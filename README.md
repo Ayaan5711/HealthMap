@@ -71,7 +71,3 @@ For any questions or suggestions, please contact us at:
 - LinkedIn: [Ayaan Ahmed](https://www.linkedin.com/in/ayaan-ahmed-70a5b0157/)
 - GitHub: [Ayaan5711](https://github.com/Ayaan5711)
 
-## Acknowledgements
-
-- [OpenAI](https://www.openai.com) for providing LLMs.
-- [Your Institution/Organization](https://www.yourorganization.com) for support and resources.
