@@ -11,6 +11,6 @@ Flask App Integration: The entire system is powered by a Flask web application, 
 
 Privacy and Security: We prioritize user privacy and data security. Your health information is handled with the utmost confidentiality, adhering to the highest industry standards.
 
-Continuous Improvement: Our system is designed for continuous improvement. As we gather more data, the machine learning models evolve, providing increasingly accurate and relevant recommendations.
+
 
 
