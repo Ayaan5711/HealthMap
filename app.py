@@ -224,15 +224,15 @@ def breast():
     else:
         return render_template("breast.html")
 
-@app.route('/dibates', methods=['GET','POST'])
-def dibates():
+@app.route('/diabetes', methods=['GET','POST'])
+def diabetes():
     if request.method == 'POST':
         to_predict_dict = request.form.to_dict()
         to_predict_list = list(map(float, list(to_predict_dict.values())))
         pred = predict_disease(to_predict_list, to_predict_dict)
-        return render_template("dibates.html", prediction_text_dibates=pred)
+        return render_template("diabetes.html", prediction_text_diabetes=pred)
     else:
-        return render_template("dibates.html")
+        return render_template("diabetes.html")
 
 @app.route('/heart' , methods=['GET','POST'])
 def heart():
