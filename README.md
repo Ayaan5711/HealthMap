@@ -1,6 +1,6 @@
-# MediFY
+# HealthMap
 
-MediFY is an advanced platform designed for personalized medicine and bioinformatics analysis. It predicts diseases based on symptoms, identifies specific diseases, and offers personalized medicine for patient drug responses. The platform leverages state-of-the-art large language models (LLMs) and vision-language models (VLMs) to enhance the knowledge domain and streamline healthcare processes.
+HealthMap is an advanced platform designed for personalized medicine and bioinformatics analysis. It predicts diseases based on symptoms, identifies specific diseases, and offers personalized medicine for patient drug responses. The platform leverages state-of-the-art large language models (LLMs) and vision-language models (VLMs) to enhance the knowledge domain and streamline healthcare processes.
 
 ## Features
 
@@ -21,11 +21,11 @@ MediFY is an advanced platform designed for personalized medicine and bioinforma
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/Ayaan5711/medify.git
+    git clone https://github.com/Ayaan5711/healthmap.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd medify
+    cd healthmap
     ```
 3. Install the required packages:
     ```sh
