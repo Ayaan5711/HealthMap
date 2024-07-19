@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breast Cancer Prediction</title>
+</head>
+<body>
+    <h1>Breast Cancer Prediction</h1>
+    <form method="POST">
+        Radius Mean: <input type="number" step="any" name="radius_mean" required><br>
+        Texture Mean: <input type="number" step="any" name="texture_mean" required><br>
+        Perimeter Mean: <input type="number" step="any" name="perimeter_mean" required><br>
+        Area Mean: <input type="number" step="any" name="area_mean" required><br>
+        Smoothness Mean: <input type="number" step="any" name="smoothness_mean" required><br>
+        Compactness Mean: <input type="number" step="any" name="compactness_mean" required><br>
+        Concavity Mean: <input type="number" step="any" name="concavity_mean" required><br>
+        Concave Points Mean: <input type="number" step="any" name="concave_points_mean" required><br>
+        Symmetry Mean: <input type="number" step="any" name="symmetry_mean" required><br>
+        Radius SE: <input type="number" step="any" name="radius_se" required><br>
+        Perimeter SE: <input type="number" step="any" name="perimeter_se" required><br>
+        Area SE: <input type="number" step="any" name="area_se" required><br>
+        Compactness SE: <input type="number" step="any" name="compactness_se" required><br>
+        Concavity SE: <input type="number" step="any" name="concavity_se" required><br>
+        Concave Points SE: <input type="number" step="any" name="concave_points_se" required><br>
+        Fractal Dimension SE: <input type="number" step="any" name="fractal_dimension_se" required><br>
+        Radius Worst: <input type="number" step="any" name="radius_worst" required><br>
+        Texture Worst: <input type="number" step="any" name="texture_worst" required><br>
+        Perimeter Worst: <input type="number" step="any" name="perimeter_worst" required><br>
+        Area Worst: <input type="number" step="any" name="area_worst" required><br>
+        Smoothness Worst: <input type="number" step="any" name="smoothness_worst" required><br>
+        Compactness Worst: <input type="number" step="any" name="compactness_worst" required><br>
+        Concavity Worst: <input type="number" step="any" name="concavity_worst" required><br>
+        Concave Points Worst: <input type="number" step="any" name="concave_points_worst" required><br>
+        Symmetry Worst: <input type="number" step="any" name="symmetry_worst" required><br>
+        Fractal Dimension Worst: <input type="number" step="any" name="fractal_dimension_worst" required><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+        <p>Prediction: {{ prediction }}</p>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</body>
+</html>

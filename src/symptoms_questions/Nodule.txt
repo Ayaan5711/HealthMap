@@ -1,0 +1,5 @@
+Do you have chest pain?
+Do you have a cough?
+Do you experience wheezing?
+Do you have unexplained weight loss?
+Do you feel fatigue?

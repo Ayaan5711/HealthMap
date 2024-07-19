@@ -1,0 +1,5 @@
+Do you experience shortness of breath?
+Do you have a cough?
+Do you feel chest discomfort?
+Do you have difficulty breathing deeply?
+Do you have a rapid heart rate?

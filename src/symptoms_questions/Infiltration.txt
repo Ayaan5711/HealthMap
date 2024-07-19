@@ -1,0 +1,5 @@
+Do you have a cough?
+Do you experience shortness of breath?
+Do you feel fatigue?
+Do you have a fever?
+Do you experience wheezing?

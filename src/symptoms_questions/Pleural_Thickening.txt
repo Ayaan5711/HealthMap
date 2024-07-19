@@ -1,0 +1,5 @@
+Do you have chest pain?
+Do you experience shortness of breath?
+Do you feel fatigue?
+Do you have a persistent cough?
+Do you have difficulty breathing deeply?

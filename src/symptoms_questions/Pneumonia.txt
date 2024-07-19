@@ -1,0 +1,5 @@
+Do you have a frequent cough?
+Do you have a high fever?
+Do you experience chest pain?
+Do you feel shortness of breath?
+Do you have chills and sweating?

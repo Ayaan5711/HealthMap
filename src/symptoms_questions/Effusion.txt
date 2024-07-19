@@ -1,0 +1,5 @@
+Do you have chest pain?
+Do you experience shortness of breath?
+Do you have a cough?
+Do you feel pressure in your chest?
+Do you have difficulty breathing when lying down?

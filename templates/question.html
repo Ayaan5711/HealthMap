@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Symptom Checker</title>
+</head>
+<body>
+    <h1>{{ label }} Symptom Checker</h1>
+    <form action="/result" method="post">
+
+        <input style="display: none;" name="label" value="{{label}}">
+
+        <label>{{ q1 }}</label>
+        <input type="radio" name="q1" value="1" required> Yes
+        <input type="radio" name="q1" value="0" required> No
+        <input type="radio" name="q1" value="0.5" required> Maybe
+        <input type="radio" name="q1" value="0.25" required> Not Sure
+        <br>
+
+        <label>{{ q2 }}</label>
+        <input type="radio" name="q2" value="1" required> Yes
+        <input type="radio" name="q2" value="0" required> No
+        <input type="radio" name="q2" value="0.5" required> Maybe
+        <input type="radio" name="q2" value="0.25" required> Not Sure
+        <br>
+
+        <label>{{ q3 }}</label>
+        <input type="radio" name="q3" value="1" required> Yes
+        <input type="radio" name="q3" value="0" required> No
+        <input type="radio" name="q3" value="0.5" required> Maybe
+        <input type="radio" name="q3" value="0.25" required> Not Sure
+        <br>
+
+        <label>{{ q4 }}</label>
+        <input type="radio" name="q4" value="1" required> Yes
+        <input type="radio" name="q4" value="0" required> No
+        <input type="radio" name="q4" value="0.5" required> Maybe
+        <input type="radio" name="q4" value="0.25" required> Not Sure
+        <br>
+
+        <label>{{ q5 }}</label>
+        <input type="radio" name="q5" value="1" required> Yes
+        <input type="radio" name="q5" value="0" required> No
+        <input type="radio" name="q5" value="0.5" required> Maybe
+        <input type="radio" name="q5" value="0.25" required> Not Sure
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

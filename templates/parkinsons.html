@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parkinson's Disease Prediction</title>
+</head>
+<body>
+    <h1>Parkinson's Disease Prediction</h1>
+    <form method="POST">
+        MDVP:Fo(Hz): <input type="number" step="any" name="MDVP:Fo(Hz)" required><br>
+        MDVP:Fhi(Hz): <input type="number" step="any" name="MDVP:Fhi(Hz)" required><br>
+        MDVP:Flo(Hz): <input type="number" step="any" name="MDVP:Flo(Hz)" required><br>
+        MDVP:Jitter(%): <input type="number" step="any" name="MDVP:Jitter(%)" required><br>
+        MDVP:Jitter(Abs): <input type="number" step="any" name="MDVP:Jitter(Abs)" required><br>
+        MDVP:RAP: <input type="number" step="any" name="MDVP:RAP" required><br>
+        MDVP:PPQ: <input type="number" step="any" name="MDVP:PPQ" required><br>
+        Jitter:DDP: <input type="number" step="any" name="Jitter:DDP" required><br>
+        MDVP:Shimmer: <input type="number" step="any" name="MDVP:Shimmer" required><br>
+        MDVP:Shimmer(dB): <input type="number" step="any" name="MDVP:Shimmer(dB)" required><br>
+        Shimmer:APQ3: <input type="number" step="any" name="Shimmer:APQ3" required><br>
+        Shimmer:APQ5: <input type="number" step="any" name="Shimmer:APQ5" required><br>
+        MDVP:APQ: <input type="number" step="any" name="MDVP:APQ" required><br>
+        Shimmer:DDA: <input type="number" step="any" name="Shimmer:DDA" required><br>
+        NHR: <input type="number" step="any" name="NHR" required><br>
+        HNR: <input type="number" step="any" name="HNR" required><br>
+        RPDE: <input type="number" step="any" name="RPDE" required><br>
+        DFA: <input type="number" step="any" name="DFA" required><br>
+        Spread1: <input type="number" step="any" name="spread1" required><br>
+        Spread2: <input type="number" step="any" name="spread2" required><br>
+        D2: <input type="number" step="any" name="D2" required><br>
+        PPE: <input type="number" step="any" name="PPE" required><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+        <p>Prediction: {{ prediction }}</p>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</body>
+</html>
