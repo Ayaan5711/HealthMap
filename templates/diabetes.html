@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Multi-Disease</title>
+    <link rel="icon" href="../static/img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../static/css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../static/css/flaticon.css">
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="../static/css/nice-select.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../static/css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+  
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html"> <img src="../static/img/logo.png" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                        id="navbarSupportedContent">
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{url_for('index')}}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="about" href="{{url_for('about')}}">About</a>
+                            </li>
+                    
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('disease') }}">Disease Symptoms</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"  id="navbarDropdown"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Multi-Disease
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{url_for('malaria')}}">Malaria</a>
+                                    <a class="dropdown-item" href="{{url_for('kidney')}}">Kidney</a>
+                                    <a class="dropdown-item" href="{{url_for('heart')}}">Heart</a>
+                                    <a class="dropdown-item" href="{{url_for('liver')}}">Liver</a>
+                                    <a class="dropdown-item" href="{{url_for('pneumonia')}}">Pneumonia</a>
+                                    <a class="dropdown-item" href="{{url_for('diabetes')}}">Diabetes</a>
+                                    <a class="dropdown-item" href="{{url_for('breast')}}">Breast Cancer</a>
+                                    <a class="dropdown-item" href="{{url_for('skin')}}">Skin Disease</a>
+                                    <a class="dropdown-item" href="{{url_for('brain')}}">Brain Tumor</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"  id="navbarDropdown_1"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Drug
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                    <a class="dropdown-item" href="{{url_for('alternativedrug')}}">Alternative Drug</a>
+                                    <a class="dropdown-item" href="{{url_for('drugresponse')}}">Drug Response</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                        <a class="btn_2 d-none d-lg-block" href="#">Appointment</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb_part breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Diabetes Prediction</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!-- about us part start-->
+    <section class="about_us single_about_padding">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                
+                
+                    <div class="about_us_text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                            Quis ipsum suspendisse ultrices gravida. Risus cmodo viverra
+                            maecenas accumsan lacus vel Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                            Quis ipsum suspendisse ultrices gravida. Risus cmodo viverra
+                            maecenas accumsan lacus vel Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                            Quis ipsum suspendisse ultrices gravida. Risus cmodo viverra
+                            maecenas accumsan lacus vel</p>
+                        </div>
+                    </div>
+                <div class="row justify-content-center"> 
+                    <div class="col-md-8">
+                        <center><h1>Diabetes Predictor</h1></center>
+                        <div class="card card-body" style="border: 1px solid black;">
+                            <form class="form-horizontal" action="{{ url_for('diabetes') }}" method="POST">
+                                <div class="form-group">
+                                    <input style="border: 1px solid black;" class="form-control" type="text" name="pregnancies" placeholder="Number of Pregnancies eg. 0">
+                                </div>
+                                <div class="form-group">
+                                    <input style="border: 1px solid black;" class="form-control" type="text" name="glucose" placeholder="Glucose (mg/dL) eg. 80">
+                                </div>
+                                <div class="form-group">
+                                    <input style="border: 1px solid black;" class="form-control" type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 80">
+                                </div>
+                                <div class="form-group">
+                                    <input style="border: 1px solid black;" class="form-control" type="text" name="skinthickness" placeholder="Skin Thickness (mm) eg. 20">
+                                </div>
+                                <div class="form-group">
+                                    <input style="border: 1px solid black;" class="form-control" type="text" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80">
+                                </div>
+                                <div class="form-group">
+                                    <input style="border: 1px solid black;" class="form-control" type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 23.1">
+                                </div>
+                                <div class="form-group">
+                                    <input style="border: 1px solid black;" class="form-control" type="text" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.52">
+                                </div>
+                                <div class="form-group">
+                                    <input style="border: 1px solid black;" class="form-control" type="text" name="age" placeholder="Age (years) eg. 34">
+                                </div>
+            
+                                <div style="margin-top: 10px ;" class="row justify-content-center"> 
+                                    <button type="submit" value="Predict" class="btn btn-primary float-end">Predict</button>
+                                </div>                            </form>
+                        </div>
+                       
+                    </div>
+                    {% if pediction_text_diabetes %}
+                    <div class="col-md-6">
+                        {% if pediction_text_diabetes == 1 %}
+                            <div class="card card-body alert alert-danger"><center>Sorry! Please consult DOCTOR.</center></div>
+                        {% else %}
+                            <div class="card card-body alert alert-success"><center>Great! You are HEALTHY.</center></div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    
+                 </div>   
+                 
+            
+              
+            </div>
+        </div>
+    </section>
+    <!-- about us part end-->
+
+    
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <div class="footer section_padding">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-2 col-md-4 col-sm-6 single-footer-widget">
+                        <a href="#" class="footer_logo"> <img src="../static/img/logo.png" alt="#"> </a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+                        <div class="social_logo">
+                            <a href="#"><i class="ti-facebook"></i></a>
+                            <a href="#"> <i class="ti-twitter"></i> </a>
+                            <a href="#"><i class="ti-instagram"></i></a>
+                            <a href="#"><i class="ti-skype"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-sm-6 col-md-4 single-footer-widget">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Department</a></li>
+                            <li><a href="#"> Online payment</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Department</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-sm-6 col-md-4 single-footer-widget">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="#">In the community</a></li>
+                            <li><a href="#">IU health foundation</a></li>
+                            <li><a href="#">Family support </a></li>
+                            <li><a href="#">Business solution</a></li>
+                            <li><a href="#">Community clinic</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-sm-6 col-md-6 single-footer-widget">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Lights were season</a></li>
+                            <li><a href="#"> Their is let wherein</a></li>
+                            <li><a href="#">which given over</a></li>
+                            <li><a href="#">Without given She</a></li>
+                            <li><a href="#">Isn two signs think</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-md-6 single-footer-widget">
+                        <h4>Newsletter</h4>
+                        <p>Seed good winged wherein which night multiply
+                            midst does not fruitful</p>
+                        <div class="form-wrap" id="mc_embed_signup">
+                            <form target="_blank"
+                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                method="get" class="form-inline">
+                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+                                    required="" type="email">
+                                <button class="click-btn btn btn-default text-uppercase"> <i class="ti-angle-right"></i>
+                                </button>
+                                <div style="position: absolute; left: -5000px;">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                        type="text">
+                                </div>
+
+                                <div class="info"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright_part">
+            <div class="container">
+                <div class="row align-items-center">
+                    <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Website is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Swayam</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                    <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+                        <a href="#"><i class="ti-facebook"></i></a>
+                        <a href="#"> <i class="ti-twitter"></i> </a>
+                        <a href="#"><i class="ti-instagram"></i></a>
+                        <a href="#"><i class="ti-skype"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- contact js -->
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
