@@ -1,57 +1,77 @@
+$white_color: #fff;
+
 .breadcrumb_bg {
-	@include background("../img/breadcrumb.png");
-	background-size: inherit;
+  background: url("../img/breadcrumb.png") no-repeat center center;
+  background-size: cover;
 }
 
 .breadcrumb_part {
-	position: relative;
-	z-index: 1;
-	height: 400px;
-	.breadcrumb_iner {
-		height: 400px;
-		width: 100%;
-		display: table;
-		.breadcrumb_iner_item {
-			display: table-cell;
-			vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  height: 400px;
 
-			h2 {
-				color: $white_color;
-				font-size: 100px;
-				font-weight: 700;
-				text-transform: capitalize;
-				text-align: center;
-				@media #{$small_mobile} {
-					font-size: 35px;
-				}
+  .breadcrumb_iner {
+    height: 400px;
+    width: 100%;
+    display: table;
 
-				@media #{$large_mobile} {
-					font-size: 35px;
-				}
+    .breadcrumb_iner_item {
+      display: table-cell;
+      vertical-align: middle;
 
-				@media #{$tab_device} {
-					font-size: 40px;
-				}
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $white_color;
+        font-weight: 700;
+        text-transform: capitalize;
+        text-align: center;
 
-				@media #{$medium_device} {}
-			}
+        @media (max-width: 600px) {
+          font-size: 35px;
+        }
 
-			p {
-				font-size: 15px;
-				color: $white_color;
-				text-transform: capitalize;
-			}
+        @media (min-width: 601px) and (max-width: 768px) {
+          font-size: 40px;
+        }
+      }
 
-			span {
-				margin: 0px 5px;
-				font-size: 12px;
-			}
+      h1 {
+        font-size: 70px;
+      }
+      h2 {
+        font-size: 60px;
+      }
+      h3 {
+        font-size: 50px;
+      }
+      h4 {
+        font-size: 40px;
+      }
+      h5 {
+        font-size: 35px;
+      }
+      h6 {
+        font-size: 25px;
+      }
 
-		}
-	}
+      p {
+        font-size: 45px;
+        color: $white_color;
+        text-transform: capitalize;
+      }
 
+      span {
+        margin: 0px 5px;
+        font-size: 12px;
+      }
+    }
+  }
 }
 
 .breadcrumb {
-	margin-bottom: 0px !important;
+  margin-bottom: 0px !important;
 }

@@ -58,3 +58,5 @@ instance/
 *~
 .project
 .pydevproject
+
+node_modules
