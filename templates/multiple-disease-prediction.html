@@ -6,9 +6,16 @@
 <body>
     <h1>Welcome to Disease Prediction</h1>
     <ul>
-        <li><a href="/predict_heart_disease">Heart Disease Prediction</a></li>
-        <li><a href="/predict_diabetes">Diabetes Prediction</a></li>
-        <li><a href="/predict_cancer">Cancer Prediction</a></li>
+        <li><a href="{{url_for('heart')}}">Heart Disease Prediction</a></li>
+        <li><a href="{{url_for('diabetes')}}">Diabetes Prediction</a></li>
+        <li><a href="{{url_for('breast')}}">Breast Cancer Prediction</a></li>
+        <li><a href="{{url_for('liver')}}">Liver Disease Prediction</a></li>
+        <li><a href="{{url_for('kidney')}}">Kidney Disease Prediction</a></li>
+        <li><a href="{{url_for('parkinsons')}}">Parkinsons Disease Prediction</a></li>
+        <li><a href="{{url_for('malaria')}}">Malaria</a></li>
+        <li><a href="{{url_for('brain')}}">Brain Tumour</a></li>
+        <li><a href="{{url_for('chest')}}">Chest Disease</a></li>
+
     </ul>
 </body>
 </html>
