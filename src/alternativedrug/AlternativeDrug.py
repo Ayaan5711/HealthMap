@@ -24,7 +24,18 @@ class AlternateDrug:
         recommended_medicines = []
         for i in medicines_list:
             recommended_medicines.append({
-                'medicine_name': self.medicines.iloc[i[0]].Drug_Name,
+                'medicine_name': medicines.iloc[i[0]].Drug_Name,
                 'pharmeasy_link': f"https://pharmeasy.in/search/all?name={medicines.iloc[i[0]].Drug_Name}"
             })
-        return recommended_medicines 
+        medicines_data = medicines['Drug_Name'].values.tolist()
+
+        return recommended_medicines , medicines_data
+    
+    def medi(self):
+        with open('src/models/medicine_dict.pkl', 'rb') as f:
+            medicines_dict = pickle.load(f)
+
+        medicines = pd.DataFrame(medicines_dict)
+        medicines_data = medicines['Drug_Name'].values.tolist()
+        
+        return medicines_data
