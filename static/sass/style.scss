@@ -19,12 +19,13 @@
 @import "about_us";
 @import "feature_part";
 
-
 @import "review";
 @import "regervation_part";
 @import "doctor_list";
 @import "intro_video_bg";
 @import "footer";
+
+@import "about";
 
 @import "elements";
 @import "blog_part";
@@ -33,19 +34,51 @@
 // breadcrumb scss
 @import "breadcrumb";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 @import "footer";
 
+// styles.scss
+@import "variables";
+// styles.scss
 
+body {
+  font-family: $font-paragraph;
+  color: $color-text;
+}
+
+.heading {
+  font-family: $font-heading;
+  font-size: $font-size-heading;
+  font-weight: 700;
+  color: $color-primary;
+}
+
+.subheading {
+  font-family: $font-subheading;
+  font-size: $font-size-subheading;
+  font-weight: 600;
+  color: $color-secondary;
+}
+
+.paragraph {
+  font-family: $font-lora;
+  font-size: $font-size-paragraph;
+  line-height: $line-height-paragraph;
+  color: $color-text-secondary;
+}
+
+.button {
+  font-family: $font-button;
+  font-size: $font-size-button;
+  font-weight: 400;
+  color: #fff;
+  background-color: $color-button-bg;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+
+  &:hover {
+    background-color: $color-button-bg-hover;
+  }
+}
