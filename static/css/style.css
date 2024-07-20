@@ -13,7 +13,7 @@
 
 /**************** common css start ****************/
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
   font-size: 14px;
@@ -23,7 +23,8 @@ body {
   outline: none;
 }
 
-input:hover, input:focus {
+input:hover,
+input:focus {
   outline: none !important;
 }
 
@@ -137,14 +138,19 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #242429;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
 }
 
 p {
   color: #666666;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.929;
   font-size: 16px;
   margin-bottom: 0px;
@@ -190,7 +196,10 @@ img {
   max-width: 100%;
 }
 
-a:focus, .button:focus, button:focus, .btn:focus {
+a:focus,
+.button:focus,
+button:focus,
+.btn:focus {
   text-decoration: none;
   outline: none;
   box-shadow: none;
@@ -346,7 +355,7 @@ ul {
 
 @media only screen and (min-width: 1200px) and (max-width: 3640px) {
   .container {
-    max-width: 1170px;
+    max-width: 1300px;
   }
 }
 @media (max-width: 1200px) {
@@ -394,7 +403,7 @@ ul {
   text-transform: capitalize;
   border: 1px solid #e4e6ea;
   border-radius: 2px;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   background-size: 200% auto;
 }
 .btn_1:hover {
@@ -431,7 +440,7 @@ ul {
   transition: all 0.4s ease-in-out;
   text-transform: uppercase;
   border-radius: 2px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-size: 200% auto;
   border-radius: 5px;
   display: inline-block;
@@ -1556,7 +1565,7 @@ ul {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(28, 25, 171);
+  background-color: rgb(21, 196, 236);
   opacity: 0.8;
   z-index: -1;
 }
@@ -1690,6 +1699,10 @@ ul {
     max-width: 130px;
   }
 }
+.main_menu .navbar_img {
+  width: 4rem;
+  height: 4rem;
+}
 .main_menu .navbar-toggler {
   position: relative;
   z-index: 1;
@@ -1730,7 +1743,7 @@ ul {
   color: #242429;
   font-size: 14px;
   padding: 38px 23px;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   line-height: 13px;
   text-transform: capitalize;
 }
@@ -1798,7 +1811,7 @@ ul {
     text-align: left !important;
   }
   .main_menu .main-menu-item .nav-item {
-    padding: 5px 15px !important;
+    padding: 20px 15px !important;
   }
   .main_menu .main-menu-item .nav-item a {
     padding: 5px 15px !important;
@@ -1830,7 +1843,7 @@ ul {
   color: #fff;
   font-size: 15px;
   padding: 0px 24px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .single_page_menu .main-menu-item ul li .nav-link {
@@ -1858,7 +1871,7 @@ ul {
 
 /**************** banner part css start ****************/
 .banner_part {
-  height: 935px;
+  height: 700px;
   position: relative;
   overflow: hidden;
   background-image: url(../img/banner_bg.png);
@@ -1886,7 +1899,8 @@ ul {
 .banner_part .banner_text .banner_text_iner {
   display: table-cell;
   vertical-align: middle;
-  padding-top: 155px;
+  padding-top: 50px; /* Adjusted padding-top */
+  padding-bottom: 0px; /* Added padding-bottom */
 }
 @media (max-width: 991px) {
   .banner_part .banner_text .banner_text_iner {
@@ -1896,8 +1910,8 @@ ul {
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .banner_part .banner_text .banner_text_iner {
-    padding-top: 0;
-    padding-top: 100px;
+    padding-top: 50px; /* Adjusted padding-top */
+    padding-bottom: 0px; /* Added padding-bottom */
   }
 }
 @media (max-width: 576px) {
@@ -1932,7 +1946,7 @@ ul {
   font-weight: 500;
   color: #242429;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .banner_part .banner_text h1 {
   font-size: 60px;
@@ -1975,7 +1989,7 @@ ul {
 .banner_part .banner_text p {
   font-size: 15px;
   line-height: 30px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #242429;
   padding-right: 20px;
 }
@@ -2042,7 +2056,7 @@ ul {
 .about_us .about_us_text h2 {
   font-size: 42px;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 80px;
   position: relative;
 }
 @media (max-width: 991px) {
@@ -2062,7 +2076,7 @@ ul {
 }
 .about_us .about_us_text p {
   line-height: 1.929;
-  margin-bottom: 35px;
+  margin-bottom: 50px;
 }
 @media (max-width: 576px) {
   .about_us .about_us_text p {
@@ -2109,7 +2123,7 @@ ul {
   color: #242429;
   width: 50%;
   float: left;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   position: relative;
   padding-left: 29px;
 }
@@ -2144,15 +2158,16 @@ ul {
   margin-top: 100px;
   position: relative;
   z-index: 1;
+  margin-top: 20px;
 }
 @media (max-width: 991px) {
   .banner_item .single_item {
-    margin-top: 30px;
+    margin-top: 15px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .banner_item .single_item {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 .banner_item .single_item:after {
@@ -2203,7 +2218,7 @@ ul {
     padding: 0 0 70px;
   }
   .top_service .our_abilityabout_us_img {
-    margin-top: 25px;
+    margin-top: 20px;
   }
 }
 .single_about_padding {
@@ -2223,7 +2238,6 @@ ul {
   }
 }
 
-/**************** service_part css start ****************/
 .feature_part {
   padding: 140px 0 515px;
 }
@@ -2244,6 +2258,7 @@ ul {
   font-size: 42px;
   line-height: 1.222;
   margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
   -webkit-transition: 1s;
   transition: 1s;
 }
@@ -2274,6 +2289,7 @@ ul {
 }
 .feature_part .single_feature_text p {
   line-height: 1.9;
+  font-family: "Open Sans", sans-serif;
   color: rgb(127, 127, 127);
   -webkit-transition: 1s;
   transition: 1s;
@@ -2300,6 +2316,19 @@ ul {
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .feature_part .single_feature_text .btn_2 {
     margin-top: 25px;
+  }
+}
+.feature_part .single_feature :hover {
+  background-color: rgb(21, 196, 236);
+}
+.feature_part .single_feature_img {
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .feature_part .single_feature_img {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .feature_part .single_feature_part {
@@ -2421,6 +2450,7 @@ ul {
   .single_feature_img {
     text-align: center;
     margin: 30px 0 0;
+    border-radius: 50%;
   }
 }
 .single_feature_page {
@@ -2501,7 +2531,7 @@ ul {
 }
 .review_part .client_review_single .client_review_text p {
   font-size: 18px;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   color: #fff;
   line-height: 1.9;
 }
@@ -2549,7 +2579,7 @@ ul {
   }
 }
 .review_part h4 span {
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   color: #fff;
   font-weight: 400;
@@ -2648,7 +2678,7 @@ ul {
   border: 1px solid #fff;
   border-radius: 0px;
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 4px;
   height: 50px;
   padding: 15px;
@@ -2690,7 +2720,7 @@ ul {
 .regervation_part .btn_2 {
   margin-top: 10px;
   background-color: #fff !important;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
   color: #242429;
   font-size: 14px;
@@ -3166,12 +3196,10 @@ h6 {
   color: #828bb2;
 }
 
-.button-area {
-  background: #fff;
-}
 .button-area .border-top-generic {
   padding: 70px 15px;
   border-top: 1px dotted #eee;
+  background: #fff;
 }
 
 .button-group-area .genric-btn {
@@ -3556,10 +3584,10 @@ h6 {
   left: 20px;
   top: 0;
   line-height: 40px;
-  z-index: 3;
 }
 .input-group-icon .icon i {
   color: #797979;
+  z-index: 3;
 }
 .input-group-icon .single-input {
   padding-left: 45px;
@@ -4326,7 +4354,7 @@ h6 {
 .blog_part .blog_btn {
   font-size: 14px;
   text-transform: uppercase;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
   margin-top: 20px;
   display: inline-block;
@@ -4713,6 +4741,47 @@ h6 {
   .footer-area .copyright_part .footer-text {
     text-align: center;
   }
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+}
+
+.heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.subheading {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.75em;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.paragraph {
+  font-family: "Lora", serif;
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  color: #fff;
+  background-color: #3498db;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+}
+.button:hover {
+  background-color: #2980b9;
 }
 
 /*# sourceMappingURL=style.css.map */
