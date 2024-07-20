@@ -74,4 +74,4 @@ For any questions or suggestions, please contact us at:
 
 ## Download Insurance model file
 - destination: `src/models/insurance_model.pkl`
-- link `https://drive.google.com/file/d/1vPwb3qeCy29o-R5Gmr4xdo98KRYx7MEX/view?usp=sharing`
+- [link] (https://drive.google.com/file/d/1vPwb3qeCy29o-R5Gmr4xdo98KRYx7MEX/view?usp=sharing)
