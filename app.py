@@ -4,18 +4,20 @@ from src.PredictionPipelines.predictions import ModelPipeline
 from werkzeug.utils import secure_filename
 from src.prediction.prediction import ImageClassification
 from src.alternativedrug.AlternativeDrug import AlternateDrug
+from src.Insurance.Insurance import Prediction
 import os
-from PIL import Image
+import gdown
 import warnings
 from src.exception import CustomException
 from src.logger import logging as lg
+import time
 
 warnings.filterwarnings("ignore", category=UserWarning, message="Trying to unpickle estimator")
 
 # Initialize Flask app
 app = Flask(__name__)
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
+
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -89,22 +91,6 @@ def skin():
 def developer():
     lg.info('Rendering developer page')
     return render_template("developer.html")
-
-# Error handling
-@app.errorhandler(404)
-def page_not_found(e):
-    lg.warning(f'Page not found: {request.url}')
-    return render_template('404.html'), 404
-
-@app.errorhandler(500)
-def internal_server_error(e):
-    lg.error(f'Internal server error: {e}')
-    return render_template('500.html'), 500
-
-
-
-
-
 
 
 
@@ -357,5 +343,47 @@ def parkinsons():
 
 
 
+
+@app.route('/insurance')
+def insurance():
+    try:
+        cities = ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Chennai', 'Kolkata', 
+                  'Ahmedabad', 'Pune', 'Kanpur', 'Nagpur', 'Lucknow', 'Chandigarh']
+        lg.info('Index page accessed successfully.')
+
+        return render_template('insurance.html', cities=cities)
+    except CustomException as ce:
+        lg.error(f"CustomException in index route: {ce}")
+        return "A custom error occurred while loading the index page."
+    except Exception as e:
+        lg.error(f"Error in index route: {e}")
+        return "An error occurred while loading the index page."
+    
+
+
+@app.route('/insurance_predict', methods=['POST'])
+def insurance_predict():
+    try:
+        data = request.form.to_dict()
+        lg.info(f"Received data for prediction: {data}")
+
+        ob = Prediction()
+        risk_score, policy_type, policy_price = ob.predict(data)
+
+        lg.info(f"Prediction results: Risk Score={risk_score}, Policy Type={policy_type}, Policy Price={policy_price}")
+        return render_template('result.html', risk_score=risk_score, policy_type=policy_type, policy_price=policy_price)
+    except CustomException as ce:
+        lg.error(f"CustomException in predict route: {ce}")
+        return "A custom error occurred while predicting the insurance risk."
+    except Exception as e:
+        lg.error(f"Error in predict route: {e}")
+        return "An error occurred while predicting the insurance risk."
+
+
+
 if __name__ == '__main__':
+
+    os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+
+
     app.run(debug=True)

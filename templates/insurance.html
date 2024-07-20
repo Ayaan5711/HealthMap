@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Prediction</title>
+</head>
+<body>
+    <h1>Risk Prediction Form</h1>
+    <form action="/insurance_predict" method="post">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="Age" required><br><br>
+
+        <label>Sex:</label>
+        <ul>
+            <li><input type="radio" id="male" name="Sex" value="Male" required>
+            <label for="male">Male</label></li>
+            <li><input type="radio" id="female" name="Sex" value="Female" required>
+            <label for="female">Female</label></li>
+        </ul><br>
+
+        <label for="bmi">BMI:</label>
+        <input type="number" id="bmi" name="BMI" step="0.1" required><br><br>
+
+        <label>Smoking Status:</label>
+        <ul>
+            <li><input type="radio" id="non-smoker" name="Smoking Status" value="Non-Smoker" required>
+            <label for="non-smoker">Non-Smoker</label></li>
+            <li><input type="radio" id="former-smoker" name="Smoking Status" value="Former Smoker" required>
+            <label for="former-smoker">Former Smoker</label></li>
+            <li><input type="radio" id="current-smoker" name="Smoking Status" value="Current Smoker" required>
+            <label for="current-smoker">Current Smoker</label></li>
+        </ul><br>
+
+        <label>Family History of Disease:</label>
+        <ul>
+            <li><input type="radio" id="family-history-yes" name="Family History of Disease" value="Yes" required>
+            <label for="family-history-yes">Yes</label></li>
+            <li><input type="radio" id="family-history-no" name="Family History of Disease" value="No" required>
+            <label for="family-history-no">No</label></li>
+        </ul><br>
+
+
+        <label for="annual-income">Annual Income:</label>
+        <input type="number" id="annual-income" name="Annual Income" required><br><br>
+
+        <label>City:</label>
+        <ul>
+            {% for city in cities %}
+                <li><input type="radio" id="city-{{ city }}" name="City" value="{{ city }}" required>
+                <label for="city-{{ city }}">{{ city }}</label></li>
+            {% endfor %}
+        </ul><br>
+
+        <h2>Select Past Diseases: </h2>
+
+        <label>Diabetes:</label>
+        <ul>
+            <li><input type="radio" id="diabetes-yes" name="Diabetes" value="Yes" required>
+            <label for="diabetes-yes">Yes</label></li>
+            <li><input type="radio" id="diabetes-no" name="Diabetes" value="No" required>
+            <label for="diabetes-no">No</label></li>
+        </ul><br>
+
+        <label>Hypertension:</label>
+        <ul>
+            <li><input type="radio" id="hypertension-yes" name="Hypertension" value="Yes" required>
+            <label for="hypertension-yes">Yes</label></li>
+            <li><input type="radio" id="hypertension-no" name="Hypertension" value="No" required>
+            <label for="hypertension-no">No</label></li>
+        </ul><br>
+
+        <label>Heart Disease:</label>
+        <ul>
+            <li><input type="radio" id="heart-disease-yes" name="Heart Disease" value="Yes" required>
+            <label for="heart-disease-yes">Yes</label></li>
+            <li><input type="radio" id="heart-disease-no" name="Heart Disease" value="No" required>
+            <label for="heart-disease-no">No</label></li>
+        </ul><br>
+
+        <label>Cancer:</label>
+        <ul>
+            <li><input type="radio" id="cancer-yes" name="Cancer" value="Yes" required>
+            <label for="cancer-yes">Yes</label></li>
+            <li><input type="radio" id="cancer-no" name="Cancer" value="No" required>
+            <label for="cancer-no">No</label></li>
+        </ul><br>
+
+        <label>Asthma:</label>
+        <ul>
+            <li><input type="radio" id="asthma-yes" name="Asthma" value="Yes" required>
+            <label for="asthma-yes">Yes</label></li>
+            <li><input type="radio" id="asthma-no" name="Asthma" value="No" required>
+            <label for="asthma-no">No</label></li>
+        </ul><br>
+
+        <label>Arthritis:</label>
+        <ul>
+            <li><input type="radio" id="arthritis-yes" name="Arthritis" value="Yes" required>
+            <label for="arthritis-yes">Yes</label></li>
+            <li><input type="radio" id="arthritis-no" name="Arthritis" value="No" required>
+            <label for="arthritis-no">No</label></li>
+        </ul><br>
+
+        <label>Stroke:</label>
+        <ul>
+            <li><input type="radio" id="stroke-yes" name="Stroke" value="Yes" required>
+            <label for="stroke-yes">Yes</label></li>
+            <li><input type="radio" id="stroke-no" name="Stroke" value="No" required>
+            <label for="stroke-no">No</label></li>
+        </ul><br>
+
+        <label>Epilepsy:</label>
+        <ul>
+            <li><input type="radio" id="epilepsy-yes" name="Epilepsy" value="Yes" required>
+            <label for="epilepsy-yes">Yes</label></li>
+            <li><input type="radio" id="epilepsy-no" name="Epilepsy" value="No" required>
+            <label for="epilepsy-no">No</label></li>
+        </ul><br>
+
+        <label>Kidney Disease:</label>
+        <ul>
+            <li><input type="radio" id="kidney-disease-yes" name="Kidney Disease" value="Yes" required>
+            <label for="kidney-disease-yes">Yes</label></li>
+            <li><input type="radio" id="kidney-disease-no" name="Kidney Disease" value="No" required>
+            <label for="kidney-disease-no">No</label></li>
+        </ul><br>
+
+        <label>Liver Disease:</label>
+        <ul>
+            <li><input type="radio" id="liver-disease-yes" name="Liver Disease" value="Yes" required>
+            <label for="liver-disease-yes">Yes</label></li>
+            <li><input type="radio" id="liver-disease-no" name="Liver Disease" value="No" required>
+            <label for="liver-disease-no">No</label></li>
+        </ul><br>
+
+        <label>Tuberculosis:</label>
+        <ul>
+            <li><input type="radio" id="tuberculosis-yes" name="Tuberculosis" value="Yes" required>
+            <label for="tuberculosis-yes">Yes</label></li>
+            <li><input type="radio" id="tuberculosis-no" name="Tuberculosis" value="No" required>
+            <label for="tuberculosis-no">No</label></li>
+        </ul><br>
+
+        <label>HIV:</label>
+        <ul>
+            <li><input type="radio" id="hiv-yes" name="HIV" value="Yes" required>
+            <label for="hiv-yes">Yes</label></li>
+            <li><input type="radio" id="hiv-no" name="HIV" value="No" required>
+            <label for="hiv-no">No</label></li>
+        </ul><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

@@ -71,3 +71,7 @@ For any questions or suggestions, please contact us at:
 - LinkedIn: [Ayaan Ahmed](https://www.linkedin.com/in/ayaan-ahmed-70a5b0157/)
 - GitHub: [Ayaan5711](https://github.com/Ayaan5711)
 
+
+## Download Insurance model file
+- destination: `src/models/insurance_model.pkl`
+- link `https://drive.google.com/file/d/1vPwb3qeCy29o-R5Gmr4xdo98KRYx7MEX/view?usp=sharing`
