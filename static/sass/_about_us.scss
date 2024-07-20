@@ -11,7 +11,8 @@
     background-image: none;
   }
 
-  @media #{$medium_device} {}
+  @media #{$medium_device} {
+  }
 
   .about_us_text {
     @media #{$small_mobile} {
@@ -33,7 +34,7 @@
     h2 {
       font-size: 42px;
       font-weight: 600;
-      margin-bottom: 24px;
+      margin-bottom: 80px;
       position: relative;
 
       @media #{$tab} {
@@ -50,11 +51,9 @@
       }
     }
 
-    
-
     p {
       line-height: 1.929;
-      margin-bottom: 35px;
+      margin-bottom: 50px;
       @media #{$small_mobile} {
         margin-bottom: 10px;
       }
@@ -64,7 +63,8 @@
       @media #{$tab_device} {
         margin-bottom: 20px;
       }
-      @media #{$medium_device} {}
+      @media #{$medium_device} {
+      }
     }
 
     ul {
@@ -85,7 +85,8 @@
         margin-bottom: 20px;
       }
 
-      @media #{$medium_device} {}
+      @media #{$medium_device} {
+      }
 
       li {
         display: inline-block;
@@ -134,13 +135,14 @@
     margin-top: 100px;
     position: relative;
     z-index: 1;
+    margin-top: 20px;
 
     @media #{$tab} {
-      margin-top: 30px;
+      margin-top: 15px;
     }
 
     @media #{$medium_device} {
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     &:after {
@@ -187,7 +189,6 @@
       }
     }
   }
-
 }
 
 .top_service {
@@ -195,22 +196,23 @@
     padding: 0 0 70px;
 
     .our_abilityabout_us_img {
-      margin-top: 25px;
+      margin-top: 20px;
     }
   }
 
-  @media #{$medium_device} {}
+  @media #{$medium_device} {
+  }
 }
-.single_about_padding{
+.single_about_padding {
   padding: 140px 0 0;
   margin-bottom: 515px;
-   @media #{$tab} {
-      padding: 70px 0 0;
-      margin-bottom: 70px;
-   }
+  @media #{$tab} {
+    padding: 70px 0 0;
+    margin-bottom: 70px;
+  }
 
-   @media #{$medium_device} {
-      padding: 80px 0 0;
-      margin-bottom: 150px;
-   }
+  @media #{$medium_device} {
+    padding: 80px 0 0;
+    margin-bottom: 150px;
+  }
 }

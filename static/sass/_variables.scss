@@ -1,5 +1,5 @@
-$font_stack_1: 'Roboto', sans-serif;
-$font_stack_2: 'Playfair Display', serif;
+$font_stack_1: "Montserrat", sans-serif;
+$font_stack_2: "Raleway", sans-serif;
 
 $white_color: #fff;
 $black_color: #000;
@@ -29,17 +29,31 @@ $footer_bg: #303030;
 $sidebar_bg: #fbf9ff;
 $border: #e4e6ea;
 
+$medium_device: "only screen and (min-width: 992px) and (max-width: 1200px)";
+$tab: "(max-width: 991px)";
+$tab_device: "only screen and (min-width: 768px) and (max-width: 991px)";
+$large_mobile: "only screen and (min-width: 576px) and (max-width: 767px)";
+$small_mobile: "(max-width: 576px)";
+$xs_mobile: "(max-width: 420px)";
+$sm_mobile: "only screen and (min-width: 421px) and (max-width: 575px)";
+$big_screen: "only screen and (min-width: 1200px) and (max-width: 1440px)";
+$extra_big_screen: "only screen and (min-width: 1200px) and (max-width: 3640px)";
 
+$font-heading: "Montserrat", sans-serif;
+$font-subheading: "Raleway", sans-serif;
+$font-paragraph: "Open Sans", sans-serif;
+$font-button: "Roboto", sans-serif;
+$font-lora: "Lora", serif;
 
-$medium_device : 'only screen and (min-width: 992px) and (max-width: 1200px)';
-$tab:'(max-width: 991px)';
-$tab_device:'only screen and (min-width: 768px) and (max-width: 991px)';
-$large_mobile: 'only screen and (min-width: 576px) and (max-width: 767px)';
-$small_mobile:'(max-width: 576px)';
-$xs_mobile:'(max-width: 420px)';
-$sm_mobile:'only screen and (min-width: 421px) and (max-width: 575px)';
-$big_screen:'only screen and (min-width: 1200px) and (max-width: 1440px)';
-$extra_big_screen: 'only screen and (min-width: 1200px) and (max-width: 3640px)';
-  
-  
-  
+$color-primary: #2c3e50;
+$color-secondary: #34495e;
+$color-text: #333;
+$color-text-secondary: #555;
+$color-button-bg: #3498db;
+$color-button-bg-hover: #2980b9;
+
+$font-size-heading: 2.5em;
+$font-size-subheading: 1.75em;
+$font-size-paragraph: 1em;
+$font-size-button: 1em;
+$line-height-paragraph: 1.6;
