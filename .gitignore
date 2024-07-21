@@ -59,7 +59,6 @@ instance/
 .project
 .pydevproject
 
-<<<<<<< HEAD
-=======
+
+
 node_modules
->>>>>>> 0173846bd4528e197b4faeb88ceb34079ea8a2de

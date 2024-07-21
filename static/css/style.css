@@ -2239,7 +2239,7 @@ ul {
 }
 
 .feature_part {
-  padding: 140px 0 515px;
+  padding: 70px 0 35px;
 }
 @media (max-width: 991px) {
   .feature_part {
@@ -2419,7 +2419,7 @@ ul {
   font-size: 15px;
 }
 .feature_part .single_feature {
-  margin-top: 90px;
+  margin-top: 20px;
 }
 @media (max-width: 991px) {
   .feature_part .single_feature {
@@ -4507,18 +4507,26 @@ h6 {
   display: block;
 }
 
+.title {
+  margin-top: 50px;
+  height: 400px;
+  background-image: url(../img/banner/header.jpg);
+  background-size: cover;
+}
+
 .breadcrumb_bg {
   background: url("../img/breadcrumb.png") no-repeat center center;
   background-size: cover;
 }
 
 .breadcrumb_part {
+  margin-top: 120px;
   position: relative;
   z-index: 1;
-  height: 400px;
+  height: 300px;
 }
 .breadcrumb_part .breadcrumb_iner {
-  height: 400px;
+  height: 300px;
   width: 100%;
   display: table;
 }
