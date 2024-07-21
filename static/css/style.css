@@ -33,7 +33,7 @@ input:focus {
 }
 
 .section_padding {
-  padding: 140px 0px;
+  padding: 35px 0px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .section_padding {
@@ -1763,11 +1763,24 @@ ul {
 }
 .main_menu .main-menu-item ul li .nav-link {
   color: #242429;
-  font-size: 14px;
+  font-size: 12px;
   padding: 38px 23px;
   font-family: "Lora", serif;
   line-height: 13px;
   text-transform: capitalize;
+}
+@media (min-width: 1200px) {
+  .main_menu .main-menu-item ul li .nav-link {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .main_menu .main-menu-item ul li .nav-link {
+    color: #fff;
+  }
+  .main_menu .main-menu-item ul li .nav-link:hover {
+    color: #000;
+  }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .main_menu .main-menu-item ul li .nav-link {
@@ -1787,6 +1800,11 @@ ul {
   background-color: #fafafa;
 }
 
+@media (max-width: 768px) {
+  .dropdown-menu {
+    background-color: #0c2e60;
+  }
+}
 .dropdown .dropdown-menu {
   transition: all 0.5s;
   overflow: hidden;
@@ -1794,12 +1812,19 @@ ul {
   transform: scale(1, 0);
   display: block;
   margin-top: -1px;
+  font-family: "Lora", serif;
 }
 .dropdown .dropdown-menu .dropdown-item {
   font-size: 14px;
   padding: 9px 18px !important;
   color: #000 !important;
   text-transform: capitalize;
+}
+@media (max-width: 768px) {
+  .dropdown .dropdown-menu .dropdown-item {
+    color: #fff !important;
+    font-size: 12px;
+  }
 }
 .dropdown .dropdown-menu .dropdown-item:hover {
   color: #0065e1 !important;
@@ -1812,6 +1837,13 @@ ul {
   .single_page_menu .navbar-collapse ul li .nav-link {
     color: #000 !important;
   }
+}
+@media (max-width: 991px) and (max-width: 768px) {
+  .single_page_menu .navbar-collapse ul {
+    color: #fff;
+  }
+}
+@media (max-width: 991px) {
   .main_menu .navbar {
     padding: 15px 0;
   }
@@ -1825,7 +1857,8 @@ ul {
     left: 0;
     top: 62px;
     width: 100%;
-    background-color: #fff;
+    background-color: #0c2e60;
+    color: #fff;
     text-align: center !important;
     box-shadow: 0px 11px 9px -5px rgba(0, 0, 0, 0.2);
   }
@@ -2419,19 +2452,6 @@ ul {
   }
 }
 
-.feature_part {
-  padding: 70px 0 70px;
-}
-@media (max-width: 991px) {
-  .feature_part {
-    padding: 70px 0;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .feature_part {
-    padding: 80px 0 150px;
-  }
-}
 .feature_part .section_tittle {
   margin-bottom: 0px;
 }
@@ -3165,7 +3185,7 @@ ul {
 }
 
 .footer-area {
-  background-color: #f3f6f7;
+  background-color: #0c2e60;
 }
 @media (max-width: 991px) {
   .footer-area .single-footer-widget {
@@ -3173,10 +3193,11 @@ ul {
   }
 }
 .footer-area .single-footer-widget p {
-  color: #7b838a;
+  color: #ffffff;
+  font-size: 16px;
 }
 .footer-area .single-footer-widget h4 {
-  color: #242429;
+  color: #fff;
   font-style: inherit;
   margin-bottom: 30px;
   font-weight: 700;
@@ -3196,7 +3217,7 @@ ul {
   margin-bottom: 14px;
 }
 .footer-area .single-footer-widget ul li a {
-  color: #7f7f7f;
+  color: #fff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -3247,13 +3268,14 @@ ul {
 }
 .footer-area .social_logo {
   margin-top: 20px;
+  font-size: larger;
 }
 .footer-area .social_logo a {
   color: #b8bcbf;
   margin-right: 10px;
 }
 .footer-area .social_logo a:hover {
-  color: #0065e1;
+  color: #000;
 }
 .footer-area .footer-bottom {
   margin-top: 70px;
@@ -4779,7 +4801,7 @@ h6 {
 }
 
 .footer-area {
-  background-color: #f3f6f7;
+  background-color: #0c2e60;
 }
 @media (max-width: 991px) {
   .footer-area .single-footer-widget {
@@ -4787,10 +4809,11 @@ h6 {
   }
 }
 .footer-area .single-footer-widget p {
-  color: #7b838a;
+  color: #ffffff;
+  font-size: 16px;
 }
 .footer-area .single-footer-widget h4 {
-  color: #242429;
+  color: #fff;
   font-style: inherit;
   margin-bottom: 30px;
   font-weight: 700;
@@ -4810,7 +4833,7 @@ h6 {
   margin-bottom: 14px;
 }
 .footer-area .single-footer-widget ul li a {
-  color: #7f7f7f;
+  color: #fff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -4861,13 +4884,14 @@ h6 {
 }
 .footer-area .social_logo {
   margin-top: 20px;
+  font-size: larger;
 }
 .footer-area .social_logo a {
   color: #b8bcbf;
   margin-right: 10px;
 }
 .footer-area .social_logo a:hover {
-  color: #0065e1;
+  color: #000;
 }
 .footer-area .footer-bottom {
   margin-top: 70px;
