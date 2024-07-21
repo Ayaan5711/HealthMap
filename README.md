@@ -40,7 +40,7 @@ HealthMap is an advanced platform designed for personalized medicine and bioinfo
     ```
 2. Open your web browser and navigate to `http://localhost:5000`.
 
-3. Follow the on-screen instructions to use MediFY's features.
+3. Follow the on-screen instructions to use HealthMap's features.
 
 ## Components
 
@@ -51,7 +51,7 @@ HealthMap is an advanced platform designed for personalized medicine and bioinfo
 
 ## Contributing
 
-We welcome contributions to MediFY! Please follow these steps to contribute:
+We welcome contributions to HealthMap! Please follow these steps to contribute:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
