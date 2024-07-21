@@ -383,7 +383,5 @@ def insurance_predict():
 
 if __name__ == '__main__':
 
-    os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-
-
+    os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0' 
     app.run(debug=True)
