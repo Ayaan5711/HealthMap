@@ -2,7 +2,7 @@
 @import "variables";
 
 .feature_part {
-  padding: 140px 0 515px;
+  padding: 70px 0 35px;
 
   @media #{$tab} {
     padding: 70px 0;
@@ -179,7 +179,7 @@
   }
 
   .single_feature {
-    margin-top: 90px;
+    margin-top: 20px;
 
     @media #{$tab} {
       margin-top: 30px;
