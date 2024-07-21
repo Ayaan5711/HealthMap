@@ -2,7 +2,7 @@
 @import "variables";
 
 .feature_part {
-  padding: 70px 0 35px;
+  padding: 70px 0 70px;
 
   @media #{$tab} {
     padding: 70px 0;
@@ -49,7 +49,7 @@
     p {
       line-height: 1.9;
       font-family: $font-paragraph;
-      color: rgb(127, 127, 127);
+
       @include transform_time(1s);
     }
 
@@ -172,7 +172,6 @@
     }
 
     p {
-      color: $font_3;
       line-height: 1.8;
       font-size: 15px;
     }
