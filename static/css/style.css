@@ -11,6 +11,12 @@
   background-image: linear-gradient(to right, #fff, #fff, #fff);
 }
 
+.btn_3 {
+  background-image: -webkit-linear-gradient(to right, #e24850, #e20821, #e24850);
+  background-image: -o-linear-gradient(to right, #e24850, #e20821, #e24850);
+  background-image: linear-gradient(to right, #e24850, #e20821, #e24850);
+}
+
 /**************** common css start ****************/
 body {
   font-family: "Raleway", sans-serif;
@@ -467,6 +473,27 @@ ul {
   display: inline-block;
 }
 .btn_2:hover {
+  color: #fff;
+  background-position: center right;
+}
+.btn_3 {
+  display: inline-block;
+  padding: 10px 35px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  text-transform: uppercase;
+  border-radius: 2px;
+  font-family: "Roboto", sans-serif;
+  background-size: 200% auto;
+  border-radius: 5px;
+  display: inline-block;
+}
+.btn_3:hover {
   color: #fff;
   background-position: center right;
 }
@@ -1706,6 +1733,7 @@ ul {
   top: 0;
   width: 100%;
   z-index: 999;
+  background-color: #0c2e60;
 }
 
 .main_menu .navbar-brand {
@@ -1722,8 +1750,8 @@ ul {
   }
 }
 .main_menu .navbar_img {
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
 }
 .main_menu .navbar-toggler {
   position: relative;
@@ -1762,7 +1790,7 @@ ul {
   }
 }
 .main_menu .main-menu-item ul li .nav-link {
-  color: #242429;
+  color: #fff;
   font-size: 12px;
   padding: 38px 23px;
   font-family: "Lora", serif;
@@ -4889,7 +4917,7 @@ h6 {
 }
 
 .breadcrumb_part {
-  margin-top: 120px;
+  margin-top: 87px;
   position: relative;
   z-index: 1;
   height: 300px;

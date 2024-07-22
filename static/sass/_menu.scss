@@ -5,6 +5,7 @@
   top: 0;
   width: 100%;
   z-index: 999;
+  background-color: $heading_color2;
 }
 
 .main_menu {
@@ -20,8 +21,8 @@
     }
   }
   .navbar_img {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
   }
 
   .navbar-toggler {
@@ -62,7 +63,7 @@
 
     ul {
       li .nav-link {
-        color: $menu_color;
+        color: $white-color;
         font-size: 12px;
         padding: 38px 23px;
         font-family: $font_lora;
