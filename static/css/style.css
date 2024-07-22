@@ -4876,6 +4876,13 @@ h6 {
   font-family: "Verdana", sans-serif;
 }
 
+.card-header {
+  background-color: #0c2e60;
+}
+.card-header .h5 {
+  font-family: "Montserrat", sans-serif;
+}
+
 .breadcrumb_bg {
   background: url("../img/breadcrumb.png") no-repeat center center;
   background-size: cover;

@@ -198,3 +198,10 @@ $border: #e4e6ea;
     }
   }
 }
+
+.card-header {
+  background-color: $heading_color2;
+  .h5 {
+    font-family: $font_stack_1;
+  }
+}
