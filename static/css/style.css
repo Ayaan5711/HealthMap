@@ -4710,20 +4710,9 @@ h6 {
   display: block;
 }
 
-.title {
-  margin-top: 50px;
-  height: 400px;
-  background-image: url(../img/banner/header.jpg);
-  background-size: cover;
-}
-
-/************Team css start***************/
 .about_us2 {
   position: relative;
   z-index: 99;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 @media (max-width: 991px) {
   .about_us2 {
@@ -4862,6 +4851,29 @@ h6 {
 .custom-optionn {
   font-size: 14px; /* Reduce font size */
   padding: 5px; /* Adjust padding */
+}
+
+.about_us3 .about_us_text3 h2 {
+  color: #0c2e60;
+  font-family: "Montserrat", sans-serif;
+}
+.about_us3 .about_us_text3 ul {
+  font-family: "Lora", serif;
+}
+.about_us3 .form-label {
+  font-family: "Roboto", sans-serif;
+}
+.about_us3 .btn_2 {
+  color: #fff;
+  background-color: #dc3545;
+  font-family: "Roboto", sans-serif;
+}
+.about_us3 .btn_2:hover {
+  background-color: #bd2130;
+}
+.about_us3 .card .card-body .card-title {
+  color: #007bff;
+  font-family: "Verdana", sans-serif;
 }
 
 .breadcrumb_bg {
