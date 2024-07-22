@@ -39,8 +39,6 @@
     
      
 </head>
-
-<>
     <!--::header part start::-->
         <header class="main_menu home_menu">
       <div class="container">
@@ -260,155 +258,157 @@
     </section>
 
     <!-- about us part start-->
-    <section class="about_us single_about_padding">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                
-                
-                    <div class="about_us_text">
-                        <p>Disease prediction using symptoms is an innovative approach that leverages advancements in technology and medical science to anticipate potential health issues before they become severe. This method integrates various data points, including patient-reported symptoms, medical history, and sometimes genetic information, to predict the likelihood of a disease. By understanding and analyzing these symptoms, healthcare providers can make informed decisions about diagnosis and treatment plans, ultimately improving patient outcomes.</p>
-                        </div>
-            </div>
-                    <div class="container mt-5">
-                        <div class="row">
-                            <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
-                                <div class="col-12">
-                                </div>
-                                <form method="POST" action="{{url_for('predict')}}">
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="First Name">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="Last Name">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="tel" class="form-control" placeholder="Phone Number">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="email" class="form-control" placeholder="Enter Email">
-                                        </div>
+    <section class="about_us2 section_padding">
+      <div class="row justify-content-center about_us_text2">
+        <h2 class="text-decoration-underline font-weight-bold">Fill Your information here:</h2>
+      </div>
+                    <div class="box mt-5 bg-black" >
+                        <div class="row g-5">
+  <div class="col-md-8 offset-md-2 border p-4 shadow">
+    <form method="POST" action="{{ url_for('predict') }}">
+      <div class="row g-3">
+        <div class="col-md-6 my-2">
+          <input type="text" class="form-control text-black" placeholder="First Name">
+        </div>
+        <div class="col-md-6 my-2">
+          <input type="text" class="form-control text-black" placeholder="Last Name">
+        </div>
+        <div class="col-md-6 my-2">
+          <input type="tel" class="form-control text-black" placeholder="Phone Number">
+        </div>
+        <div class="col-md-6 my-2">
+          <input type="email" class="form-control text-black" placeholder="Enter Email">
+        </div>
+        <div class="col-12 my-2">
+          <select name="symptom_1" id="symptom_1" class="form-select">
+            <option value="">Select a symptom</option>
+            {% for symptom, index in symptoms_dict.items() %}
+            <option value="{{ symptom }}">{{ symptom }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-12 my-2">
+          <select name="symptom_2" id="symptom_2" class="form-select">
+            <option value="">Select a symptom</option>
+            {% for symptom, index in symptoms_dict.items() %}
+            <option value="{{ symptom }}">{{ symptom }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-12 my-2">
+          <select name="symptom_3" id="symptom_3" class="form-select">
+            <option value="">Select a symptom</option>
+            {% for symptom, index in symptoms_dict.items() %}
+            <option value="{{ symptom }}">{{ symptom }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-12 my-2">
+          <select name="symptom_4" id="symptom_4" class="form-select">
+            <option class="custom-optionn" value="">Select a symptom</option>
+            {% for symptom, index in symptoms_dict.items() %}
+            <option value="{{ symptom }}">{{ symptom }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-12 my-2">
+          <textarea class="form-control text-black" placeholder="Message"></textarea>
+        </div>
+        <div class="col-12 d-flex justify-content-center" style="margin-top: 10px">
+          <button type="submit" value="Predict" class="btn btn-danger">Predict</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
-                                        <div class="col-12">
-                                            <select name="symptom_1" id="symptom_1" class="form-select">
-                                                <option value="">Select a symptom</option>
-                                                    {% for symptom, index in symptoms_dict.items() %}
-                                                        <option value="{{ symptom }}">{{ symptom }}</option>
-                                                    {% endfor %}
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <select  name="symptom_2" id="symptom_2" class="form-select">
-                                                <option value="">Select a symptom</option>
-                                                {% for symptom, index in symptoms_dict.items() %}
-                                                    <option value="{{ symptom }}">{{ symptom }}</option>
-                                                {% endfor %}
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <select   name="symptom_2" id="symptom_2" class="form-select">
-                                                <option value="">Select a symptom</option>
-                                                    {% for symptom, index in symptoms_dict.items() %}
-                                                        <option value="{{ symptom }}">{{ symptom }}</option>
-                                                    {% endfor %}                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <select  name="symptom_2" id="symptom_2" class="form-select">
-                                                <option value="">Select a symptom</option>
-                                                {% for symptom, index in symptoms_dict.items() %}
-                                                    <option value="{{ symptom }}">{{ symptom }}</option>
-                                                {% endfor %}
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <textarea class="form-control" placeholder="Message"></textarea>
-                                        </div>
-                                        <div style="margin-top: 10px ;" class="row justify-content-center"> 
-                                            <button type="submit" value="Predict" class="btn btn-primary float-end">Predict</button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                
+                        {% if predicted_disease %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card my-4 shadow-lg border border-primary">
+                <div class="card-header text-black font-weight-bold text-center border border-primary border-4">
+                    <ul class="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#diseaseModal" role="tab">Disease</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#descriptionModal" role="tab">Description</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#precautionModal" role="tab">Precaution</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#MedicationModal" role="tab">Medication</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#workoutsModal" role="tab">Workout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#dietModal" role="tab">Diet</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content text-center">
+                        <div class="tab-pane active" id="diseaseModal" role="tabpanel">
+                            <div>
+                                <p class="">{{ predicted_disease }}</p>
                             </div>
                         </div>
-                        {% if predicted_disease %}
-                        <div class="card">
-                            <div class="card-header">
-                                <ul class="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#diseaseModal" role="tab">Disease</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#descriptionModal" role="tab">Description</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#precautionModal" role="tab">Precaution</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#MedicationModal" role="tab">Medication</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#workoutsModal" role="tab">Workout</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#dietModal" role="tab">Diet</a>
-                                    </li>
+                        <div class="tab-pane" id="descriptionModal" role="tabpanel">
+                            <div>
+                                <p>{{ dis_des }}</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="precautionModal" role="tabpanel">
+                            <div>
+                                <ul class="list-group list-group-flush">
+                                    {% for i in my_precautions %}
+                                    <li class="list-group-item bg-transparent">{{ i }}</li>
+                                    {% endfor %}
                                 </ul>
                             </div>
-                            {% endif %}
-                            <div class="card-body">
-                                <!-- Tab panes -->
-                                <div class="tab-content text-center">
-                                    <div class="tab-pane active" id="diseaseModal" role="tabpanel">
-                                        <div>
-                                            <p>{{ predicted_disease }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="descriptionModal" role="tabpanel">
-                                        <div>
-                                            <p>{{ dis_des }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="precautionModal" role="tabpanel">
-                                        <div>
-                                            <ul>
-                                                {% for i in my_precautions %}
-                                                <li>{{ i }}</li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="MedicationModal" role="tabpanel">
-                                        <div>
-                                            <ul>
-                                                {% for i in medications %}
-                                                <li>{{ i }}</li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="workoutsModal" role="tabpanel">
-                                        <div>
-                                            <ul>
-                                                {% for i in workout %}
-                                                <li>{{ i }}</li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="dietModal" role="tabpanel">
-                                        <div>
-                                            <ul>
-                                                {% for i in my_diet %}
-                                                <li>{{ i }}</li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="tab-pane" id="MedicationModal" role="tabpanel">
+                            <div>
+                                <ul class="list-group list-group-flush">
+                                    {% for i in medications %}
+                                    <li class="list-group-item bg-transparent">{{ i }}</li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
+                        <div class="tab-pane" id="workoutsModal" role="tabpanel">
+                            <div>
+                                <ul class="list-group list-group-flush">
+                                    {% for i in workout %}
+                                    <li class="list-group-item bg-transparent">{{ i }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="dietModal" role="tabpanel">
+                            <div>
+                                <ul class="list-group list-group-flush">
+                                    {% for i in my_diet %}
+                                    <li class="list-group-item bg-transparent">{{ i }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+              <h4 class="text-bg-danger">Always visit a doctor if you have any symptoms of a disease or call your local hospital</h4>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
                         
                         <!-- Bootstrap JS Bundle -->
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -443,7 +443,6 @@
                             });
                         </script>
 
-                        </div>
                         </div>
                         </section>
                         
