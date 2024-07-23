@@ -39,224 +39,221 @@
   <body>
     <div>
       <header class="main_menu home_menu">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg navbar-light">
-              <a class="navbar-brand navbar_img" href="#">
-                <img src="../static/img/logo6.png" alt="logo" />
-              </a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div
-                class="collapse navbar-collapse main-menu-item justify-content-center"
-                id="navbarSupportedContent"
-              >
-                <ul class="navbar-nav align-items-center">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('home')}}">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" id="about" href="{{url_for('about')}}"
-                      >About</a
-                    >
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('disease') }}"
-                      >Disease Symptoms</a
-                    >
-                  </li>
-
-                  <li class="nav-item dropdown">
-                    <a
-                      class="nav-link dropdown-toggle"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Multi-Disease
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{url_for('malaria')}}"
-                        >Malaria</a
-                      >
-                      <a class="dropdown-item" href="{{url_for('kidney')}}"
-                        >Kidney</a
-                      >
-                      <a class="dropdown-item" href="{{url_for('heart')}}"
-                        >Heart</a
-                      >
-                      <a class="dropdown-item" href="{{url_for('liver')}}"
-                        >Liver</a
-                      >
-                      <a class="dropdown-item" href="{{url_for('pneumonia')}}"
-                        >Pneumonia</a
-                      >
-                      <a class="dropdown-item" href="{{url_for('diabetes')}}"
-                        >Diabetes</a
-                      >
-                      <a class="dropdown-item" href="{{url_for('breast')}}"
-                        >Breast Cancer</a
-                      >
-                      <a class="dropdown-item" href="{{url_for('skin')}}"
-                        >Skin Disease</a
-                      >
-                      <a class="dropdown-item" href="{{url_for('brain')}}"
-                        >Brain Tumor</a
-                      >
-                    </div>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                    <a
-                      class="nav-link dropdown-toggle"
-                      id="navbarDropdown_1"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Drug
-                    </a>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="navbarDropdown_1"
-                    >
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand navbar_img" href="#">
+                  <img src="../static/img/logo6.png" alt="logo" />
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                  class="collapse navbar-collapse main-menu-item justify-content-center"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                    </li>
+                    <li class="nav-item">
                       <a
-                        class="dropdown-item"
-                        href="{{url_for('alternativedrug')}}"
-                        >Alternative Drug</a
+                        class="nav-link active"
+                        id="about"
+                        href="{{url_for('about')}}"
+                        >About</a
                       >
-                      <a
-                        class="dropdown-item"
-                        href="{{url_for('drugresponse')}}"
-                        >Drug Response</a
-                      >
-                    </div>
-                  </li>
+                    </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('contact')}}"
-                      >Contact</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('developer')}}"
-                      >developer</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <a
-                class="btn_2 d-none d-lg-block"
-                href="regervation_part section_padding"
-                >Appointment</a
-              >
-            </nav>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('disease') }}"
+                        >Disease Symptoms</a
+                      >
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Multi-Disease
+                      </a>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="navbarDropdown"
+                      >
+                        <a class="dropdown-item" href="{{url_for('malaria')}}"
+                          >Malaria</a
+                        >
+                        <a class="dropdown-item" href="{{url_for('kidney')}}"
+                          >Kidney</a
+                        >
+                        <a class="dropdown-item" href="{{url_for('heart')}}"
+                          >Heart</a
+                        >
+                        <a class="dropdown-item" href="{{url_for('liver')}}"
+                          >Liver</a
+                        >
+                        <a class="dropdown-item" href="{{url_for('pneumonia')}}"
+                          >Pneumonia</a
+                        >
+                        <a class="dropdown-item" href="{{url_for('diabetes')}}"
+                          >Diabetes</a
+                        >
+                        <a class="dropdown-item" href="{{url_for('breast')}}"
+                          >Breast Cancer</a
+                        >
+                        <a class="dropdown-item" href="{{url_for('skin')}}"
+                          >Skin Disease</a
+                        >
+                        <a class="dropdown-item" href="{{url_for('brain')}}"
+                          >Brain Tumor</a
+                        >
+                      </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a
+                        class="nav-link dropdown-toggle"
+                        id="navbarDropdown_1"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Drug
+                      </a>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="navbarDropdown_1"
+                      >
+                        <a
+                          class="dropdown-item"
+                          href="{{url_for('alternativedrug')}}"
+                          >Alternative Drug</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="{{url_for('drugresponse')}}"
+                          >Drug Response</a
+                        >
+                      </div>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('contact')}}"
+                        >Contact</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('developer')}}"
+                        >developer</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <a
+                  class="btn_2 d-none d-lg-block"
+                  href="regervation_part section_padding"
+                  >Appointment</a
+                >
+              </nav>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
     </div>
-    
 
     <!--my code-->
-    
-
-    <!--vision-->
-
-    <section class="banner_part">
+    <section class="about_part">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <div class="banner_text">
-              <div class="banner_text_iner">
-                <h3>Our Vision</h3>
-                <p>
-                  We envision a world where access to healthcare information is not just a
-                 luxury but a fundamental right. Our journey began with a simple yet
-                 powerful idea: to empower individuals with the knowledge and tools they
-                 need to take control of their health.
-                </p>
-              </div>
+            <div class="about_text">
+              <h3>Our Vision</h3>
+              <p>
+                We envision a world where access to healthcare information is
+                not just a luxury but a fundamental right. Our journey began
+                with a simple yet powerful idea: to empower individuals with the
+                knowledge and tools they need to take control of their health.
+              </p>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="banner_img">
-              <img src="../static/img//about_us/our_vision.jpg" alt="" />
+            <div class="about_img">
+              <img
+                src="../static/img/about_us/our vision.jpeg"
+                alt="Our Vision Image"
+              />
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!--Who we are-->
-
-    <section class="banner_part">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <div class="banner_img">
-              <img src="../static/img//banner/banner2.webp" alt="" />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="banner_text">
-              <div class="banner_text_iner">
-                <!-- <h5>We are here for your care</h5> -->
-                <h3>Who We Are</h3>
-                <p>
-                  We are a passionate team of healthcare professionals, data scientists,
-                  and technology enthusiasts who share a common goal: to make healthcare
-                  accessible, understandable, and personalized for you. With years of
-                  experience in both healthcare and cutting-edge technology, we've come
-                  together to create this platform as a testament to our commitment to
-                  your well-being.
-                </p>
-              </div>
-            </div>
-          </div>
           </div>
         </div>
       </div>
     </section>
 
     <!--our mission-->
-    <section class="banner_part2">
+    <section class="banner_part3">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <div class="banner_text2">
-              <div class="banner_text_iner2">
-                <!-- <h5>We are here for your care</h5> -->
-                <h3>Our Mission</h3>
-                <p>
-                  At this website, our mission is to provide you with a seamless and
-                  intuitive platform that leverages the power of artificial intelligence
-                  and machine learning. We want to assist you in identifying potential
-                  health concerns based on your reported symptoms, all while offering a
-                  wealth of educational resources to enhance your health literacy.
-                </p>
-              </div>
+            <div class="banner_img3">
+              <img
+                src="https://imageio.forbes.com/specials-images/imageserve/651bbeb1c78cc403f92a6abd/The-10-Biggest-Trends-Revolutionizing-Healthcare-In-2024/0x0.jpg?crop=2500,1405,x0,y0,safe&height=399&width=711&fit=bounds"
+                alt="Healthcare Trends 2024"
+              />
             </div>
           </div>
           <div class="col-md-6">
-            <div class="banner_img">
-              <img src="../static/img//banner/banner2.webp" alt="" />
+            <div class="banner_text3">
+              <h3>Who We Are</h3>
+              <p>
+                We are a passionate team of healthcare professionals, data
+                scientists, and technology enthusiasts who share a common goal:
+                to make healthcare accessible, understandable, and personalized
+                for you. With years of experience in both healthcare and
+                cutting-edge technology, we've come together to create this
+                platform as a testament to our commitment to your well-being.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner_part3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="banner_text3">
+              <!-- <h5>We are here for your care</h5> -->
+              <h3>Our Mission</h3>
+              <p>
+                At this website, our mission is to provide you with a seamless
+                and intuitive platform that leverages the power of artificial
+                intelligence and machine learning. We want to assist you in
+                identifying potential health concerns based on your reported
+                symptoms, all while offering a wealth of educational resources
+                to enhance your health literacy.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="banner_img3">
+              <img src="../static//img/about_us/our_mission.avif" alt="" />
             </div>
           </div>
         </div>
@@ -264,26 +261,28 @@
     </section>
 
     <!--how we do it-->
-    <section class="banner_part">
+    <section class="banner_part3">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <div class="banner_img">
-              <img src="../static/img//banner/banner2.webp" alt="" />
+            <div class="banner_img3">
+              <img
+                src="https://images.pexels.com/photos/2383010/pexels-photo-2383010.jpeg?cs=srgb&dl=pexels-totalshape-2383010.jpg&fm=jpg"
+                alt=""
+              />
             </div>
           </div>
           <div class="col-md-6">
-            <div class="banner_text">
-              <div class="banner_text_iner">
-                <!-- <h5>We are here for your care</h5> -->
-                <h3>How We Do It</h3>
-                <p>
-                  Our platform utilizes a robust machine learning model trained on a vast
-                  dataset of symptoms and diseases. By inputting your symptoms, our system
-                  generates accurate predictions about potential illnesses, allowing you
-                  to make informed decisions about your health.
-                </p>
-              </div>
+            <div class="banner_text3">
+              <!-- <h5>We are here for your care</h5> -->
+              <h3>How We Do It</h3>
+              <p>
+                Our platform utilizes a robust machine learning model trained on
+                a vast dataset of symptoms and diseases. By inputting your
+                symptoms, our system generates accurate predictions about
+                potential illnesses, allowing you to make informed decisions
+                about your health.
+              </p>
             </div>
           </div>
         </div>
@@ -291,37 +290,48 @@
     </section>
 
     <!--Your Well-being, Our Priority-->
-    <section class="banner_part">
+    <section class="banner_part3">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <div class="banner_text">
-              <div class="banner_text_iner">
-                <!-- <h5>We are here for your care</h5> -->
-                <h3>Your Well-being, Our Priority</h3>
-                <p>
-                  Your health is our top priority. We understand that navigating the
-                  complexities of healthcare can be daunting. That's why we've gone the
-                  extra mile to provide not only accurate predictions but also
-                  comprehensive information about each disease. You'll find descriptions,
-                  recommended precautions, medications, dietary advice, and workout tips
-                  to support your journey to better health.
-                </p>
-              </div>
+            <div class="banner_text3">
+              <!-- <h5>We are here for your care</h5> -->
+              <h4>Your Well-being, Our Priority</h4>
+              <p>
+                Your health is our top priority. We understand that navigating
+                the complexities of healthcare can be daunting. That's why we've
+                gone the extra mile to provide not only accurate predictions but
+                also comprehensive information about each disease. You'll find
+                descriptions, recommended precautions, medications, dietary
+                advice, and workout tips to support your journey to better
+                health.
+              </p>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="banner_img">
-              <img src="../static/img//banner/banner2.webp" alt="" />
+            <div class="banner_text3">
+              <!-- <h5>We are here for your care</h5> -->
+              <h4>Join Us on this Journey</h4>
+              <p>
+                We invite you to explore our platform, engage with our
+                educational content, and take control of your health journey.
+                Together, we can revolutionize the way individuals access and
+                understand healthcare information.
+              </p>
             </div>
           </div>
+          <!-- <div class="col-md-6">
+            <div class="banner_img">
+              <img src="../static/img//about/" alt="" />
+            </div>
+          </div> -->
         </div>
       </div>
     </section>
 
     <!--Join Us on this Journey-->
-    
-    <section class="banner_part">
+
+    <!-- <section class="banner_part">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
@@ -332,7 +342,6 @@
           <div class="col-md-6">
             <div class="banner_text">
               <div class="banner_text_iner">
-                <!-- <h5>We are here for your care</h5> -->
                 <h3>Join Us on this Journey</h3>
                 <p>
                   We invite you to explore our platform, engage with our educational
@@ -346,20 +355,16 @@
           
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!---my code-->
 
-
     <div class="container my-4 mt-4">
       <p>
-        Welcome to MediFY , where health meets technology for a brighter,
-        healthier future.
+        <!-- Welcome to MediFY , where health meets technology for a brighter,
+        healthier future. -->
       </p>
 
-
-      
-      
       <!-- <h3>Our Vision</h3>
 
       <p>
@@ -412,9 +417,9 @@
         information.
       </p> -->
       <p>
-        Thank you for choosing [Your Website Name] as your trusted health
+        <!-- Thank you for choosing [Your Website Name] as your trusted health
         companion. We are here to empower you with knowledge, support, and a
-        brighter, healthier future.
+        brighter, healthier future. -->
       </p>
     </div>
 
