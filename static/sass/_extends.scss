@@ -23,3 +23,24 @@
   background-image: -o-linear-gradient(to right, #e24850, #e20821, #e24850);
   background-image: linear-gradient(to right, #e24850, #e20821, #e24850);
 }
+%custom_btn_bg_4 {
+  background-image: -webkit-linear-gradient(
+    to right,
+    #07baa0,
+    #7ad6cc,
+    #9af2e5
+  );
+  background-image: -o-linear-gradient(to right, #057c6a, #7ad6cc, #9af2e5);
+  background-image: linear-gradient(to right, #037a68, #7ad6cc, #9af2e5);
+}
+
+%custom_btn_bg_5 {
+  background-image: -webkit-linear-gradient(
+    to right,
+    #07ba66,
+    #53db47,
+    #228541
+  );
+  background-image: -o-linear-gradient(to right, #057c17, #12421f, #1a511c);
+  background-image: linear-gradient(to right, #1b8d3d, #194a1c, #5fd66f);
+}

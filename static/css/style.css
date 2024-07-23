@@ -2723,25 +2723,44 @@ ul {
 .about_part .about_text {
   padding: 20px;
 }
-.about_part .about_text h3 {
+.about_part .about_text h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 50px;
   color: #0c2e60;
   font-weight: 600;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.about_part .about_text h2:hover {
+  text-decoration: none;
+}
+.about_part .about_text h2:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust the position of the underline */
+}
+.about_part .about_text h2:hover:after {
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .about_part .about_text h3 {
+  .about_part .about_text h2 {
     font-size: 40px;
   }
 }
 @media (min-width: 600px) and (max-width: 768px) {
-  .about_part .about_text h3 {
+  .about_part .about_text h2 {
     font-size: 28px;
   }
 }
 @media (min-width: 320px) and (max-width: 600px) {
-  .about_part .about_text h3 {
+  .about_part .about_text h2 {
     font-size: 25px;
   }
 }
@@ -2775,6 +2794,25 @@ ul {
   color: #0c2e60;
   font-weight: 600;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.about_part .about_text2 h3:hover {
+  text-decoration: none; /* Remove the default text decoration */
+}
+.about_part .about_text2 h3:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust the position of the underline */
+}
+.about_part .about_text2 h3:hover:after {
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .about_part .about_text2 h3 {
@@ -2894,6 +2932,25 @@ ul {
   color: #0c2e60;
   font-weight: 600;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.banner_part3 .banner_text3 h3:hover {
+  text-decoration: none; /* Remove the default text decoration */
+}
+.banner_part3 .banner_text3 h3:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust the position of the underline */
+}
+.banner_part3 .banner_text3 h3:hover:after {
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner_part3 .banner_text3 h3 {
@@ -2916,6 +2973,25 @@ ul {
   color: #0c2e60;
   font-weight: 800;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.banner_part3 .banner_text3 h4:hover {
+  text-decoration: none; /* Remove the default text decoration */
+}
+.banner_part3 .banner_text3 h4:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust the position of the underline */
+}
+.banner_part3 .banner_text3 h4:hover:after {
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner_part3 .banner_text3 h4 {
