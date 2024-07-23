@@ -22,7 +22,7 @@
   }
   .navbar_img {
     width: 6rem;
-    height: 6rem;
+    height: 5rem;
   }
 
   .navbar-toggler {
@@ -77,7 +77,7 @@
         @media (max-width: 768px) {
           color: $white-color;
           &:hover {
-            color: $black-color;
+            color: $font_1;
           }
         }
 
@@ -86,7 +86,7 @@
         }
 
         &:hover {
-          color: $btn_bg;
+          color: $font_1;
         }
       }
     }
@@ -105,7 +105,7 @@
 
 @media (max-width: 768px) {
   .dropdown-menu {
-    background-color: $icon_color;
+    background-color: $heading_color2;
   }
 }
 .dropdown {
@@ -117,17 +117,19 @@
     display: block;
     margin-top: -1px;
     font-family: $font_lora;
+    background-color: $heading_color2;
     .dropdown-item {
       font-size: 14px;
       padding: 9px 18px !important;
-      color: $black_color !important;
+      color: $white-color !important;
       text-transform: capitalize;
       @media (max-width: 768px) {
         color: $white-color !important;
         font-size: 12px;
       }
       &:hover {
-        color: $btn_bg !important;
+        color: $author_text_color !important;
+        background-color: $heading_color2;
       }
     }
   }
@@ -166,9 +168,9 @@
     z-index: 9999 !important;
     position: absolute;
     left: 0;
-    top: 62px;
+    top: 110px;
     width: 100%;
-    background-color: $icon_color;
+    background-color: $icon_color2;
     color: $white-color;
     text-align: center !important;
     box-shadow: 0px 11px 9px -5px rgba(0, 0, 0, 0.2);
@@ -364,7 +366,7 @@
   .main-menu-item {
     ul {
       li .nav-link {
-        color: $black_color;
+        color: $font_3;
       }
     }
   }

@@ -22,13 +22,13 @@ input:focus {
     padding: 80px 0px;
   }
   @media #{$tab_device} {
-    padding: 70px 0px;
+    padding: 40px 0px;
   }
   @media #{$small_mobile} {
-    padding: 70px 0px;
+    padding: 20px 0px;
   }
   @media #{$large_mobile} {
-    padding: 70px 0px;
+    padding: 20px 0px;
   }
 }
 .single_padding_top {
@@ -158,19 +158,19 @@ button:focus,
 }
 
 .section_tittle {
-  margin-bottom: 84px;
+  margin-bottom: 0px;
   @media #{$small_mobile} {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   @media #{$large_mobile} {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   @media #{$tab_device} {
-    font-size: 50px;
-    margin-bottom: 50px;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
   @media #{$medium_device} {
-    margin-bottom: 50px;
+    margin-bottom: 0px;
   }
   h2 {
     font-size: 48px;
