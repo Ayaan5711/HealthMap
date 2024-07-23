@@ -117,6 +117,34 @@
   }
 }
 
+.btn_4 {
+  display: inline-block;
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 12px;
+  color: $white_color;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  text-transform: uppercase;
+  border-radius: 2px;
+  font-family: $font_button;
+  background-size: 200% auto;
+  @extend %custom_btn_bg_5;
+  border-radius: 5px;
+  display: inline-block;
+  &:hover {
+    color: $white_color;
+    background-position: center right;
+  }
+
+  @media #{$tab_device} {
+  }
+
+  @media #{$medium_device} {
+  }
+}
+
 /*=================== custom button rule start ====================*/
 
 .button {

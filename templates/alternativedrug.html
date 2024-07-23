@@ -264,9 +264,9 @@
         </div>
 
         {% if prediction_text %}
-        <div class="mt-5">
+        <div class="mt-5 about_us_text3">
           <h2
-            class="text-center mb-4 text-success font-weight-bold"
+            class="text-center mb-4 font-weight-bold"
             style="font-family: 'Roboto', sans-serif"
           >
             Recommended Medicines
@@ -274,12 +274,14 @@
           <div class="row">
             {% for medicine in prediction_text %}
             <div class="col-md-4 mb-3">
-              <div class="card border shadow-sm">
-                <div class="card-body text-center">
-                  <p class="card-title mb-3">{{ medicine['medicine_name'] }}</p>
+              <div class="card border shadow-lg">
+                <div class="card-body text-center about_us_text3">
+                  <p class="card-title mb-3 font-weight-bold">
+                    {{ medicine['medicine_name'] }}
+                  </p>
                   <a
                     href="{{ medicine['pharmeasy_link'] }}"
-                    class="btn btn-info text-white"
+                    class="btn_4 text-white"
                   >
                     <i class="fas fa-shopping-cart"></i> Buy from PharmEasy
                   </a>
