@@ -226,6 +226,16 @@
   padding-top: 160px;
   padding-bottom: 10px;
   background-color: #f8f9fa;
+  .btn_2 {
+    margin-top: 20px;
+    @media #{$tab} {
+      margin-top: 20px;
+    }
+
+    @media #{$medium_device} {
+      margin-top: 20px;
+    }
+  }
 
   .about_text {
     padding: 20px;
@@ -264,6 +274,43 @@
     }
   }
 
+  .about_text2 {
+    padding: 20px;
+
+    h3 {
+      font-family: $font_stack_1;
+      font-size: 45px;
+      color: $heading_color2;
+      font-weight: 600;
+      margin-bottom: 20px;
+      @media (min-width: 768px) and (max-width: 1024px) {
+        font-size: 30px;
+      }
+      @media (min-width: 600px) and (max-width: 768px) {
+        font-size: 22px;
+      }
+      @media (min-width: 320px) and (max-width: 600px) {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: $black_color;
+      font-family: $font_stack_2;
+      @media (min-width: 768px) and (max-width: 1024px) {
+        font-size: 18px;
+      }
+      @media (min-width: 600px) and (max-width: 768px) {
+        font-size: 14px;
+      }
+      @media (min-width: 320px) and (max-width: 600px) {
+        font-size: 13px;
+      }
+    }
+  }
+
   .about_img {
     display: flex;
     justify-content: center;
@@ -272,7 +319,7 @@
 
     img {
       width: 100%;
-      max-width: 500px;
+      max-width: 550px;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -286,15 +333,27 @@
 }
 
 .banner_part3 {
-  padding-top: 50px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 0px;
   background-color: #f8f9fa;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-top: 15px;
+  }
+  @media (min-width: 600px) and (max-width: 768px) {
+    padding-top: 10px;
+  }
+  @media (min-width: 320px) and (max-width: 600px) {
+    padding-top: 5px;
+  }
 
   .banner_img3 {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    @media (min-width: 320px) and (max-width: 600px) {
+      padding: 10px;
+    }
 
     img {
       width: 100%;
@@ -312,6 +371,16 @@
 
   .banner_text3 {
     padding: 20px;
+    .btn_2 {
+      margin-top: 50px;
+      @media #{$tab} {
+        margin-top: 20px;
+      }
+
+      @media #{$medium_device} {
+        margin-top: 20px;
+      }
+    }
 
     h3 {
       font-family: $font_stack_1;
