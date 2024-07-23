@@ -7,6 +7,28 @@
       font-weight: 600;
       margin-bottom: 0px;
       @include transform_time(1s);
+      position: relative;
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none; /* Remove the default text decoration */
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 4px;
+        background: $heading_color2;
+        transition: width 0.3s;
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the position of the underline */
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
 
       @media (min-width: 768px) and (max-width: 1024px) {
         font-size: 30px;
@@ -58,7 +80,7 @@
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
     &:hover {
-      background-color: rgb(21, 196, 236);
+      background-color: $font_5;
       transform: translateY(-10px);
 
       .single_feature_part {
@@ -125,6 +147,14 @@
     @media (min-width: 768px) and (max-width: 1024px) {
       padding: 15px;
       margin-top: 0px;
+    }
+    .feature_link {
+      display: block;
+      text-decoration: none; /* Remove underline from link */
+      color: inherit; /* Ensure the text color remains unchanged */
+      height: 100%; /* Ensure the link spans the entire height of the parent div */
+      width: 100%; /* Ensure the link spans the entire width of the parent div */
+      padding: 0; /* Remove default padding from the link */
     }
   }
 

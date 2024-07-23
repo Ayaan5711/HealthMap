@@ -11,13 +11,16 @@ $white_color: #fff;
   position: relative;
   z-index: 1;
   height: 300px;
+
   @media (min-width: 768px) and (max-width: 1024px) {
     height: 280px;
   }
+
   @media (min-width: 600px) and (max-width: 768px) {
     height: 245px;
     padding-top: 35px;
   }
+
   @media (max-width: 600px) {
     height: 230px;
     padding-top: 30px;
@@ -52,18 +55,46 @@ $white_color: #fff;
           font-size: 40px;
         }
       }
+
       h2 {
         font-size: 42px;
+
         @media (min-width: 768px) and (max-width: 1024px) {
           font-size: 35px;
         }
+
         @media (min-width: 550px) and (max-width: 768px) {
           font-size: 28px;
         }
+
         @media (max-width: 550px) {
           font-size: 23px;
         }
+
+        position: relative;
+        display: inline-block;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 4px;
+          background: $heading_color2;
+          transition: width 0.3s;
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+        }
+
+        &:hover:after {
+          width: 100%;
+        }
       }
+
       p {
         font-size: 45px;
         color: $white_color;

@@ -2534,25 +2534,44 @@ ul {
 .about_part .about_text {
   padding: 20px;
 }
-.about_part .about_text h3 {
+.about_part .about_text h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 50px;
   color: #0c2e60;
   font-weight: 600;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.about_part .about_text h2:hover {
+  text-decoration: none;
+}
+.about_part .about_text h2:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust the position of the underline */
+}
+.about_part .about_text h2:hover:after {
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .about_part .about_text h3 {
+  .about_part .about_text h2 {
     font-size: 40px;
   }
 }
 @media (min-width: 600px) and (max-width: 768px) {
-  .about_part .about_text h3 {
+  .about_part .about_text h2 {
     font-size: 28px;
   }
 }
 @media (min-width: 320px) and (max-width: 600px) {
-  .about_part .about_text h3 {
+  .about_part .about_text h2 {
     font-size: 25px;
   }
 }
@@ -2586,6 +2605,25 @@ ul {
   color: #0c2e60;
   font-weight: 600;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.about_part .about_text2 h3:hover {
+  text-decoration: none; /* Remove the default text decoration */
+}
+.about_part .about_text2 h3:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust the position of the underline */
+}
+.about_part .about_text2 h3:hover:after {
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .about_part .about_text2 h3 {
@@ -2705,6 +2743,25 @@ ul {
   color: #0c2e60;
   font-weight: 600;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.banner_part3 .banner_text3 h3:hover {
+  text-decoration: none; /* Remove the default text decoration */
+}
+.banner_part3 .banner_text3 h3:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust the position of the underline */
+}
+.banner_part3 .banner_text3 h3:hover:after {
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner_part3 .banner_text3 h3 {
@@ -2727,6 +2784,25 @@ ul {
   color: #0c2e60;
   font-weight: 800;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.banner_part3 .banner_text3 h4:hover {
+  text-decoration: none; /* Remove the default text decoration */
+}
+.banner_part3 .banner_text3 h4:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust the position of the underline */
+}
+.banner_part3 .banner_text3 h4:hover:after {
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner_part3 .banner_text3 h4 {
@@ -2774,6 +2850,25 @@ ul {
   margin-bottom: 0px;
   -webkit-transition: 1s;
   transition: 1s;
+  position: relative;
+  display: inline-block;
+}
+.feature_part .section_tittle h2:hover {
+  text-decoration: none; /* Remove the default text decoration */
+}
+.feature_part .section_tittle h2:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust the position of the underline */
+}
+.feature_part .section_tittle h2:hover:after {
+  width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .feature_part .section_tittle h2 {
@@ -2829,7 +2924,7 @@ ul {
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 .feature_part .single_feature:hover {
-  background-color: rgb(21, 196, 236);
+  background-color: #999999;
   transform: translateY(-10px);
 }
 .feature_part .single_feature:hover .single_feature_part {
@@ -2901,6 +2996,14 @@ ul {
     padding: 15px;
     margin-top: 0px;
   }
+}
+.feature_part .single_feature_part .feature_link {
+  display: block;
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Ensure the text color remains unchanged */
+  height: 100%; /* Ensure the link spans the entire height of the parent div */
+  width: 100%; /* Ensure the link spans the entire width of the parent div */
+  padding: 0; /* Remove default padding from the link */
 }
 @media (min-width: 600px) and (max-width: 768px) {
   .feature_part {
@@ -5405,6 +5508,8 @@ h6 {
 }
 .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2 {
   font-size: 42px;
+  position: relative;
+  display: inline-block;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2 {
@@ -5420,6 +5525,23 @@ h6 {
   .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2 {
     font-size: 23px;
   }
+}
+.breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2:hover {
+  text-decoration: none;
+}
+.breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background: #0c2e60;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+.breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2:hover:after {
+  width: 100%;
 }
 .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item p {
   font-size: 45px;

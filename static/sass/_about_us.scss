@@ -240,18 +240,43 @@
   .about_text {
     padding: 20px;
 
-    h3 {
+    h2 {
       font-family: $font_stack_1;
       font-size: 50px;
       color: $heading_color2;
       font-weight: 600;
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 5px;
+        background: $heading_color2;
+        transition: width 0.3s;
+        position: absolute;
+        left: 0;
+        bottom: -2px; /* Adjust the position of the underline */
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+
       @media (min-width: 768px) and (max-width: 1024px) {
         font-size: 40px;
       }
+
       @media (min-width: 600px) and (max-width: 768px) {
         font-size: 28px;
       }
+
       @media (min-width: 320px) and (max-width: 600px) {
         font-size: 25px;
       }
@@ -283,6 +308,28 @@
       color: $heading_color2;
       font-weight: 600;
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none; /* Remove the default text decoration */
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 5px;
+        background: $heading_color2;
+        transition: width 0.3s;
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the position of the underline */
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
       @media (min-width: 768px) and (max-width: 1024px) {
         font-size: 30px;
       }
@@ -388,6 +435,26 @@
       color: $heading_color2;
       font-weight: 600;
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      &:hover {
+        text-decoration: none; /* Remove the default text decoration */
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 5px;
+        background: $heading_color2;
+        transition: width 0.3s;
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the position of the underline */
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
       @media (min-width: 768px) and (max-width: 1024px) {
         font-size: 40px;
       }
@@ -404,6 +471,27 @@
       color: $heading_color2;
       font-weight: 800;
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      &:hover {
+        text-decoration: none; /* Remove the default text decoration */
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 5px;
+        background: $heading_color2;
+        transition: width 0.3s;
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the position of the underline */
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
       @media (min-width: 768px) and (max-width: 1024px) {
         font-size: 28px;
       }
