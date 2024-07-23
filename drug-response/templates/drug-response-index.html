@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drug Side Effects</title>
+</head>
+<body>
+    <h1>Welcome to the Drug Side Effects App</h1>
+    <form method="post" action="/">
+        <label for="drug_name">Enter Drug Name:</label>
+        <input type="text" id="drug_name" name="drug_name" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if side_effects %}
+        <h2>Side Effects:</h2>
+        {% if side_effects == "No data available for this drug." %}
+            <p>{{ side_effects }}</p>
+        {% else %}
+            <ul>
+                {% for effect in side_effects %}
+                    <li>{{ effect }}</li>
+                {% endfor %}
+                <li>and many more..</li>
+            </ul>
+            
+        {% endif %}
+    {% endif %}
+</body>
+</html>
