@@ -32,9 +32,9 @@
   transition: all 0.4s ease-in-out;
   text-transform: capitalize;
   border: 1px solid $border;
-  border-radius: 2px;
+  border-radius: 20px;
   font-family: $font_button;
-  @extend %custom_btn_bg_1;
+  @extend %custom_btn_bg_4;
   background-size: 200% auto;
   &:hover {
     background-color: $btn_bg !important;
@@ -74,7 +74,7 @@
   border-radius: 2px;
   font-family: $font_button;
   background-size: 200% auto;
-  @extend %custom_btn_bg_1;
+  @extend %custom_btn_bg_4;
   border-radius: 5px;
   display: inline-block;
   &:hover {
