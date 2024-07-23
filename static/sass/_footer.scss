@@ -1,43 +1,68 @@
-//--------- start footer Area -------------//
 .footer-area {
   background-color: #0c2e60;
+  padding: 5px 0;
 
   .single-footer-widget {
+    margin-bottom: 10px;
+
     @media (max-width: 991px) {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
 
     p {
       color: #ffffff;
-      font-size: 16px;
+      font-size: 15px;
+      @media (min-width: 768px) and (max-width: 1024px) {
+        font-size: 13px;
+      }
+
+      @media (min-width: 600px) and (max-width: 768px) {
+        font-size: 13px;
+      }
+
+      @media (min-width: 320px) and (max-width: 600px) {
+        font-size: 13px;
+      }
     }
 
     h4 {
-      color: $white_color;
+      color: #ffffff;
       font-style: inherit;
       margin-bottom: 30px;
       font-weight: 700;
-      font-size: 20px;
+      font-size: 22px;
 
       @media (max-width: 1024px) {
-        font-size: 18px;
+        font-size: 14px;
       }
 
       @media (max-width: 991px) {
-        margin-bottom: 15px;
+        margin-bottom: 12px;
       }
     }
 
     ul {
       li {
-        margin-bottom: 14px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        @media (min-width: 768px) and (max-width: 1024px) {
+          font-size: 13px;
+        }
+
+        @media (min-width: 600px) and (max-width: 768px) {
+          font-size: 13px;
+        }
+
+        @media (min-width: 320px) and (max-width: 600px) {
+          font-size: 13px;
+        }
 
         a {
-          color: $white_color;
-          @include transform_time(0.5s);
+          color: #ffffff;
+          transition: color 0.5s;
 
           &:hover {
-            color: $btn_bg;
+            color: #9af2e5;
           }
         }
       }
@@ -46,6 +71,9 @@
     .form-wrap {
       margin-top: 25px;
       position: relative;
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
 
     input {
@@ -54,7 +82,6 @@
       width: 100% !important;
       font-weight: 400;
       background: transparent;
-      // color: $white;
       padding-left: 20px;
       border-radius: 0;
       font-size: 14px;
@@ -66,16 +93,11 @@
         outline: none;
         box-shadow: none;
       }
-
-      // @include placeholder {
-      // 	padding-left: 10px;
-      // 	// color: $link-color;
-      // }
     }
 
     .click-btn {
-      background-color: $btn_bg;
-      color: $white_color;
+      background-color: #9af2e5;
+      color: #ffffff;
       border-radius: 5px;
       border: 0;
       position: absolute;
@@ -85,16 +107,35 @@
       line-height: 30px;
       text-align: center;
       display: inline-block;
+
       &:focus {
         outline: none;
         box-shadow: none;
       }
     }
   }
+
   .footer_logo {
     margin-bottom: 30px;
     display: inline-block;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      height: 6rem;
+      width: 7rem;
+    }
+
+    @media (min-width: 600px) and (max-width: 768px) {
+      height: 5rem;
+      width: 6rem;
+    }
+
+    @media (min-width: 320px) and (max-width: 600px) {
+      height: 6rem;
+      width: 7rem;
+      margin-bottom: 2px;
+    }
   }
+
   .social_logo {
     margin-top: 20px;
     font-size: larger;
@@ -102,11 +143,13 @@
     a {
       color: #b8bcbf;
       margin-right: 10px;
+
       &:hover {
-        color: $black_color;
+        color: #ffffff;
       }
     }
   }
+
   .footer-bottom {
     margin-top: 70px;
 
@@ -115,16 +158,13 @@
     }
 
     p {
-      // color: $white;
+      color: #ffffff;
 
       a {
-        // color: $primary-color;
+        color: #9af2e5;
       }
     }
 
-    // span {
-    // 	font-weight: 700;
-    // }
     .footer-social {
       text-align: center;
 
@@ -137,16 +177,16 @@
         background: rgba(255, 255, 255, 0.15);
         margin-left: 3px;
         width: 32px;
-        // color: $white;
+        color: #ffffff;
         display: inline-grid;
         text-align: center;
         height: 32px;
         align-content: center;
+        transition: background 0.5s;
 
-        // @include transition();
         &:hover {
-          // @extend .gradient-bg;
-          // background: $primary-color;
+          background: #9af2e5;
+          color: #0c2e60;
         }
 
         i,
@@ -162,35 +202,24 @@
     padding: 26px 0px;
 
     a {
-      color: $btn_bg;
+      color: #9af2e5;
     }
 
     .footer-social {
-      @media #{$small_mobile} {
-        margin-top: 20px;
-      }
-
-      @media #{$large_mobile} {
-      }
-
-      @media #{$tab_device} {
-      }
-
-      @media #{$medium_device} {
-      }
+      margin-top: 20px;
 
       a {
         margin-left: 20px;
-        color: #fff;
+        color: #ffffff;
         text-align: center;
 
         &:hover {
-          color: $btn_bg;
+          color: #9af2e5;
         }
 
         i {
           &:hover {
-            color: $btn_bg;
+            color: #9af2e5;
           }
         }
 
@@ -201,15 +230,12 @@
       }
     }
 
-    @media #{$tab} {
-      .footer-text {
+    .footer-text {
+      text-align: center;
+
+      @media (max-width: 991px) {
         text-align: center;
       }
     }
-
-    @media #{$medium_device} {
-    }
   }
 }
-
-//--------- end footer Area -------------//
