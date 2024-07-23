@@ -54,17 +54,22 @@
     p {
       line-height: 1.929;
       margin-bottom: 60px;
+      font-size: 17px;
       @media #{$small_mobile} {
         margin-bottom: 10px;
+        font-size: 13px;
       }
       @media #{$large_mobile} {
         margin-bottom: 20px;
+        font-size: 12px;
       }
       @media #{$tab_device} {
         margin-bottom: 20px;
+        font-size: 13px;
       }
       @media #{$medium_device} {
         margin-bottom: 20px;
+        font-size: 10px;
       }
     }
 
