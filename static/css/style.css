@@ -1959,7 +1959,7 @@ ul {
 }
 
 .navbar-light .navbar-nav .active > .nav-link {
-  color: #0bdbbb;
+  color: #9af2e5;
 }
 
 /**************** banner part css start ****************/
@@ -5195,10 +5195,28 @@ h6 {
 }
 
 .breadcrumb_part {
-  margin-top: 87px;
+  margin-top: 0px;
+  padding-top: 50px;
   position: relative;
   z-index: 1;
   height: 300px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .breadcrumb_part {
+    height: 280px;
+  }
+}
+@media (min-width: 600px) and (max-width: 768px) {
+  .breadcrumb_part {
+    height: 245px;
+    padding-top: 35px;
+  }
+}
+@media (max-width: 600px) {
+  .breadcrumb_part {
+    height: 230px;
+    padding-top: 30px;
+  }
 }
 .breadcrumb_part .breadcrumb_iner {
   height: 300px;
@@ -5219,6 +5237,7 @@ h6 {
   font-weight: 700;
   text-transform: capitalize;
   text-align: center;
+  color: #0c2e60;
 }
 @media (max-width: 600px) {
   .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h1,
@@ -5240,23 +5259,23 @@ h6 {
     font-size: 40px;
   }
 }
-.breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h1 {
-  font-size: 70px;
-}
 .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2 {
-  font-size: 60px;
+  font-size: 48px;
 }
-.breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h3 {
-  font-size: 50px;
+@media (min-width: 768px) and (max-width: 1024px) {
+  .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2 {
+    font-size: 35px;
+  }
 }
-.breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h4 {
-  font-size: 40px;
+@media (min-width: 550px) and (max-width: 768px) {
+  .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2 {
+    font-size: 28px;
+  }
 }
-.breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h5 {
-  font-size: 35px;
-}
-.breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h6 {
-  font-size: 25px;
+@media (max-width: 550px) {
+  .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item h2 {
+    font-size: 23px;
+  }
 }
 .breadcrumb_part .breadcrumb_iner .breadcrumb_iner_item p {
   font-size: 45px;
