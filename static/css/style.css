@@ -1797,6 +1797,9 @@ ul {
   line-height: 13px;
   text-transform: capitalize;
 }
+.main_menu .main-menu-item ul li .nav-link.active {
+  color: #999999;
+}
 @media (min-width: 1200px) {
   .main_menu .main-menu-item ul li .nav-link {
     font-size: 18px;
@@ -1844,7 +1847,8 @@ ul {
   background-color: #0c2e60;
 }
 .dropdown .dropdown-menu .dropdown-item {
-  font-size: 14px;
+  font-size: 18px;
+  margin: 0px;
   padding: 9px 18px !important;
   color: #fff !important;
   text-transform: capitalize;
@@ -1887,7 +1891,7 @@ ul {
     left: 0;
     top: 110px;
     width: 100%;
-    background-color: #22545f;
+    background-color: #0c2e60;
     color: #fff;
     text-align: center !important;
     box-shadow: 0px 11px 9px -5px rgba(0, 0, 0, 0.2);
@@ -1952,6 +1956,10 @@ ul {
 }
 .menu_fixed .main-menu-item ul li .nav-link {
   color: #7f7f7f;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #0bdbbb;
 }
 
 /**************** banner part css start ****************/
