@@ -57,6 +57,8 @@ $white_color: #fff;
       }
 
       h2 {
+        position: relative;
+        display: inline-block;
         font-size: 42px;
 
         @media (min-width: 768px) and (max-width: 1024px) {
@@ -70,9 +72,6 @@ $white_color: #fff;
         @media (max-width: 550px) {
           font-size: 23px;
         }
-
-        position: relative;
-        display: inline-block;
 
         &:hover {
           text-decoration: none;
