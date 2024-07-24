@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Multi-Disease</title>
+    <link rel="icon" href="../static/img/favicon.png" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../static/css/animate.css" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../static/css/themify-icons.css" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../static/css/flaticon.css" />
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="../static/css/magnific-popup.css" />
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="../static/css/nice-select.css" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../static/css/slick.css" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+
+  <body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand navbar_img" href="/">
+                <img src="../static/img/logo6.png" alt="logo" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="collapse navbar-collapse main-menu-item justify-content-center"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav align-items-center">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="about" href="{{url_for('about')}}"
+                      >About</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('disease') }}"
+                      >Disease Symptoms</a
+                    >
+                  </li>
+
+                  <li class="nav-item dropdown active">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Multi-Disease
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      
+                      <a class="dropdown-item" href="{{url_for('kidney')}}"
+                        >Kidney</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('heart')}}"
+                        >Heart</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('liver')}}"
+                        >Liver</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('parkinsons')}}"
+                        >Parkinsons</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('diabetes')}}"
+                        >Diabetes</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('breast')}}"
+                        >Breast Cancer</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('skin')}}"
+                        >Skin Disease</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('pneumonia')}}"
+                        >Pneumonia</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('malaria')}}"
+                        >Malaria</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('brain')}}"
+                        >Brain Tumor</a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdown_1"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Drug
+                    </a>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdown_1"
+                    >
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('alternativedrug')}}"
+                        >Alternative Drug</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('drugresponse')}}"
+                        >Drug Response</a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('insurance') }}"
+                      >Insurance</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('contact')}}"
+                      >Contact</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('developer')}}"
+                      >developer</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <a
+                class="btn_2 d-none d-lg-block"
+                href="regervation_part section_padding"
+                >Appointment</a
+              >
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb_part breadcrumb_bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcrumb_iner">
+              <div <div class="breadcrumb_iner_item text-center">
+                >
+                <h2>Insurance Policy Pediction</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!-- about us part start-->
+    <section class="about_us3 section_padding py-5">
+      <div class="container">
+        <div class="row justify-content-between align-items-center mb-4">
+          <div class="col text-center about_us_text3">
+            <h2 class="fw-bold mb-4">
+              Discover the Future of Proactive Healthcare
+            </h2>
+            <p>
+              <!-- Take control of your cardiovascular health with our Heart Disease
+              Prediction technology. Our advanced system leverages sophisticated
+              algorithms to assess critical health indicators, providing an
+              early warning for potential heart issues. By identifying risks
+              early, you can make informed decisions and adopt proactive
+              measures to safeguard your heart health. Embark on a journey to a
+              healthier heart and a better future with our reliable prediction
+              tool. -->
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-8 text-center about_us_text3">
+            <h2 class="text-decoration-underline fw-bold mb-4">
+              Fill Your Information Here:
+            </h2>
+          </div>
+        </div>
+
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-md-8">
+            <div class="card border-primary shadow-lg">
+              <div class="card-header">
+                <h5
+                  class="card-title mb-0 text-white text-center font-weight-bold"
+                >
+                  Insurance Policy Predictor
+                </h5>
+              </div>
+              <div class="card shadow-sm">
+                <div class="card-body">
+
+                  <form class="form-horizontal" action="{{ url_for('insurance') }}" method="POST">
+                    <form class="form-horizontal" action="/" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control border-dark" type="text" name="age" placeholder="Age" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control border-dark" name="gender" required>
+                                        <option value="">Gender</option>
+                                        <option value="1">Male</option>
+                                        <option value="0">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control border-dark" name="city" required>
+                                        <option value="">City</option>
+                                        <option value="0">Ahmedabad</option>
+                                        <option value="1">Bangalore</option>
+                                        <option value="2">Chandigarh</option>
+                                        <option value="3">Chennai</option>
+                                        <option value="4">Delhi</option>
+                                        <option value="5">Hyderabad</option>
+                                        <option value="6">Kanpur</option>
+                                        <option value="7">Kolkata</option>
+                                        <option value="8">Lucknow</option>
+                                        <option value="9">Mumbai</option>
+                                        <option value="10">Nagpur</option>
+                                        <option value="11">Pune</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control border-dark" name="occupation" required>
+                                        <option value="">Occupation</option>
+                                        <option value="0">Not Active</option>
+                                        <option value="1">Active</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control border-dark" name="smoking_status" required>
+                                        <option value="">Smoking Status</option>
+                                        <option value="0">Non-smoker</option>
+                                        <option value="1">Smoker</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control border-dark" name="alcohol_consumption" required>
+                                        <option value="">Alcohol Consumption</option>
+                                        <option value="0">None</option>
+                                        <option value="1">Moderate</option>
+                                        <option value="2">High</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control border-dark" type="text" name="previous_claims" placeholder="Previous Claims" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control border-dark" type="text" name="income_level" placeholder="Income Level" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6 offset-md-3">
+                                <div class="form-group">
+                                    <select class="form-control border-dark" name="education_level" required>
+                                        <option value="">Education Level</option>
+                                        <option value="0">Undergraduate</option>
+                                        <option value="1">Graduate</option>
+                                        <option value="2">Postgraduate</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-4">
+                            <button type="submit" value="Predict" class="btn_3">Predict</button>
+                        </div>
+                    </form>
+                    
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          {% if policy is not none and policy_price is not none %}
+          <div class="col-md-8 mt-4">
+                  <div class="card shadow-sm alert alert-danger">
+                      <div class="card-body">
+                        <center><h2>Policy Name: {{policy}}</h2></center>
+                        <center><h3>Rs. {{policy_price}} per year</h3></center>      
+                      </div>
+                  </div>
+            </div>
+            {% endif %}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- about us part end-->
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+      <div class="footer section_padding">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+              <a href="#" class="footer_logo">
+                <img src="../static/img/logo6.png" alt="#" />
+              </a>
+              <div class="social_logo">
+                <a href="#"><i class="ti-facebook"></i></a>
+                <a href="#"><i class="ti-twitter"></i></a>
+                <a href="#"><i class="ti-instagram"></i></a>
+                <a href="#"><i class="ti-youtube"></i></a>
+              </div>
+            </div>
+            <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Department</a></li>
+                <li><a href="#">Online payment</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Department</a></li>
+              </ul>
+            </div>
+            <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+              <h4>Explore</h4>
+              <ul>
+                <li><a href="#">In the community</a></li>
+                <li><a href="#">IU health foundation</a></li>
+                <li><a href="#">Family support</a></li>
+                <li><a href="#">Business solution</a></li>
+                <li><a href="#">Community clinic</a></li>
+              </ul>
+            </div>
+            <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Lights were season</a></li>
+                <li><a href="#">Their is let wherein</a></li>
+                <li><a href="#">which given over</a></li>
+                <li><a href="#">Without given She</a></li>
+                <li><a href="#">Isn two signs think</a></li>
+              </ul>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-md-2 single-footer-widget">
+              <h4>Newsletter</h4>
+              <p>
+                Seed good winged wherein which night multiply midst does not
+                fruitful
+              </p>
+              <div class="form-wrap" id="mc_embed_signup">
+                <form
+                  target="_blank"
+                  action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                  method="get"
+                  class="form-inline"
+                >
+                  <input
+                    class="form-control"
+                    name="EMAIL"
+                    placeholder="Your Email Address"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Your Email Address '"
+                    required=""
+                    type="email"
+                  />
+                  <button class="click-btn btn btn-default text-uppercase">
+                    <i class="ti-angle-right"></i>
+                  </button>
+                  <div style="position: absolute; left: -5000px">
+                    <input
+                      name="b_36c4fd991d266f23781ded980_aefe40901a"
+                      tabindex="-1"
+                      value=""
+                      type="text"
+                    />
+                  </div>
+                  <div class="info"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- contact js -->
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>

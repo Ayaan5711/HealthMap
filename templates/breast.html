@@ -39,7 +39,7 @@
         <div class="row align-items-center">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg navbar-light">
-              <a class="navbar-brand navbar_img" href="#">
+              <a class="navbar-brand navbar_img" href="/">
                 <img src="../static/img/logo6.png" alt="logo" />
               </a>
               <button
@@ -58,7 +58,7 @@
                 id="navbarSupportedContent"
               >
                 <ul class="navbar-nav align-items-center">
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="{{url_for('home')}}">Home</a>
                   </li>
                   <li class="nav-item">
@@ -86,9 +86,7 @@
                       Multi-Disease
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{url_for('malaria')}}"
-                        >Malaria</a
-                      >
+                      
                       <a class="dropdown-item" href="{{url_for('kidney')}}"
                         >Kidney</a
                       >
@@ -98,8 +96,8 @@
                       <a class="dropdown-item" href="{{url_for('liver')}}"
                         >Liver</a
                       >
-                      <a class="dropdown-item" href="{{url_for('pneumonia')}}"
-                        >Pneumonia</a
+                      <a class="dropdown-item" href="{{url_for('parkinsons')}}"
+                        >Parkinsons</a
                       >
                       <a class="dropdown-item" href="{{url_for('diabetes')}}"
                         >Diabetes</a
@@ -109,6 +107,12 @@
                       >
                       <a class="dropdown-item" href="{{url_for('skin')}}"
                         >Skin Disease</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('pneumonia')}}"
+                        >Pneumonia</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('malaria')}}"
+                        >Malaria</a
                       >
                       <a class="dropdown-item" href="{{url_for('brain')}}"
                         >Brain Tumor</a
@@ -142,6 +146,12 @@
                         >Drug Response</a
                       >
                     </div>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('insurance') }}"
+                      >Insurance</a
+                    >
                   </li>
 
                   <li class="nav-item">
@@ -308,7 +318,7 @@
                           <input
                             class="form-control border-dark"
                             type="text"
-                            name="concave_points_mean"
+                            name="concave points_mean"
                             placeholder="Concave Points Mean"
                           />
                         </div>
@@ -382,7 +392,7 @@
                           <input
                             class="form-control border-dark"
                             type="text"
-                            name="concave_points_se"
+                            name="concave points_se"
                             placeholder="Concave Points SE"
                           />
                         </div>
@@ -478,7 +488,7 @@
                           <input
                             class="form-control border-dark"
                             type="text"
-                            name="concave_points_worst"
+                            name="concave points_worst"
                             placeholder="Concave Points Worst"
                           />
                         </div>
@@ -517,24 +527,26 @@
             </div>
           </div>
 
-          {% if pediction_text_breast %}
-          <div class="col-md-8 mt-4">
-            {% if pediction_text_breast == 1 %}
-            <div class="card shadow-sm alert alert-danger">
-              <div class="card-body">
-                <center>Sorry! Please consult a DOCTOR.</center>
-              </div>
-            </div>
-            {% else %}
-            <div class="card shadow-sm alert alert-success">
-              <div class="card-body">
-                <center>Great! You are HEALTHY.</center>
-              </div>
-            </div>
-            {% endif %}
+          {% if prediction_text is not none %}
+            <div class="col-md-8 mt-4">
+                {% if prediction_text == 1 %}
+                    <div class="card shadow-sm alert alert-danger">
+                        <div class="card-body">
+                            <center><h3>Sorry! Please consult a DOCTOR.</h3></center>
+                        </div>
+                    </div>
+                {% elif prediction_text == 0 %}
+                    <div class="card shadow-sm alert alert-success">
+                        <div class="card-body">
+                            <center><h3>Great! You are HEALTHY.</h3></center>
+                        </div>
+                    </div>
+                {% endif %}
           </div>
-          {% endif %}
+      {% endif %}
         </div>
+      </div>
+
       </div>
     </section>
 
