@@ -22,6 +22,7 @@ from src.disease_prediction.disease_prediction import DiseasePrediction
 from src.alternativedrug.AlternativeDrug import AlternateDrug
 from src.Prediction.disease_predictions import ModelPipeline
 from src.Insurance.Insurance import Insurance_Prediction
+from src.ImagePrediction.image_prediction import ImagePrediction
 
 app = Flask(__name__)
 
@@ -202,6 +203,45 @@ def insurance():
     except Exception as e:
         lg.error(f"Error in /insurance route: {e}")
         raise CustomException(e, sys)
+    
+@app.route('/multi_disease')
+def multi_disease():
+    return render_template("multi_disease.html")
+
+@app.route('/disease_input_type')
+def disease_input_type():
+    return render_template("disease_input_type.html")
+
+
+
+
+UPLOAD_FOLDER = 'static/uploads'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/disease_image_input', methods=['POST', 'GET'])
+def disease_image_input():
+    if request.method == 'POST':
+        file = request.files['image']
+        if file and allowed_file(file.filename):
+            if not os.path.exists(app.config['UPLOAD_FOLDER']):
+                os.makedirs(app.config['UPLOAD_FOLDER'])
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            file.save(file_path)
+            img = file_path
+
+            model = ImagePrediction()
+            pred, class_name = model.predict(img)
+
+            return render_template("disease_image_input.html", pediction=pred, class_name=class_name)
+        return render_template("disease_image_input.html")
+    return render_template("disease_image_input.html")
     
 
 

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Home</title>
+    <link rel="icon" href="../static/img/logo.png" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../static/css/animate.css" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../static/css/themify-icons.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@500&family=Raleway:wght@500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- flaticon CSS -->
+    <!-- <link rel="stylesheet" href="../static/css/flaticon.css" /> -->
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="../static/css/magnific-popup.css" />
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="../static/css/nice-select.css" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../static/css/slick.css" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+
+  <body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand navbar_img" href="/">
+                <img src="../static/img/logo6.png" alt="logo" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="collapse navbar-collapse main-menu-item justify-content-center"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav align-items-center">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="about" href="{{url_for('about')}}"
+                      >About</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('disease') }}"
+                      >Disease Symptoms</a
+                    >
+                  </li>
+
+                  <li class="nav-item dropdown active">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="{{url_for('disease_input_type')}}"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Multi-Disease
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      
+                      <a class="dropdown-item" href="{{url_for('kidney')}}"
+                        >Kidney</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('heart')}}"
+                        >Heart</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('liver')}}"
+                        >Liver</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('parkinsons')}}"
+                        >Parkinsons</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('diabetes')}}"
+                        >Diabetes</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('breast')}}"
+                        >Breast Cancer</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('skin')}}"
+                        >Skin Disease</a
+                      >
+                      
+                      <a class="dropdown-item" href="{{url_for('malaria')}}"
+                        >Malaria</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('disease_image_input')}}"
+                        >Disease Prediction using image</a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdown_1"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Drug
+                    </a>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdown_1"
+                    >
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('alternativedrug')}}"
+                        >Alternative Drug</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('drugresponse')}}"
+                        >Drug Response</a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('insurance') }}"
+                      >Insurance</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('contact')}}"
+                      >Contact</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('developer')}}"
+                      >developer</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <a
+                class="btn_2 d-none d-lg-block"
+                href="regervation_part section_padding"
+                >Appointment</a
+              >
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header part end-->
+
+
+
+    <section class="feature_part section_padding">
+        <div class="container">
+
+            <div class="row justify-content-between align-items-center flex-md-row flex-column">
+        
+                <div class="col-lg-12 col-sm-12">
+
+                    <div class="single_feature" style="margin-top: 200px; margin-bottom: 25px">
+                        <div class="single_feature_part">
+                          <a href="/kidney" class="feature_link">
+                            <h4>
+                              Kidney Disease Prediction
+                              <img class="inline_icon" src="../static/img/icon/feature_1.svg" alt=""/>
+                            </h4>
+                            <p>
+                                Our Kidney Disease Prediction Model utilizes machine learning to assess the risk of 
+                                kidney disease by analyzing various health parameters. 
+                                By inputting features such as age, sex, blood pressure, diabetes status,
+                                kidney function tests, and other relevant health indicators, 
+                                the model provides a predictive analysis of kidney disease risk.
+                            </p>
+                          </a>
+                        </div>
+                    </div>
+
+
+                    <div class="single_feature" style="margin-bottom: 25px">
+                        <div class="single_feature_part">
+                          <a href="/heart" class="feature_link">
+                            <h4>
+                              Heart Disease Prediction
+                              <img class="inline_icon" src="../static/img/icon/feature_1.svg" alt=""/>
+                            </h4>
+                            <p>
+                                Our Heart Disease Prediction Model uses machine learning to assess the risk of 
+                                heart disease by analyzing various health parameters. 
+                                By inputting features such as age, sex, blood pressure, cholesterol levels, 
+                                smoking status, family history, and other relevant medical data, 
+                                the model provides a predictive analysis of heart disease risk.
+                            </p>
+                          </a>
+                        </div>
+                    </div>
+
+
+                    <div class="single_feature" style="margin-bottom: 25px">
+                        <div class="single_feature_part">
+                          <a href="/liver" class="feature_link">
+                            <h4>
+                              Liver Disease Prediction
+                              <img class="inline_icon" src="../static/img/icon/feature_1.svg" alt=""/>
+                            </h4>
+                            <p>
+                                Our Liver Disease Prediction Model uses machine learning to evaluate the risk of liver 
+                                disease by analyzing various health parameters. 
+                                By inputting features such as age, sex, liver function tests, and other relevant health indicators, 
+                                the model provides a predictive analysis of liver disease risk.
+                            </p>
+                          </a>
+                        </div>
+                    </div>
+
+
+                    <div class="single_feature" style="margin-bottom: 25px">
+                        <div class="single_feature_part">
+                          <a href="/parkinsons" class="feature_link">
+                            <h4>
+                              Parkinsons Disease Prediction
+                              <img class="inline_icon" src="../static/img/icon/feature_1.svg" alt=""/>
+                            </h4>
+                            <p>
+                                Our Parkinson's Disease Prediction Model leverages machine learning to 
+                                assess the risk of Parkinson's disease by analyzing various health parameters. 
+                                By inputting features such as age, motor symptoms, voice changes, and other neurological indicators, 
+                                the model provides a predictive analysis of Parkinson's disease risk.
+                            </p>
+                          </a>
+                        </div>
+                    </div>
+
+
+                    <div class="single_feature" style="margin-bottom: 25px">
+                        <div class="single_feature_part">
+                          <a href="/diabetes" class="feature_link">
+                            <h4>
+                              Diabetes Prediction
+                              <img class="inline_icon" src="../static/img/icon/feature_1.svg" alt=""/>
+                            </h4>
+                            <p>
+                                Our Diabetes Prediction Model leverages machine learning to assess the risk of diabetes in 
+                                individuals based on a variety of health parameters. By inputting relevant features such as 
+                                age, sex, body mass index (BMI), smoking status, family history of diabetes, and 
+                                other vital health indicators, the model provides a predictive analysis of diabetes risk.
+                            </p>
+                          </a>
+                        </div>
+                    </div>
+
+
+                    <div class="single_feature" style="margin-bottom: 25px">
+                        <div class="single_feature_part">
+                          <a href="/breast" class="feature_link">
+                            <h4>
+                              Breast Cancer Prediction
+                              <img class="inline_icon" src="../static/img/icon/feature_1.svg" alt=""/>
+                            </h4>
+                            <p>
+                                Our Breast Cancer Prediction Model uses machine learning to evaluate the 
+                                likelihood of breast cancer by analyzing various health parameters. 
+                                By inputting features such as age, tumor size, lymph node status, 
+                                and other relevant medical data, the model provides a predictive analysis of breast cancer risk.
+                            </p>
+                          </a>
+                        </div>
+                    </div>
+
+
+            
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <div class="footer section_padding">
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+                <a href="#" class="footer_logo">
+                  <img src="../static/img/logo6.png" alt="#" />
+                </a>
+                <div class="social_logo">
+                  <a href="#"><i class="ti-facebook"></i></a>
+                  <a href="#"><i class="ti-twitter"></i></a>
+                  <a href="#"><i class="ti-instagram"></i></a>
+                  <a href="#"><i class="ti-youtube"></i></a>
+                </div>
+              </div>
+              <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Department</a></li>
+                  <li><a href="#">Online payment</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Department</a></li>
+                </ul>
+              </div>
+              <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+                <h4>Explore</h4>
+                <ul>
+                  <li><a href="#">In the community</a></li>
+                  <li><a href="#">IU health foundation</a></li>
+                  <li><a href="#">Family support</a></li>
+                  <li><a href="#">Business solution</a></li>
+                  <li><a href="#">Community clinic</a></li>
+                </ul>
+              </div>
+              <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+                <h4>Resources</h4>
+                <ul>
+                  <li><a href="#">Lights were season</a></li>
+                  <li><a href="#">Their is let wherein</a></li>
+                  <li><a href="#">which given over</a></li>
+                  <li><a href="#">Without given She</a></li>
+                  <li><a href="#">Isn two signs think</a></li>
+                </ul>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-md-2 single-footer-widget">
+                <h4>Newsletter</h4>
+                <p>
+                  Seed good winged wherein which night multiply midst does not
+                  fruitful
+                </p>
+                <div class="form-wrap" id="mc_embed_signup">
+                  <form
+                    target="_blank"
+                    action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                    method="get"
+                    class="form-inline"
+                  >
+                    <input
+                      class="form-control"
+                      name="EMAIL"
+                      placeholder="Your Email Address"
+                      onfocus="this.placeholder = ''"
+                      onblur="this.placeholder = 'Your Email Address '"
+                      required=""
+                      type="email"
+                    />
+                    <button class="click-btn btn btn-default text-uppercase">
+                      <i class="ti-angle-right"></i>
+                    </button>
+                    <div style="position: absolute; left: -5000px">
+                      <input
+                        name="b_36c4fd991d266f23781ded980_aefe40901a"
+                        tabindex="-1"
+                        value=""
+                        type="text"
+                      />
+                    </div>
+                    <div class="info"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+      <!-- footer part end-->
+  
+      <!-- jquery plugins here-->
+  
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <!-- Popper.js -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <!-- Other JS files -->
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/jquery.nice-select.min.js"></script>
+      <script src="js/jquery.ajaxchimp.min.js"></script>
+      <script src="js/jquery.form.js"></script>
+      <script src="js/jquery.validate.min.js"></script>
+      <script src="js/mail-script.js"></script>
+      <script src="js/contact.js"></script>
+      <!-- Custom JS -->
+      <script src="js/custom.js"></script>
+    </body>
+  </html>
+  
+

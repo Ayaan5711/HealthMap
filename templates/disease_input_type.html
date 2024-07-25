@@ -179,177 +179,166 @@
       </div>
     </header>
     <!-- Header part end-->
-     
-    <!-- breadcrumb start-->
-    <section class="breadcrumb_part breadcrumb_bg">
+
+
+
+    <section class="feature_part section_padding">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item text-center">>
-                            <h2>Drug Response</h2>
+
+            <div class="row justify-content-between align-items-center flex-md-row flex-column">
+        
+                <div class="col-lg-12 col-sm-12">
+
+                    <div class="single_feature" style="margin-top: 200px; margin-bottom: 25px">
+                        <div class="single_feature_part">
+                          <a href="/multi_disease" class="feature_link">
+                            <h4>
+                              Disease Prediction using Medical Report Data
+                              <img class="inline_icon" src="../static/img/icon/feature_1.svg" alt=""/>
+                            </h4>
+                            <p>
+                                Information about data entry prediction.
+                            </p>
+                          </a>
                         </div>
                     </div>
-                </div>
+
+
+                    <div class="single_feature" style="margin-bottom: 25px">
+                        <div class="single_feature_part">
+                          <a href="/disease_image_input" class="feature_link">
+                            <h4>
+                                Disease Prediction using Image like(X-ray, MRI, etc.)
+                              <img class="inline_icon" src="../static/img/icon/feature_1.svg" alt=""/>
+                            </h4>
+                            <p>
+                                information about image input
+                            </p>
+                          </a>
+                        </div>
+                    </div>
+
+            
             </div>
         </div>
     </section>
-    <!-- breadcrumb start-->
 
-    <!-- about us part start-->
-    <section style="text-align: center;">
-          <div>
-          <!-- <h3 > ON THE WAY</h1> -->
-            <h1>Welcome to the Drug Side Effects App</h1>
-            <form method="post" action="/drugresponse">
-                <label for="drug_name">Enter Drug Name:</label>
-                <!-- <input type="text" id="drug_name" name="drug_name" required> -->
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <input
-                      class="form-control"
-                      type="text"
-                      name="drug_name"
-                      placeholder="Drug Name"
-                    />
-                  </div>
-                </div>
-                <div class="row justify-content-center mt-3">
-                  <button type="submit" value="Predict" class="btn_3">
-                    Predict
-                  </button>
-                </div>
-            </form>
-            {% if side_effects %}
-                <h2>Side Effects:</h2>
-                {% if side_effects == "No data available for this drug." %}
-                    <p>{{ side_effects }}</p>
-                {% else %}
-                    <ul>
-                        {% for effect in side_effects %}
-                            <li>{{ effect }}</li>
-                        {% endfor %}
-                        <li>and many more..</li>
-                    </ul>
-                    
-                {% endif %}
-            {% endif %}
-                    
-              
-        </div>
-    </section>
-    <!-- about us part end-->
 
-    
+
+
+
+
+
 
     <!-- footer part start-->
     <footer class="footer-area">
-      <div class="footer section_padding">
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
-              <a href="#" class="footer_logo">
-                <img src="../static/img/logo6.png" alt="#" />
-              </a>
-              <div class="social_logo">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"><i class="ti-twitter"></i></a>
-                <a href="#"><i class="ti-instagram"></i></a>
-                <a href="#"><i class="ti-youtube"></i></a>
+        <div class="footer section_padding">
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+                <a href="#" class="footer_logo">
+                  <img src="../static/img/logo6.png" alt="#" />
+                </a>
+                <div class="social_logo">
+                  <a href="#"><i class="ti-facebook"></i></a>
+                  <a href="#"><i class="ti-twitter"></i></a>
+                  <a href="#"><i class="ti-instagram"></i></a>
+                  <a href="#"><i class="ti-youtube"></i></a>
+                </div>
               </div>
-            </div>
-            <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Department</a></li>
-                <li><a href="#">Online payment</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Department</a></li>
-              </ul>
-            </div>
-            <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
-              <h4>Explore</h4>
-              <ul>
-                <li><a href="#">In the community</a></li>
-                <li><a href="#">IU health foundation</a></li>
-                <li><a href="#">Family support</a></li>
-                <li><a href="#">Business solution</a></li>
-                <li><a href="#">Community clinic</a></li>
-              </ul>
-            </div>
-            <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href="#">Lights were season</a></li>
-                <li><a href="#">Their is let wherein</a></li>
-                <li><a href="#">which given over</a></li>
-                <li><a href="#">Without given She</a></li>
-                <li><a href="#">Isn two signs think</a></li>
-              </ul>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-md-2 single-footer-widget">
-              <h4>Newsletter</h4>
-              <p>
-                Seed good winged wherein which night multiply midst does not
-                fruitful
-              </p>
-              <div class="form-wrap" id="mc_embed_signup">
-                <form
-                  target="_blank"
-                  action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                  method="get"
-                  class="form-inline"
-                >
-                  <input
-                    class="form-control"
-                    name="EMAIL"
-                    placeholder="Your Email Address"
-                    onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Your Email Address '"
-                    required=""
-                    type="email"
-                  />
-                  <button class="click-btn btn btn-default text-uppercase">
-                    <i class="ti-angle-right"></i>
-                  </button>
-                  <div style="position: absolute; left: -5000px">
+              <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Department</a></li>
+                  <li><a href="#">Online payment</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Department</a></li>
+                </ul>
+              </div>
+              <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+                <h4>Explore</h4>
+                <ul>
+                  <li><a href="#">In the community</a></li>
+                  <li><a href="#">IU health foundation</a></li>
+                  <li><a href="#">Family support</a></li>
+                  <li><a href="#">Business solution</a></li>
+                  <li><a href="#">Community clinic</a></li>
+                </ul>
+              </div>
+              <div class="col-xl-2 col-sm-6 col-md-2 single-footer-widget">
+                <h4>Resources</h4>
+                <ul>
+                  <li><a href="#">Lights were season</a></li>
+                  <li><a href="#">Their is let wherein</a></li>
+                  <li><a href="#">which given over</a></li>
+                  <li><a href="#">Without given She</a></li>
+                  <li><a href="#">Isn two signs think</a></li>
+                </ul>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-md-2 single-footer-widget">
+                <h4>Newsletter</h4>
+                <p>
+                  Seed good winged wherein which night multiply midst does not
+                  fruitful
+                </p>
+                <div class="form-wrap" id="mc_embed_signup">
+                  <form
+                    target="_blank"
+                    action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                    method="get"
+                    class="form-inline"
+                  >
                     <input
-                      name="b_36c4fd991d266f23781ded980_aefe40901a"
-                      tabindex="-1"
-                      value=""
-                      type="text"
+                      class="form-control"
+                      name="EMAIL"
+                      placeholder="Your Email Address"
+                      onfocus="this.placeholder = ''"
+                      onblur="this.placeholder = 'Your Email Address '"
+                      required=""
+                      type="email"
                     />
-                  </div>
-                  <div class="info"></div>
-                </form>
+                    <button class="click-btn btn btn-default text-uppercase">
+                      <i class="ti-angle-right"></i>
+                    </button>
+                    <div style="position: absolute; left: -5000px">
+                      <input
+                        name="b_36c4fd991d266f23781ded980_aefe40901a"
+                        tabindex="-1"
+                        value=""
+                        type="text"
+                      />
+                    </div>
+                    <div class="info"></div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+  
+      <!-- footer part end-->
+  
+      <!-- jquery plugins here-->
+  
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <!-- Popper.js -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <!-- Other JS files -->
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/jquery.nice-select.min.js"></script>
+      <script src="js/jquery.ajaxchimp.min.js"></script>
+      <script src="js/jquery.form.js"></script>
+      <script src="js/jquery.validate.min.js"></script>
+      <script src="js/mail-script.js"></script>
+      <script src="js/contact.js"></script>
+      <!-- Custom JS -->
+      <script src="js/custom.js"></script>
+    </body>
+  </html>
+  
 
-    <!-- footer part end-->
-
-    <!-- jquery plugins here-->
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- owl carousel js -->
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <!-- contact js -->
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/contact.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
-</body>
-
-</html>
