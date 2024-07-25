@@ -202,6 +202,12 @@ def insurance():
     except Exception as e:
         lg.error(f"Error in /insurance route: {e}")
         raise CustomException(e, sys)
+    
+
+
+
+
+
 
 @app.route("/malaria", methods=['POST', 'GET'])
 def malaria():
@@ -212,7 +218,7 @@ def malaria():
             img = np.asarray(img)
             img = img.reshape((1,36,36,3))
             img = img.astype(np.float64)
-            model = load_model("models/malaria.h5")
+            model = load_model("src/models/malaria.h5")
             pred = np.argmax(model.predict(img)[0])
             return render_template('malaria.html', pediction_malaria=pred)
         else:
@@ -230,7 +236,7 @@ def pneumonia():
             img = np.asarray(img)
             img = img.reshape((1,36,36,1))
             img = img / 255.0
-            model = load_model("models/pneumonia.h5")
+            model = load_model("src/models/pneumonia.h5")
             pred = np.argmax(model.predict(img)[0])
             return render_template('pneumonia.html', pediction_pneumonia=pred)
         else:
@@ -239,7 +245,7 @@ def pneumonia():
         lg.error(f"Error in /pneumonia route: {e}")
         raise CustomException(e, sys)
 
-model = load_model('models/braintumor.h5')
+model = load_model('src/models/braintumor.h5')
 
 @app.route('/brain', methods=['GET', 'POST'])
 def brain():
@@ -291,9 +297,6 @@ def skin():
         raise CustomException(e, sys)
 
 if __name__ == '__main__':
-    try:
-        app.run(debug=True)
-    except Exception as e:
-        lg.error(f"Error starting Flask app: {e}")
-        raise CustomException(e, sys)
+    app.run(debug=True)
+    
 
