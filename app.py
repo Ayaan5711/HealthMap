@@ -84,7 +84,7 @@ def drugresponse():
         if request.method == 'POST':
             drug_name = request.form.get('drug_name')
             side_effects = side_effects_data.get(drug_name, "No data available for this drug.")
-        return render_template("drugresponse.html", side_effects=side_effects[:10])
+        return render_template("drugresponse.html", side_effects=side_effects)
     except Exception as e:
         lg.error(f"Error in /drugresponse route: {e}")
         raise CustomException(e, sys)
