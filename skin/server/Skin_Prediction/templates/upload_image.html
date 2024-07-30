@@ -1,0 +1,35 @@
+{% extends 'headerPage.html' %}
+
+{% block content %}
+
+<h2>Upload Image for Classification</h2>
+
+<br>
+
+<form method="post" enctype="multipart/form-data" action="/prediction">
+    <div class="col-md-4 col-sm-4">
+        <label for="filePath">Upload Image File Here:</label>
+    </div>
+    <input name="filePath" type="file" required><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+{% if predictedLabel %}
+    <!-- Display classification results if available -->
+    <h2>The classification of the image is: {{ predictedLabel }}</h2>
+    <div style="width: 400px; height: 250px; overflow: hidden;">
+        <img src="{{ url_for('static', filename=filePathName) }}" alt='Image' style="width: 100%; height: auto;">
+    </div>
+    <div>
+        <h4><b>Overview about the disease:</b> {{ about }}</h4>
+        <h4><b>Recommended Treatments:</b> {{ medicine }}</h4>
+        <h4><b>Home Remedies:</b> {{ remedies }}</h4>
+    </div>
+{% elif error %}
+    <!-- Display error message if there is an issue -->
+    <h4 style="color: red;">{{ error }}</h4>
+{% endif %}
+
+<br>
+
+{% endblock %}
