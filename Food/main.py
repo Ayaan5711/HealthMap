@@ -44,8 +44,8 @@ disease = st.text_input("Enter your disease (if any):")
 input_prompt = f"""
 You are an expert in nutritionist. Analyze the food items from the image and provide the nutritional value in the following format:
 
-1. Item 1 - Nutritional value
-2. Item 2 - Nutritional value
+1. Item 1 - Nutritional value with Estimated Macro and Micro Nutrients 
+2. Item 2 - Nutritional value with Estimated Macro and Micro Nutrients 
 ----
 ----
 
