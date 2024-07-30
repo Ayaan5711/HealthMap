@@ -1,0 +1,129 @@
+nav {
+    width: 100%;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: var(--shadow-2);
+    /* max-height: 100vh; */
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.nav-toggle {
+    font-size: 1.5rem;
+    color: var(--primary-900);
+    background: transparent;
+    border: transparent;
+    transition: var(--transition);
+    cursor: pointer;
+    outline: none;
+}
+
+.nav-toggle:hover {
+    color: var(--primary-700);
+}
+
+/* 
+.logo {
+    height: 40px;
+} */
+
+.links a {
+    color: var(--grey-700);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: block;
+    padding: 0.5rem 1rem;
+    letter-spacing: var(--letter-spacing);
+    transition: var(--transition);
+}
+
+.links a:hover {
+    /* background: var(--primary-100); */
+    color: var(--primary-500);
+}
+
+.links-container {
+    /* height: 0; */
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.btnPredict {
+    background-color: var(--primary-700);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--white);
+    padding: 0.8rem 3rem;
+    letter-spacing: var(--letter-spacing);
+    border-radius: 50px;
+    border: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btnPredict:hover {
+    background-color: var(--primary-600);
+}
+
+@media screen and (max-width: 768px) {
+
+    .links {
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btnPredict {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-header {
+        padding: 0;
+    }
+
+    .nav-center {
+        /* max-width: 1170px; */
+        margin: 0 auto;
+        display: flex;
+        min-height: 10vh;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        /* border: 2px solid; */
+    }
+
+    .links-container {
+        height: auto !important;
+    }
+    
+    .links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .links a {
+        padding: 0;
+    }
+
+    .links a:hover {
+        padding: 0;
+        background: transparent;
+    }
+}
