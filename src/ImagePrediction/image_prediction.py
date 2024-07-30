@@ -1,60 +1,216 @@
-import tensorflow as tf
-import numpy as np
+import torch
+import torch.nn as nn
+from torchvision import models, transforms
+from PIL import Image
+import torch.nn.functional as F
 
 class ImagePrediction:
 
+    def chest(self, image_path):
+        model = models.resnet50(pretrained=False)
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Linear(num_ftrs, 7)
+        model.load_state_dict(torch.load('src/image_models/chest_resnet50_model_state_dict.pth', map_location=torch.device('cpu')))
+        model.eval()
+
+        # Define image transformations
+        preprocess = transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ])
+        image = Image.open(image_path).convert('L')
+        image = Image.merge("RGB", (image, image, image))
+        image = preprocess(image)
+        image = image.unsqueeze(0)
+        with torch.no_grad():
+            output = model(image)
+            probabilities = F.softmax(output, dim=1)
+            _, predicted = torch.max(output, 1)
+
+        with open("src/classnames/chest.txt") as file:
+            data = file.readlines()
+        classes = []
+        for i in data:
+            classes.append(i.strip("\n"))
+
+        return classes[predicted.item()]
+    
+
+
+
+    def brain(self, image_path):
+        model = models.resnet50(pretrained=False)
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Linear(num_ftrs, 3)
+        model.load_state_dict(torch.load('src/image_models/brain_resnet50_model_state_dict.pth', map_location=torch.device('cpu')))
+        model.eval()
+
+        # Define image transformations
+        preprocess = transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ])
+        image = Image.open(image_path).convert('L')
+        image = Image.merge("RGB", (image, image, image))
+        image = preprocess(image)
+        image = image.unsqueeze(0)
+        with torch.no_grad():
+            output = model(image)
+            _, predicted = torch.max(output, 1)
+
+        with open("src/classnames/brain.txt") as file:
+            data = file.readlines()
+        classes = []
+        for i in data:
+            classes.append(i.strip("\n"))
+
+        return classes[predicted.item()]
+    
+
+
+
+
+    def malaria(self, image_path):
+        model = models.resnet50(pretrained=False)
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(num_ftrs, 1024),
+            nn.ReLU(),
+            nn.Dropout(0.5),
+            nn.Linear(1024, 256),
+            nn.ReLU(),
+            nn.Linear(256, 7),
+            nn.Softmax(dim=1)
+        )
+        model.load_state_dict(torch.load('src/image_models/malaria_resnet152_model_state_dict.pth', map_location=torch.device('cpu')))
+        model.eval()
+
+        # Define image transformations
+        preprocess = transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ])
+
+        image = Image.open(image_path).convert('L')
+        image = Image.merge("RGB", (image, image, image))
+        image = preprocess(image)
+        image = image.unsqueeze(0)
+        with torch.no_grad():
+            output = model(image)
+        _, predicted = torch.max(output, 1)
+
+        with open("src/classnames/malaria.txt") as file:
+            data = file.readlines()
+        classes = []
+        for i in data:
+            classes.append(i.strip("\n"))
+
+        return classes[predicted.item()]
+    
+
+
+
+    def skin(self, image_path):
+        model = models.googlenet(pretrained=False)
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(num_ftrs, 1024),
+            nn.ReLU(),
+            nn.Dropout(0.5),
+            nn.Linear(1024, 256),
+            nn.ReLU(),
+            nn.Linear(256, 7),
+            nn.Softmax(dim=1)
+        )
+        model.load_state_dict(torch.load('src/image_models/skin_googlenet_model_state_dict.pth', map_location=torch.device('cpu')))
+        model.eval()
+
+        # Define image transformations
+        preprocess = transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ])
+
+        image = Image.open(image_path).convert('L')
+        image = Image.merge("RGB", (image, image, image))
+        image = preprocess(image)
+        image = image.unsqueeze(0)
+        with torch.no_grad():
+            output = model(image)
+        _, predicted = torch.max(output, 1)
+
+        with open("src/classnames/skin.txt") as file:
+            data = file.readlines()
+        classes = []
+        for i in data:
+            classes.append(i.strip("\n"))
+
+        return classes[predicted.item()]
+
+
+
+
+
     def predict(self,image_path):
 
-        result = ""
-        img=tf.keras.preprocessing.image.load_img(image_path,target_size = (224, 224))
+        # Load the trained model
+        model = models.inception_v3(pretrained=False)
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Linear(num_ftrs, 4)
 
-        model = tf.keras.models.load_model('image_models/Chest_Brain_ResNet50_V2.h5')
 
-        x=tf.keras.preprocessing.image.img_to_array(img)
-        x = np.expand_dims(x, axis=0)  # Add a batch dimension
-        x = x / 255.0
-        prediction = model.predict(x)
-        index = np.argmax(prediction)
-        class_names = ["Chest","Brain"]
-        class_name = class_names[index]
-        confidence_score = prediction[0][index]
+        model.load_state_dict(torch.load('src/image_models/brain_chest_malaria_skin_inception_v3_model_state_dict.pth', map_location=torch.device('cpu')))
+        model.eval()
 
-        if class_name == 'Chest' and confidence_score >= 0.85:
-            chest_model = tf.keras.models.load_model('image_models/ChestV3_ResNet201_V2.h5')
-            chest_prediction = chest_model.predict(x)
-            chest_index = np.argmax(chest_prediction)
-            chest_class_names = ["Atelectasis","Effusion","Infiltration","Nodule","Pleural Thickening","Pneumonia","Pneumothorax"]
-            chest_class_name = chest_class_names[chest_index]
-            chest_confidence_score = prediction[0][chest_index]
-            if chest_confidence_score >= 0.3:
-                result = chest_class_name
+        # Define image transformations
+        preprocess = transforms.Compose([
+            transforms.Resize(299),
+            transforms.CenterCrop(299),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ])
+
+        image = Image.open(image_path).convert('L')
+        image = Image.merge("RGB", (image, image, image))
+        image = preprocess(image)
+        image = image.unsqueeze(0)
+        with torch.no_grad():
+            output = model(image)
+            probabilities = F.softmax(output, dim=1)
+            _, predicted = torch.max(output, 1)
+            prob = probabilities[0][predicted].item()
+            if prob > 0.3:
+                if predicted.item() == 0:
+                    prediction = "Brain"
+                    chest_pred = self.brain(image_path=image_path)
+                    return chest_pred,prediction
+
+                elif predicted.item() == 1:
+                    prediction = "Chest"
+                    brain_pred = self.chest(image_path=image_path)
+                    return brain_pred,prediction
+
+                elif predicted.item() == 2:
+                    prediction = "Malaria"
+                    malaria_pred = self.malaria(image_path=image_path)
+                    return malaria_pred,prediction
+                
+                elif predicted.item() == 3:
+                    prediction = "Skin"
+                    skin_pred = self.skin(image_path=image_path)
+                    return skin_pred,prediction
+
             else:
-                result = "None"
-
-            return result, chest_class_name
-            
-
-
+                return "Sorry!, we don't have that disease in out database."
 
         
-        elif class_name == 'Brain' and confidence_score >= 0.85:
-            brain_model = tf.keras.models.load_model('image_models/BrainV3_ResNet201.h5')
-            brain_prediction = brain_model.predict(x)
-            brain_index = np.argmax(brain_prediction)
-            brain_class_names = ["Glioma","Meningioma","Pituitary"]
-            brain_class_name = brain_class_names[index]
-            brain_confidence_score = brain_prediction[0][brain_index]
-            if brain_confidence_score >= 0.4:
-                result = brain_class_name
-            else:
-                result = "None"
-
-            return result, brain_class_name
-            
-
-
-
-
-        else:
-            result = "None"
-            return result , "None"

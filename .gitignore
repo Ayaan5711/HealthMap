@@ -64,6 +64,6 @@ instance/
 node_modules
 
 
-image_models/
 static/uploads/
 logs/
+src/image_models

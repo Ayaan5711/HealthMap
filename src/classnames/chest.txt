@@ -1,0 +1,7 @@
+Atelectasis
+Effusion
+Infiltration
+Nodule
+Pleural_Thickening
+Pneumonia
+Pneumothorax

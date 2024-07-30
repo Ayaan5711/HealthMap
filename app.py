@@ -23,6 +23,7 @@ from src.alternativedrug.AlternativeDrug import AlternateDrug
 from src.Prediction.disease_predictions import ModelPipeline
 from src.Insurance.Insurance import Insurance_Prediction
 from src.ImagePrediction.image_prediction import ImagePrediction
+from src.llm_report.Report import report_generator
 
 app = Flask(__name__)
 
@@ -238,103 +239,14 @@ def disease_image_input():
 
             model = ImagePrediction()
             pred, class_name = model.predict(img)
+            llm = report_generator()
+            response = llm.report(pred,class_name)
+            
 
-            return render_template("disease_image_input.html", pediction=pred, class_name=class_name)
+            return render_template("disease_image_input.html", response = response)
         return render_template("disease_image_input.html")
     return render_template("disease_image_input.html")
     
-
-
-
-
-
-
-@app.route("/malaria", methods=['POST', 'GET'])
-def malaria():
-    try:
-        if request.method == 'POST':
-            img = Image.open(request.files['image'])
-            img = img.resize((36,36))
-            img = np.asarray(img)
-            img = img.reshape((1,36,36,3))
-            img = img.astype(np.float64)
-            model = load_model("src/models/malaria.h5")
-            pred = np.argmax(model.predict(img)[0])
-            return render_template('malaria.html', pediction_malaria=pred)
-        else:
-            return render_template('malaria.html')
-    except Exception as e:
-        lg.error(f"Error in /malaria route: {e}")
-        raise CustomException(e, sys)
-
-@app.route("/pneumonia", methods=['POST', 'GET'])
-def pneumonia():
-    try:
-        if request.method == 'POST':
-            img = Image.open(request.files['image']).convert('L')
-            img = img.resize((36,36))
-            img = np.asarray(img)
-            img = img.reshape((1,36,36,1))
-            img = img / 255.0
-            model = load_model("src/models/pneumonia.h5")
-            pred = np.argmax(model.predict(img)[0])
-            return render_template('pneumonia.html', pediction_pneumonia=pred)
-        else:
-            return render_template('pneumonia.html')
-    except Exception as e:
-        lg.error(f"Error in /pneumonia route: {e}")
-        raise CustomException(e, sys)
-
-model = load_model('src/models/braintumor.h5')
-
-@app.route('/brain', methods=['GET', 'POST'])
-def brain():
-    try:
-        if request.method == 'POST':
-            img = request.files['image']
-            img_bytes = img.read()
-            img_array = np.array(bytearray(img_bytes), dtype=np.uint8)
-            img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
-            img = cv2.resize(img, (300, 300))
-            img_array = np.expand_dims(img, axis=0)
-            img_array = np.expand_dims(img_array, axis=-1)
-            predictions = model.predict(img_array)
-            indices = np.argmax(predictions)
-            probabilities = np.max(predictions)
-            labels = ['glioma_tumor', 'meningioma_tumor', 'no_tumor', 'pituitary_tumor']
-            result = {'label': labels[indices], 'probability': round(float(probabilities) * 100)}
-            return render_template("brain.html", prediction_text_brain=result)
-        else:
-            return render_template("brain.html")
-    except Exception as e:
-        lg.error(f"Error in /brain route: {e}")
-        raise CustomException(e, sys)
-
-def get_treatment(path):
-    with open(path) as f:
-        return json.load(f)
-
-treatment_dict = get_treatment("skin_disorder.json")
-
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'png', 'jpg', 'jpeg'}
-
-def is_skin(img):
-    hsv = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
-    lower_skin = np.array([0, 20, 70], dtype=np.uint8)
-    upper_skin = np.array([20, 255, 255], dtype=np.uint8)
-    mask = cv2.inRange(hsv, lower_skin, upper_skin)
-    skin_pixels = np.sum(mask > 0)
-    skin_percent = skin_pixels / (img.shape[0] * img.shape[1]) * 100
-    return skin_percent > 5
-
-@app.route('/skin', methods=['GET', 'POST'])
-def skin():
-    try:
-        return render_template('skin.html')
-    except Exception as e:
-        lg.error(f"Error in /skin route: {e}")
-        raise CustomException(e, sys)
 
 if __name__ == '__main__':
     app.run(debug=True)
