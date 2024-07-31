@@ -49,7 +49,7 @@ You are an expert in nutritionist. Analyze the food items from the image and pro
 ----
 ----
 
-Based on the nutritional value and the disease "{disease}", tell me if this meal is good or bad for the user. Explain your reasoning.
+Based on the nutritional value and the disease "{disease}", tell me if this meal is good or bad for the user. Explain your reasoning. If the user does not provide any disease request the user to input proper disease name so that you can help them.
 """
 
 submit = st.button("Analyze Meal")
