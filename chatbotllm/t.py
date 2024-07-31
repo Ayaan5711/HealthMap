@@ -51,7 +51,6 @@ You will respond to the user's queries by leveraging your medical knowledge and 
 Context: {context}
 Chat History: {chat_history}
 Question: {question}
-Messages: {messages}
 Answer: {response}
 """
 
@@ -94,11 +93,10 @@ async def user_input(user_question, chat_history):
     response = chain.run({
         "context": docs, 
         "chat_history": chat_history, 
-        "question": user_question,
-        "messages": st.session_state.messages
+        "question": user_question
      })
     
-    return response
+    return responsee
 
 def main():
     st.set_page_config(page_title="Health", page_icon=":hospital:")
