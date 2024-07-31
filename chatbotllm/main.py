@@ -52,19 +52,31 @@ Context: {context}
 Chat History: {chat_history}
 Question: {question}
 Messages: {messages}
-Answer:
+Answer: {answer}
 """
 
     
     # Instantiate the language model
     model = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash-latest", 
+        model="gemini-1.5-flash", 
         temperature=0.3, 
         system_instruction="You are Healy, a highly experienced healthcare professional providing medical advice based on current medical knowledge and best practices. You will respond to the user's queries by leveraging your medical expertise and the Context Provided."
     )
+    messages = [
+    ("system", "You are a helpful AI health assistant..."),  # System message
+    ("user", "{question}"),  # User message
+    ("assistant", "{answer}")  # Assistant message
+    ]
+
+    # Create the prompt template
+    prompt = ChatPromptTemplate(
+    template=prompt_template,
+    input_variables=["context", "chat_history", "question"],
+    messages=messages
+    )
 
     # Create the prompt
-    prompt = ChatPromptTemplate(template=prompt_template, input_variables=["context", "chat_history", "question","messages"])
+    #prompt = ChatPromptTemplate(template=prompt_template, input_variables=["context", "chat_history", "question","messages"])
     
     # Correctly instantiate LLMChain with the concrete model
     chain = LLMChain(llm=model, prompt=prompt)  
@@ -84,7 +96,7 @@ async def user_input(user_question, chat_history):
         "chat_history": chat_history, 
         "question": user_question,
         "messages": st.session_state.messages
-    })
+     })
     
     return response
 

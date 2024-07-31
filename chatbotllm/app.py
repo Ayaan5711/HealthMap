@@ -52,7 +52,7 @@ def get_conversational_chain():
     Answer:
     """
     model = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash-latest", 
+        model="gemini-1.5-flash", 
         temperature=0.3, 
         system_instruction="You are Healy, a highly experienced healthcare professional providing medical advice based on current medical knowledge and best practices. You will respond to the user's queries by leveraging your medical expertise and the Context Provided.")
     prompt = ChatPromptTemplate(template=prompt_template, input_variables=["context", "chat_history", "question"])
