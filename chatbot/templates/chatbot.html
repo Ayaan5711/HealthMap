@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+        #chat-box {
+            width: 90%;
+            max-width: 600px;
+            height: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            margin-top: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #chat-box .message {
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 75%;
+            display: flex;
+            flex-direction: column;
+        }
+        #chat-box .user-message {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+        }
+        #chat-box .assistant-message {
+            background-color: #f1f0f0;
+            align-self: flex-start;
+        }
+        #chat-form {
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        #question {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #loading {
+            display: none;
+            align-self: center;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Health Assistant</h1>
+    <div id="chat-box"></div>
+    <form id="chat-form">
+        <input type="text" id="question" name="question" placeholder="Type your health-related question here..." required>
+        <input type="hidden" id="history" name="history" value="">
+        <button type="submit">Send</button>
+    </form>
+    <div id="loading">Loading...</div>
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const question = document.getElementById('question').value;
+            const history = document.getElementById('history').value;
+
+            const chatBox = document.getElementById('chat-box');
+            const loading = document.getElementById('loading');
+
+            // Show loading indicator
+            loading.style.display = 'block';
+
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    question: question,
+                    history: history
+                })
+            });
+
+            const result = await response.json();
+
+            // Hide loading indicator
+            loading.style.display = 'none';
+
+            const userMessage = document.createElement('div');
+            userMessage.innerHTML = `<b>User:</b><br>${question}`;
+            userMessage.classList.add('message', 'user-message');
+            const assistantMessage = document.createElement('div');
+            assistantMessage.innerHTML = `<b>Assistant:</b><br>${result}`;
+            assistantMessage.classList.add('message', 'assistant-message');
+
+            chatBox.appendChild(userMessage);
+            chatBox.appendChild(assistantMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;  // Scroll to the bottom of the chat box
+            document.getElementById('question').value = '';
+            document.getElementById('history').value += `User: ${question}\nAssistant: ${result}\n`;
+        });
+
+        document.getElementById('question').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                document.querySelector('button[type="submit"]').click();
+            }
+        });
+    </script>
+</body>
+</html>

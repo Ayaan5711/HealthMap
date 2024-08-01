@@ -38,6 +38,7 @@
 
   <body>
     <!--::header part start::-->
+    {% include 'food_analyzer.html' %}
     <header class="main_menu home_menu">
       <div class="container">
         <div class="row align-items-center">
@@ -90,7 +91,6 @@
                       Multi-Disease
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      
                       <a class="dropdown-item" href="{{url_for('kidney')}}"
                         >Kidney</a
                       >
@@ -109,8 +109,10 @@
                       <a class="dropdown-item" href="{{url_for('breast')}}"
                         >Breast Cancer</a
                       >
-                      
-                      <a class="dropdown-item" href="{{url_for('disease_image_input')}}"
+
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('disease_image_input')}}"
                         >Disease Prediction using image</a
                       >
                     </div>
@@ -136,9 +138,7 @@
                         href="{{url_for('alternativedrug')}}"
                         >Alternative Drug</a
                       >
-                      <a
-                        class="dropdown-item"
-                        href="{{url_for('drugresponse')}}"
+                      <a class="dropdown-item" href="{{url_for('drugres')}}"
                         >Drug Response</a
                       >
                     </div>
@@ -147,17 +147,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('insurance') }}"
                       >Insurance</a
-                    >
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('contact')}}"
-                      >Contact</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('developer')}}"
-                      >developer</a
                     >
                   </li>
                 </ul>

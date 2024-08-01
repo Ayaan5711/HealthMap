@@ -1,8 +1,9 @@
-from flask import Flask, request, render_template, session, url_for, redirect
+from flask import Flask, request, render_template, session, url_for, redirect, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import numpy as np
 import cv2
 import os
+import asyncio
 import sys
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
@@ -30,6 +31,7 @@ from src.Insurance.Insurance import Insurance_Prediction
 from src.DrugResponse.drugresponse import report_generator2
 from src.llm_report.Report import report_generator
 from src.Food.food import food_report_generator
+from chatbot.src.ChatBot.chatbot import ingest_data,user_input
 
 
 current_dir = os.path.abspath(os.path.dirname(__file__))
@@ -502,6 +504,21 @@ def food():
     return render_template('food-input.html')
 
 
+
+
+@app.route('/chatbot')
+def chatbot():
+    if not os.path.exists("Faiss"):
+        ingest_data()
+        return redirect(url_for('chatbot'))
+    return render_template('chatbot.html')
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_question = request.form['question']
+    chat_history = request.form['history']
+    response = asyncio.run(user_input(user_question, chat_history))
+    return jsonify(response)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=5000)

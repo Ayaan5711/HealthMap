@@ -38,6 +38,7 @@
 
   <body>
     <!--::header part start::-->
+    {% include 'food_analyzer.html' %}
     <header class="main_menu home_menu">
       <div class="container">
         <div class="row align-items-center">
@@ -90,7 +91,6 @@
                       Multi-Disease
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      
                       <a class="dropdown-item" href="{{url_for('kidney')}}"
                         >Kidney</a
                       >
@@ -109,8 +109,10 @@
                       <a class="dropdown-item" href="{{url_for('breast')}}"
                         >Breast Cancer</a
                       >
-                      
-                      <a class="dropdown-item" href="{{url_for('disease_image_input')}}"
+
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('disease_image_input')}}"
                         >Disease Prediction using image</a
                       >
                     </div>
@@ -136,9 +138,7 @@
                         href="{{url_for('alternativedrug')}}"
                         >Alternative Drug</a
                       >
-                      <a
-                        class="dropdown-item"
-                        href="{{url_for('drugresponse')}}"
+                      <a class="dropdown-item" href="{{url_for('drugres')}}"
                         >Drug Response</a
                       >
                     </div>
@@ -147,17 +147,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('insurance') }}"
                       >Insurance</a
-                    >
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('contact')}}"
-                      >Contact</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('developer')}}"
-                      >developer</a
                     >
                   </li>
                 </ul>
@@ -231,127 +220,204 @@
               </div>
               <div class="card shadow-sm">
                 <div class="card-body">
-
-                  <form class="form-horizontal" action="{{ url_for('heart') }}" method="POST">
+                  <form
+                    class="form-horizontal"
+                    action="{{ url_for('heart') }}"
+                    method="POST"
+                  >
                     <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control border-dark" type="number" name="Age" placeholder="Age" required />
-                            </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            class="form-control border-dark"
+                            type="number"
+                            name="Age"
+                            placeholder="Age"
+                            required
+                          />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <select class="form-control border-dark" name="Sex" required>
-                                    <option value="">Sex</option>
-                                    <option value="0">Female</option>
-                                    <option value="1">Male</option>
-                                </select>
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <select
+                            class="form-control border-dark"
+                            name="Sex"
+                            required
+                          >
+                            <option value="">Sex</option>
+                            <option value="0">Female</option>
+                            <option value="1">Male</option>
+                          </select>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <select class="form-control border-dark" name="ChestPain" required>
-                                    <option value="">Chest Pain Type</option>
-                                    <option value="0">Asymptomatic</option>
-                                    <option value="1">Non-anginal</option>
-                                    <option value="2">Non-typical</option>
-                                    <option value="3">Typical</option>
-                                </select>
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <select
+                            class="form-control border-dark"
+                            name="ChestPain"
+                            required
+                          >
+                            <option value="">Chest Pain Type</option>
+                            <option value="0">Asymptomatic</option>
+                            <option value="1">Non-anginal</option>
+                            <option value="2">Non-typical</option>
+                            <option value="3">Typical</option>
+                          </select>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control border-dark" type="number" name="RestBP" placeholder="Resting Blood Pressure (mm Hg)" required />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            class="form-control border-dark"
+                            type="number"
+                            name="RestBP"
+                            placeholder="Resting Blood Pressure (mm Hg)"
+                            required
+                          />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control border-dark" type="number" name="Chol" placeholder="Serum Cholesterol (mg/dl)" required />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            class="form-control border-dark"
+                            type="number"
+                            name="Chol"
+                            placeholder="Serum Cholesterol (mg/dl)"
+                            required
+                          />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <select class="form-control border-dark" name="Fbs" required>
-                                    <option value="">Fasting Blood Sugar > 120 mg/dl</option>
-                                    <option value="0">False</option>
-                                    <option value="1">True</option>
-                                </select>
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <select
+                            class="form-control border-dark"
+                            name="Fbs"
+                            required
+                          >
+                            <option value="">
+                              Fasting Blood Sugar > 120 mg/dl
+                            </option>
+                            <option value="0">False</option>
+                            <option value="1">True</option>
+                          </select>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control border-dark" type="number" name="RestECG" placeholder="Resting ECG Results" required />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            class="form-control border-dark"
+                            type="number"
+                            name="RestECG"
+                            placeholder="Resting ECG Results"
+                            required
+                          />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control border-dark" type="number" name="MaxHR" placeholder="Max Heart Rate Achieved" required />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            class="form-control border-dark"
+                            type="number"
+                            name="MaxHR"
+                            placeholder="Max Heart Rate Achieved"
+                            required
+                          />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <select class="form-control border-dark" name="ExAng" required>
-                                    <option value="">Exercise Induced Angina</option>
-                                    <option value="0">No</option>
-                                    <option value="1">Yes</option>
-                                </select>
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <select
+                            class="form-control border-dark"
+                            name="ExAng"
+                            required
+                          >
+                            <option value="">Exercise Induced Angina</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                          </select>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control border-dark" type="number" step="any" name="Oldpeak" placeholder="ST Depression Induced by Exercise" required />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            class="form-control border-dark"
+                            type="number"
+                            step="any"
+                            name="Oldpeak"
+                            placeholder="ST Depression Induced by Exercise"
+                            required
+                          />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control border-dark" type="number" name="Slope" placeholder="Slope of Peak Exercise ST Segment" required />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            class="form-control border-dark"
+                            type="number"
+                            name="Slope"
+                            placeholder="Slope of Peak Exercise ST Segment"
+                            required
+                          />
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control border-dark" type="number" name="Ca" placeholder="Major Vessels Colored by Fluoroscopy (0-3)" required />
-                            </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input
+                            class="form-control border-dark"
+                            type="number"
+                            name="Ca"
+                            placeholder="Major Vessels Colored by Fluoroscopy (0-3)"
+                            required
+                          />
                         </div>
-                        <div class="col-md-6 offset-md-3">
-                            <div class="form-group">
-                                <select class="form-control border-dark" name="Thal" required>
-                                    <option value="">Thalassemia</option>
-                                    <option value="0">Fixed</option>
-                                    <option value="1">Normal</option>
-                                    <option value="2">Reversable</option>
-                                </select>
-                            </div>
+                      </div>
+                      <div class="col-md-6 offset-md-3">
+                        <div class="form-group">
+                          <select
+                            class="form-control border-dark"
+                            name="Thal"
+                            required
+                          >
+                            <option value="">Thalassemia</option>
+                            <option value="0">Fixed</option>
+                            <option value="1">Normal</option>
+                            <option value="2">Reversable</option>
+                          </select>
                         </div>
+                      </div>
                     </div>
                     <div class="row justify-content-center mt-4">
-                        <button type="submit" value="Predict" class="btn_3">Predict</button>
+                      <button type="submit" value="Predict" class="btn_3">
+                        Predict
+                      </button>
                     </div>
-                </form>
-
-
+                  </form>
                 </div>
               </div>
             </div>
           </div>
           {% if prediction_text is not none %}
           <div class="col-md-8 mt-4">
-              {% if prediction_text == 1 %}
-                  <div class="card shadow-sm alert alert-danger">
-                      <div class="card-body">
-                          <center><h3>Sorry! Please consult a DOCTOR. You might have Atherosclerotic Heart Disease.</h3></center>
-                      </div>
-                  </div>
-              {% elif prediction_text == 0 %}
-                  <div class="card shadow-sm alert alert-success">
-                      <div class="card-body">
-                          <center><h3>Great! You are HEALTHY.</h3></center>
-                      </div>
-                  </div>
-              {% endif %}
-        </div>
-    {% endif %}
-
-
+            {% if prediction_text == 1 %}
+            <div class="card shadow-sm alert alert-danger">
+              <div class="card-body">
+                <center>
+                  <h3>
+                    Sorry! Please consult a DOCTOR. You might have
+                    Atherosclerotic Heart Disease.
+                  </h3>
+                </center>
+              </div>
+            </div>
+            {% elif prediction_text == 0 %}
+            <div class="card shadow-sm alert alert-success">
+              <div class="card-body">
+                <center><h3>Great! You are HEALTHY.</h3></center>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
         </div>
       </div>
     </section>

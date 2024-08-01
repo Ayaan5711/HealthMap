@@ -1,0 +1,56 @@
+.drug_response_heading {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 15px;
+
+  margin-bottom: 15px;
+}
+
+.drug_response_subheading {
+  font-size: 20px;
+  font-weight: 600;
+
+}
+
+@media (min-width: 768px) {
+  .drug_response_heading {
+    font-size: 50px;
+
+  }
+
+  .drug_response_subheading {
+    font-size: 30px;
+  }
+
+}
+
+
+
+
+
+.form-label {
+  display: block;
+  font-size: 1.25rem;
+  font-family: 'Lato', sans-serif;
+  color: #333333;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border: 1px solid #333333;
+  color: #333333;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.form-textarea {
+  height: 9rem;
+}
