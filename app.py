@@ -28,7 +28,7 @@ from src.logger import logging as lg
 from src.disease_prediction.disease_prediction import DiseasePrediction
 from src.alternativedrug.AlternativeDrug import AlternateDrug
 from src.Prediction.disease_predictions import ModelPipeline
-from src.Insurance.Insurance import Insurance_Prediction
+from src.Insurance.insurance_calculator import calculate_insurance_price
 # from src.ImagePrediction.image_prediction import ImagePrediction
 from src.DrugResponse.drugresponse import report_generator2
 from src.llm_report.Report import report_generator
@@ -426,17 +426,13 @@ def parkinsons():
 
 @app.route('/insurance', methods=['GET', 'POST'])
 def insurance():
-    try:
-        if request.method == 'POST':
-            form_data = request.form.to_dict()
-            model = Insurance_Prediction()
-            policy, policy_price = model.insurance_predict(form_data=form_data)
-            return render_template("insurance.html", policy=policy, policy_price=policy_price)
-        else:
-            return render_template("insurance.html")
-    except Exception as e:
-        lg.error(f"Error in /insurance route: {e}")
-        raise CustomException(e, sys)
+    if request.method == 'POST':
+        form_data = request.form.to_dict()
+        insurance_price = calculate_insurance_price(form_data)
+        
+        return render_template("insurance.html", insurance_price = insurance_price)
+    else:
+        return render_template("insurance.html")
     
 @app.route('/multi_disease')
 def multi_disease():
