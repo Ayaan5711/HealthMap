@@ -69,41 +69,41 @@
             <strong>Phone:</strong> {{ data.phone }}<br />
             <strong>Email:</strong> {{ data.email }}<br />
           </p>
-          <div class="section-title">Symptoms:</div>
+          <div class="section-title">⦾ Symptoms:</div>
           <p class="card-text">
             {{ data.symp1 }}, {{ data.symp2 }}, {{ data.symp3 }}, {{ data.symp4
             }}
           </p>
 
-          <div class="section-title">Disease</div>
+          <div class="section-title">⦾ Disease</div>
           {% for disease in disease %} {% if disease.d_id == data.id %}
           <p class="card-text">{{ disease.disease }}</p>
           {% endif %} {% endfor %}
 
-          <div class="section-title">Description</div>
+          <div class="section-title">⦾ Description</div>
           {% for description in description %} {% if description.des_id ==
           data.id %}
           <p class="card-text">{{ description.description }}</p>
           {% endif %} {% endfor %}
 
-          <div class="section-title">Precautions</div>
+          <div class="section-title">⦾ Precautions</div>
           {% for precaution in precautions %} {% if precaution.p_id == data.id
           %}
           <p class="card-text">• {{ precaution.precaution }}</p>
           {% endif %} {% endfor %}
 
-          <div class="section-title">Medications</div>
+          <div class="section-title">⦾ Medications</div>
           {% for medication in medications %} {% if medication.m_id == data.id
           %}
           <p class="card-text">• {{ medication.medication }}</p>
           {% endif %} {% endfor %}
 
-          <div class="section-title">Workouts</div>
+          <div class="section-title">⦾ Workouts</div>
           {% for workout in workout %} {% if workout.w_id == data.id %}
           <p class="card-text">• {{ workout.workout }}</p>
           {% endif %} {% endfor %}
 
-          <div class="section-title">Diet</div>
+          <div class="section-title">⦾ Diet</div>
           {% for diet in diet %} {% if diet.di_id == data.id %}
           <p class="card-text">• {{ diet.diet }}</p>
           {% endif %} {% endfor %}
@@ -111,7 +111,7 @@
       </div>
       {% endfor %}
 
-      <a href="/" class="btn btn-primary">Back Home</a>
+      <a href="/" class="btn btn_3 text-center">Back Home</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

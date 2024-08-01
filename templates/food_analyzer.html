@@ -38,6 +38,7 @@
         position: fixed;
         top: 50%;
         left: 50%;
+        min-width: 600px;
         transform: translate(-50%, -50%);
         background-color: white;
         padding: 20px;
@@ -118,21 +119,30 @@
     <div class="overlay" id="overlay" onclick="closeFoodAnalyzer()"></div>
 
     <div class="food-analyzer-form" id="foodAnalyzerForm">
-      <h1>Food Analyzer</h1>
+      <h1 class="text-center" style="font-weight: 600">Food Analyzer</h1>
       <form
         action="{{ url_for('food') }}"
         method="post"
         enctype="multipart/form-data"
+        style="display: flex; flex-direction: column; align-items: center"
       >
-        <label for="file">Upload a photo of your meal:</label>
-        <input type="file" id="file" name="file" accept="image/*" required />
+        <div style="width: 100%; display: flex; flex-direction: column">
+          <label for="file" style="font-weight: 600"
+            >Upload a photo of your meal:</label
+          >
+          <input type="file" id="file" name="file" accept="image/*" required />
 
-        <label for="disease">Enter your disease (if any):</label>
-        <input type="text" id="disease" name="disease" />
+          <label for="disease" style="font-weight: 600"
+            >Enter your disease (if any):</label
+          >
+          <input type="text" id="disease" name="disease" />
+        </div>
 
-        <input type="submit" value="Analyze Meal" />
+        <input type="submit" class="btn_2" value="Analyze Meal" />
       </form>
-      <button onclick="closeFoodAnalyzer()">Close</button>
+      <button onclick="closeFoodAnalyzer()" class="text-center btn_3">
+        Close
+      </button>
     </div>
 
     <script>
