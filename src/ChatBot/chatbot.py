@@ -30,9 +30,9 @@ def create_vector_store(text_chunks):
     vector_store.save_local("Faiss")
 
 def ingest_data():
-<<<<<<< HEAD:src/ChatBot/chatbot.py
+
     pdf_files = [os.path.join("dataset2", file) for file in os.listdir("dataset2") if file.endswith(".pdf")]
-=======
+
     dataset_dir = "dataset2"
     
     # Check if the directory exists
@@ -47,7 +47,6 @@ def ingest_data():
         print("No PDF files found in the dataset directory.")
         return
     
->>>>>>> f0bb26111bb244a558c3108f427706aa93cd63c3:chatbot/src/ChatBot/chatbot.py
     raw_text = get_pdf_text(pdf_files)
     text_chunks = get_text_chunks(raw_text)
     create_vector_store(text_chunks)
