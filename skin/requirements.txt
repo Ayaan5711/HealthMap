@@ -1,8 +1,0 @@
-Flask
-flask_cors
-keras
-numpy
-pandas
-Pillow
-streamlit
-tensorflow

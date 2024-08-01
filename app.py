@@ -14,8 +14,10 @@ import json
 import logging
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-
-
+from src.ChatBot.chatbot import ingest_data,user_input
+import os
+import asyncio
+from flask import Flask, request, render_template, jsonify, redirect, url_for
 # Suppress warning
 warnings.filterwarnings("ignore", category=UserWarning, message="Trying to unpickle estimator")
 
@@ -27,11 +29,11 @@ from src.disease_prediction.disease_prediction import DiseasePrediction
 from src.alternativedrug.AlternativeDrug import AlternateDrug
 from src.Prediction.disease_predictions import ModelPipeline
 from src.Insurance.Insurance import Insurance_Prediction
-#from src.ImagePrediction.image_prediction import ImagePrediction
+# from src.ImagePrediction.image_prediction import ImagePrediction
 from src.DrugResponse.drugresponse import report_generator2
 from src.llm_report.Report import report_generator
 from src.Food.food import food_report_generator
-from chatbot.src.ChatBot.chatbot import ingest_data,user_input
+from src.ChatBot.chatbot import ingest_data,user_input
 
 
 current_dir = os.path.abspath(os.path.dirname(__file__))
