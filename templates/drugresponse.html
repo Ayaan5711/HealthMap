@@ -90,7 +90,6 @@
                       Multi-Disease
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      
                       <a class="dropdown-item" href="{{url_for('kidney')}}"
                         >Kidney</a
                       >
@@ -109,8 +108,10 @@
                       <a class="dropdown-item" href="{{url_for('breast')}}"
                         >Breast Cancer</a
                       >
-                      
-                      <a class="dropdown-item" href="{{url_for('disease_image_input')}}"
+
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('disease_image_input')}}"
                         >Disease Prediction using image</a
                       >
                     </div>
@@ -173,68 +174,106 @@
       </div>
     </header>
     <!-- Header part end-->
-     
+
     <!-- breadcrumb start-->
     <section class="breadcrumb_part breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item text-center">>
-                            <h2>Drug Response</h2>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcrumb_iner">
+              <div class="breadcrumb_iner_item text-center">
+                <h2>Drug Response</h2>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- breadcrumb start-->
 
     <!-- about us part start-->
-    <section style="text-align: center;">
-          <div>
-          <!-- <h3 > ON THE WAY</h1> -->
-            <h1>Welcome to the Drug Side Effects App</h1>
+    <section class="about_us2 section_padding">
+      <div class="container">
+        <div class="row justify-content-center mb-4">
+          <div class="col-12 text-center about_us_text2">
+            <h2>Fill Your Information Here:</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8 border p-4 shadow">
             <form method="post" action="/drugresponse">
-                <label for="drug_name">Enter Drug Name:</label>
-                <!-- <input type="text" id="drug_name" name="drug_name" required> -->
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <input
-                      class="form-control"
-                      type="text"
-                      name="drug_name"
-                      placeholder="Drug Name"
-                    />
-                  </div>
+              <div class="row g-3">
+                <div class="col-md-6 my-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Name"
+                    required
+                  />
                 </div>
-                <div class="row justify-content-center mt-3">
-                  <button type="submit" value="Predict" class="btn_3">
-                    Predict
-                  </button>
+                <div class="col-md-6 my-2">
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Age"
+                    required
+                  />
                 </div>
+                <div class="col-md-6 my-2">
+                  <select class="form-control" required>
+                    <option value="" disabled selected>Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="col-md-6 my-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Disease"
+                    required
+                  />
+                </div>
+                <div class="col-md-12 my-2">
+                  <label for="drug_name">Enter Drug Name:</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="drug_name"
+                    id="drug_name"
+                    placeholder="Drug Name"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center mt-3">
+                <button type="submit" value="Predict" class="btn_3">
+                  Predict
+                </button>
+              </div>
             </form>
             {% if side_effects %}
-                <h2>Side Effects:</h2>
-                {% if side_effects == "No data available for this drug." %}
-                    <p>{{ side_effects }}</p>
-                {% else %}
-                    <ul>
-                        {% for effect in side_effects %}
-                            <li>{{ effect }}</li>
-                        {% endfor %}
-                        <li>and many more..</li>
-                    </ul>
-                    
-                {% endif %}
+            <div class="mt-12 text-center pt-lg-5">
+              <h2>Side Effects:</h2>
+              {% if side_effects == "No data available for this drug." %}
+              <p>{{ side_effects }}</p>
+              {% else %}
+              <ul>
+                {% for effect in side_effects %}
+                <li>{{ effect }}</li>
+                {% endfor %}
+                <li>and many more...</li>
+              </ul>
+              {% endif %}
+            </div>
             {% endif %}
-                    
-              
+          </div>
         </div>
+      </div>
     </section>
-    <!-- about us part end-->
 
-    
+    <!-- about us part end-->
 
     <!-- footer part start-->
     <footer class="footer-area">
@@ -344,6 +383,5 @@
     <script src="js/contact.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-</body>
-
+  </body>
 </html>

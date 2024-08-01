@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, session, url_for, redirect
+from flask_sqlalchemy import SQLAlchemy
 import numpy as np
 import cv2
 import os
@@ -10,6 +11,9 @@ from PIL import Image
 import warnings
 import json
 import logging
+UPLOAD_FOLDER = 'static/uploads'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
 
 # Suppress warning
 warnings.filterwarnings("ignore", category=UserWarning, message="Trying to unpickle estimator")
@@ -22,10 +26,70 @@ from src.disease_prediction.disease_prediction import DiseasePrediction
 from src.alternativedrug.AlternativeDrug import AlternateDrug
 from src.Prediction.disease_predictions import ModelPipeline
 from src.Insurance.Insurance import Insurance_Prediction
-from src.ImagePrediction.image_prediction import ImagePrediction
+#from src.ImagePrediction.image_prediction import ImagePrediction
+from src.DrugResponse.drugresponse import report_generator
 from src.llm_report.Report import report_generator
+from src.Food.food import food_report_generator
+
+
+current_dir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///"+os.path.join(current_dir, "database2.sqlite3")
+app.config['SECRET_KEY'] = 'healthmap'
+db = SQLAlchemy()
+db.init_app(app)
+app.app_context().push()
+
+class Symptoms(db.Model):
+    __tablename__ = 'symptoms'
+    id = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True, unique=True)
+    fname = db.Column(db.String(30), nullable=False)
+    lname = db.Column(db.String(30), nullable=False)
+    phone = db.Column(db.String(13), nullable=False)
+    email = db.Column(db.String(40), nullable=False)
+    symp1 = db.Column(db.String(30), nullable=False)
+    symp2 = db.Column(db.String(30))
+    symp3 = db.Column(db.String(30))
+    symp4 = db.Column(db.String(30))
+
+
+class Precautions(db.Model):
+    __tablename__ = 'precautions'
+    sl = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True, unique=True)
+    p_id = db.Column(db.Integer, db.ForeignKey("symptoms.id"), nullable=False)
+    precaution = db.Column(db.String(30), nullable=False)
+
+class Medications(db.Model):
+    __tablename__ = 'medications'
+    sl = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True, unique=True)
+    m_id = db.Column(db.Integer, db.ForeignKey("symptoms.id"), nullable=False)
+    medication = db.Column(db.String(30), nullable=False)
+
+class Disease(db.Model):
+    __tablename__ = 'disease'
+    sl = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True, unique=True)
+    d_id = db.Column(db.Integer, db.ForeignKey("symptoms.id"), nullable=False)
+    disease = db.Column(db.String(30), nullable=False)
+
+class Diet(db.Model):
+    __tablename__ = 'diet'
+    sl = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True, unique=True)
+    di_id = db.Column(db.Integer, db.ForeignKey("symptoms.id"), nullable=False)
+    diet = db.Column(db.String(30), nullable=False)
+
+class Workout(db.Model):
+    __tablename__ = 'workout'
+    sl = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True, unique=True)
+    w_id = db.Column(db.Integer, db.ForeignKey("symptoms.id"), nullable=False)
+    workout = db.Column(db.String(30), nullable=False)
+
+class Description(db.Model):
+    __tablename__ = 'description'
+    sl = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True, unique=True)
+    des_id = db.Column(db.Integer, db.ForeignKey("symptoms.id"), nullable=False)
+    description = db.Column(db.String(200), nullable=False)
+
 
 @app.route("/")
 def index():
@@ -52,22 +116,187 @@ def developer():
 def predict():
     try:
         if request.method == 'POST':
+            fname = request.form.get('fname')
+            lname = request.form.get('lname')
+            phone = request.form.get('phone')
+            email = request.form.get('email')
             symptom_1 = request.form.get('symptom_1')
             symptom_2 = request.form.get('symptom_2')
             symptom_3 = request.form.get('symptom_3')
             symptom_4 = request.form.get('symptom_4')
             symptoms_list = [symptom_1, symptom_2, symptom_3, symptom_4]
             
+            symp_list = Symptoms(fname=fname, lname=lname, phone=phone, email=email, symp1 = symptom_1, symp2 = symptom_2, symp3 = symptom_3, symp4 = symptom_4)
+            db.session.add(symp_list)
+            db.session.commit()
+
+            symptom_id = symp_list.id
+
             model = DiseasePrediction()
-            predicted_disease, dis_des, my_precautions, medications, rec_diet, workout, symptoms_dict = model.predict(symptoms_list=symptoms_list)
+            predicted_disease, dis_des, my_precautions, medications, rec_diet, rec_workout, symptoms_dict = model.predict(symptoms_list=symptoms_list)
+
+            for precaution in my_precautions:
+                if precaution and isinstance(precaution, str):
+                    precaution_entry = Precautions(p_id=symptom_id, precaution=precaution)
+                    db.session.add(precaution_entry)
+            db.session.commit()
+
+            for medication in medications:
+                if medication and isinstance(medication, str):
+                    medication_entry =Medications(m_id=symptom_id, medication=medication)
+                    db.session.add(medication_entry)
+            db.session.commit()
+
+            if predicted_disease and isinstance(predicted_disease, str):
+                disease_entry = Disease(d_id=symptom_id, disease=predicted_disease)
+                db.session.add(disease_entry)
+                db.session.commit()
+
+
+            if dis_des and isinstance(dis_des, str):
+                    description_entry =Description(des_id=symptom_id, description=dis_des)
+                    db.session.add(description_entry)
+            db.session.commit()
+
+            for workout in rec_workout:
+                if workout and isinstance(workout, str):
+                    workout_entry =Workout(w_id=symptom_id, workout=workout)
+                    db.session.add(workout_entry)
+            db.session.commit()
+
+            for diet in rec_diet:
+                if diet and isinstance(diet, str):
+                    diet_entry =Diet(di_id=symptom_id, diet=diet)
+                    db.session.add(diet_entry)
+            db.session.commit()
+
+
 
             return render_template('disease.html', predicted_disease=predicted_disease, dis_des=dis_des,
                                    my_precautions=my_precautions, medications=medications, my_diet=rec_diet,
-                                   workout=workout, symptoms_dict=symptoms_dict)
-        return render_template('disease.html', symptoms_dict=symptoms_dict)
+                                   my_workout=rec_workout, symptoms_dict=symptoms_dict,)
+        return render_template('disease.html', symptoms_dict=symptoms_dict,fname=fname,lname=lname,phone=phone,email=email)
     except Exception as e:
         lg.error(f"Error in /predict route: {e}")
         raise CustomException(e, sys)
+
+@app.route("/data")
+def data():
+    user_data = Symptoms.query.all()
+    disease=Disease.query.all()
+    description=Description.query.all()
+    precautions = Precautions.query.all()
+    medications=Medications.query.all()
+    workout=Workout.query.all()
+    diet=Diet.query.all()
+
+    return render_template("doctors.html", user_data=user_data,disease=disease,description=description, precautions=precautions, medications=medications,workout=workout,diet=diet)
+
+
+@app.route("/patient/<email>")
+def patient(email):
+    # email = Symptoms.email()
+    user_data = Symptoms.query.filter_by(email=email).all()
+    
+    disease=Disease.query.all()
+    description=Description.query.all()
+    precautions = Precautions.query.all()
+    medications=Medications.query.all()
+    workout=Workout.query.all()
+    diet=Diet.query.all()
+
+    return render_template("patient.html", email=email, user_data=user_data,disease=disease,description=description, precautions=precautions,medications=medications,workout=workout,diet=diet)
+
+@app.route("/findpatient")
+def findpatient():
+    return render_template("findpatient.html")
+
+
+@app.route("/update_precaution", methods=['POST'])
+def update_precaution():
+    precaution_id = request.form.get('precaution_id')
+    new_precaution = request.form.get('new_precaution')
+    
+    precaution = Precautions.query.filter_by(sl=precaution_id).first()
+    if precaution:
+        precaution.precaution = new_precaution
+        db.session.commit()
+
+    return redirect(url_for('data'))
+
+@app.route("/update_medication", methods=['POST'])
+def update_medication():
+    medication_id = request.form.get('medication_id')
+    new_medication = request.form.get('new_medication')
+    print(f"Medication ID: {medication_id}")
+    print(f"New Medication: {new_medication}")
+    
+    medication = Medications.query.filter_by(sl=medication_id).first()
+    if medication:
+        medication.medication = new_medication
+        db.session.commit()
+
+    return redirect(url_for('data'))
+
+@app.route("/update_disease", methods=['POST'])
+def update_disease():
+    disease_id = request.form.get('disease_id')
+    new_disease = request.form.get('new_disease')
+    
+    print(f"Disease ID: {disease_id}")
+    print(f"New Disease: {new_disease}")
+
+    # Fetch the disease record using the provided id
+    disease = Disease.query.filter_by(sl=disease_id).first()
+    
+    if disease:
+        disease.disease = new_disease  # Update the disease field
+        db.session.commit()  # Commit the changes to the database
+        print("Disease updated successfully")
+    else:
+        print("Disease not found")
+
+    return redirect(url_for('data'))
+
+
+    return redirect(url_for('data'))
+
+@app.route("/update_description", methods=['POST'])
+def update_description():
+    description_id = request.form.get('description_id')
+    new_description = request.form.get('new_description')
+    
+    description = Description.query.filter_by(sl=description_id).first()
+    if description:
+        description.description = new_description
+        db.session.commit()
+
+    return redirect(url_for('data'))
+
+@app.route("/update_workout", methods=['POST'])
+def update_workout():
+    workout_id = request.form.get('workout_id')
+    new_workout = request.form.get('new_workout')
+    print(f"workout ID: {workout_id}")
+    print(f"New workout: {new_workout}")
+    
+    workout = Workout.query.filter_by(sl=workout_id).first()
+    if workout:
+        workout.workout = new_workout
+        db.session.commit()
+
+    return redirect(url_for('data'))
+
+@app.route("/update_diet", methods=['POST'])
+def update_diet():
+    diet_id = request.form.get('diet_id')
+    new_diet = request.form.get('new_diet')
+    
+    diet = Diet.query.filter_by(sl=diet_id).first()
+    if diet:
+        diet.diet = new_diet
+        db.session.commit()
+    return redirect(url_for('data'))
 
 @app.route("/about")
 def about():
@@ -86,7 +315,7 @@ def drugresponse():
         if request.method == 'POST':
             drug_name = request.form.get('drug_name')
             side_effects = side_effects_data.get(drug_name, "No data available for this drug.")
-        return render_template("drugresponse.html", side_effects=side_effects)
+        return render_template("drug_response.html", side_effects=side_effects)
     except Exception as e:
         lg.error(f"Error in /drugresponse route: {e}")
         raise CustomException(e, sys)
@@ -246,9 +475,35 @@ def disease_image_input():
             return render_template("disease_image_input.html", response = response)
         return render_template("disease_image_input.html")
     return render_template("disease_image_input.html")
-    
+
+@app.route('/food', methods=['GET', 'POST'])
+def food():
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            if not os.path.exists(app.config['UPLOAD_FOLDER']):
+                os.makedirs(app.config['UPLOAD_FOLDER'])
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            file.save(file_path)
+            file = file_path
+
+        disease = request.form.get('disease')
+        if disease == "":
+            disease = None
+        else:
+            disease = disease.strip()  # Ensure it's a clean string
+
+        # Create an instance of the class
+        generator = food_report_generator()
+        
+        #Call the report method
+        response = generator.report(file, disease)
+        return render_template('food-output.html', response=response)
+    return render_template('food-input.html')
+
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True, port=5000)
     
 

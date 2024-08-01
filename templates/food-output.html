@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meal Analysis Result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .section-title {
+        font-size: 1.4em;
+        color: #444;
+        margin-bottom: 10px;
+      }
+      .section-content {
+        font-size: 1em;
+        color: #555;
+        line-height: 1.8;
+        white-space: pre-wrap; /* Allows formatting of new lines */
+      }
+      .recommendations {
+        background-color: #e9f5e9;
+        border-left: 5px solid #4caf50;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      .recommendations h2 {
+        color: #4caf50;
+      }
+      a.btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+      }
+      a.btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meal Analysis Result</h1>
+      <div class="section">
+        <div class="section-title">Detailed Analysis:</div>
+        <div class="section-content">
+          <!-- This is where dynamic content will be inserted -->
+          {{ response }}
+        </div>
+      </div>
+      <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+  </body>
+</html>

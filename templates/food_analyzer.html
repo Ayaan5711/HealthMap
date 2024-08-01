@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nutrition Health App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .food-icon {
+        width: 50px;
+        height: 50px;
+        background-color: #f39c12;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        font-size: 24px; /* Ensure the icon is large enough */
+        z-index: 1001;
+      }
+
+      .food-analyzer-form {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        z-index: 1002;
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+
+      .food-analyzer-form h1 {
+        margin-top: 0;
+      }
+
+      .food-analyzer-form form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .food-analyzer-form label,
+      .food-analyzer-form input[type="file"],
+      .food-analyzer-form input[type="text"],
+      .food-analyzer-form input[type="submit"] {
+        margin-bottom: 10px;
+      }
+
+      .food-analyzer-form input[type="file"],
+      .food-analyzer-form input[type="text"],
+      .food-analyzer-form input[type="submit"] {
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+      }
+
+      .food-analyzer-form input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      .food-analyzer-form input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .food-analyzer-form button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      .food-analyzer-form button:hover {
+        background-color: #c0392b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="food-icon" onclick="openFoodAnalyzer()">
+      <i class="fas fa-utensils"></i>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeFoodAnalyzer()"></div>
+
+    <div class="food-analyzer-form" id="foodAnalyzerForm">
+      <h1>Food Analyzer</h1>
+      <form
+        action="{{ url_for('food') }}"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="file">Upload a photo of your meal:</label>
+        <input type="file" id="file" name="file" accept="image/*" required />
+
+        <label for="disease">Enter your disease (if any):</label>
+        <input type="text" id="disease" name="disease" />
+
+        <input type="submit" value="Analyze Meal" />
+      </form>
+      <button onclick="closeFoodAnalyzer()">Close</button>
+    </div>
+
+    <script>
+      function openFoodAnalyzer() {
+        document.getElementById("foodAnalyzerForm").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+      }
+
+      function closeFoodAnalyzer() {
+        document.getElementById("foodAnalyzerForm").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
