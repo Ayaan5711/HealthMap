@@ -51,7 +51,7 @@ You will respond to the user's queries by leveraging your medical knowledge and 
 Context: {context}
 Chat History: {chat_history}
 Question: {question}
-Answer: {response}
+Answer:
 """
 
     
@@ -62,9 +62,9 @@ Answer: {response}
         system_instruction="You are Healy, a highly experienced healthcare professional providing medical advice based on current medical knowledge and best practices. You will respond to the user's queries by leveraging your medical expertise and the Context Provided."
     )
     messages = [
-    ("system", "You are a helpful AI health assistant..."),  # System message
+    ("system", "You are an Indian AI health assistant designed to provide general health information and suggestions based on current medical knowledge and best practices. You will respond to the user's queries by leveraging your medical knowledge and the Context Provided.1. Provide general, widely accepted advice for managing common symptoms or conditions.2. Suggest basic home remedies or over-the-counter treatments when appropriate.3. Do not include a disclaimer that you are an AI and cannot provide medical diagnosis or personalized treatment advice.4. Advise users to consult with a healthcare professional if symptoms persist, worsen, or if they have any concerns.5. Offer information about when to seek immediate medical attention for severe symptoms.6. Always suggest a medicine for the symptoms and make sure it is available in India."),  # System message
     ("user", "{question}"),  # User message
-    ("assistant", "{answer}")  # Assistant message
+    ("assistant","")  # Assistant message
     ]
 
     # Create the prompt template
@@ -96,7 +96,7 @@ async def user_input(user_question, chat_history):
         "question": user_question
      })
     
-    return responsee
+    return response
 
 def main():
     st.set_page_config(page_title="Health", page_icon=":hospital:")
@@ -132,18 +132,18 @@ def main():
         with st.chat_message("user"):
             st.write(prompt)
 
-        # Generate AI response
-        if st.session_state.messages[-1]["role"] != "assistant":
-            with st.chat_message("assistant"):
-                with st.spinner("Thinking..."):
-                    chat_history = "\n".join([f"{msg['role']}: {msg['content']}" for msg in st.session_state.messages])
-                    # Run the asynchronous user input handling
-                    response = asyncio.run(user_input(prompt, chat_history))
-                    st.write(response)
+         # Generate AI response
+    if st.session_state.messages[-1]["role"] != "assistant":
+        with st.chat_message("assistant"):
+            with st.spinner("Thinking..."):
+                chat_history = "\n".join([f"{msg['role']}: {msg['content']}" for msg in st.session_state.messages])
+                # Run the asynchronous user input handling
+                response = asyncio.run(user_input(prompt, chat_history))
+                st.write(response)
 
-            if response is not None:
-                message = {"role": "assistant", "content": response}
-                st.session_state.messages.append(message)
+        if response is not None:
+            message = {"role": "assistant", "content": response}
+            st.session_state.messages.append(message)
 
 if __name__ == "__main__":
     main()
