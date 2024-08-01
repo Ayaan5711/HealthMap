@@ -37,7 +37,7 @@ def create_vector_store(text_chunks):
     
 
 def ingest_data():
-    dataset_dir = "dataset"
+    dataset_dir = "dataset2"
     
     # Check if the directory exists
     if not os.path.exists(dataset_dir):
@@ -45,7 +45,7 @@ def ingest_data():
         os.makedirs(dataset_dir)
 
 
-    pdf_files = [os.path.join("dataset", file) for file in os.listdir("dataset") if file.endswith(".pdf")]
+    pdf_files = [os.path.join("dataset2", file) for file in os.listdir("dataset2") if file.endswith(".pdf")]
 
     if not pdf_files:
         print("No PDF files found in the dataset directory.")
