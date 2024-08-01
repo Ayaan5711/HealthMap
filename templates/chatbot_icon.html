@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page with Chatbot Icon</title>
+    <style>
+      #chatbot-icon {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #7ce5f8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+      }
+      #chatbot-icon:hover {
+        background-color: #70c2e0;
+      }
+      #chatbot-icon img {
+        width: 50%;
+        height: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your page content -->
+
+    <!-- Chatbot Icon -->
+    <div id="chatbot-icon" onclick="openChatbot()">
+      <img
+        src="../static/img/banner/1538298822.svg"
+        style="width: 50px; height: 50px"
+        alt="Chatbot Icon"
+      />
+    </div>
+
+    <script>
+      function openChatbot() {
+        window.open("/chatbot", "Chatbot", "width=1000,height=800");
+      }
+    </script>
+  </body>
+</html>

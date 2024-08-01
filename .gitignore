@@ -63,7 +63,7 @@ instance/
 
 node_modules
 
-
+myenv/
 static/uploads/
 logs/
 src/image_models
