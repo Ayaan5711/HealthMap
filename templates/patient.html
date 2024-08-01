@@ -11,19 +11,47 @@
       crossorigin="anonymous"
     />
     <style>
+      body {
+        font-family: "Arial", sans-serif;
+      }
       .container {
         margin-top: 50px;
       }
       .card {
         margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
       .card-header {
-        background-color: #007bff;
+        background-color: #0b3f76;
         color: white;
+        font-size: 1.25rem;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+      .card-body {
+        padding: 1.5rem;
       }
       .section-title {
         font-weight: bold;
         margin-top: 10px;
+        font-size: 1.1rem;
+        color: #062341bf;
+      }
+      .card-text {
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+      .btn-primary {
+        background-color: #17f9de;
+        border-color: #009194;
+      }
+      .btn-primary:hover {
+        background-color: #08ec6f;
+        border-color: #327400;
+      }
+      .btn-primary:focus {
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
       }
     </style>
   </head>
@@ -41,12 +69,10 @@
             <strong>Phone:</strong> {{ data.phone }}<br />
             <strong>Email:</strong> {{ data.email }}<br />
           </p>
-          <div class="section-title">Symptoms</div>
+          <div class="section-title">Symptoms:</div>
           <p class="card-text">
-            Symptom 1:{{ data.symptom_1 }}<br />
-            Symptom 2:{{ data.symptom_2 }}<br />
-            Symptom 3:{{ data.symptom_3 }}<br />
-            Symptom 4:{{ data.symptom_4 }}<br />
+            {{ data.symp1 }}, {{ data.symp2 }}, {{ data.symp3 }}, {{ data.symp4
+            }}
           </p>
 
           <div class="section-title">Disease</div>

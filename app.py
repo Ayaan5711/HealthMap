@@ -27,7 +27,7 @@ from src.alternativedrug.AlternativeDrug import AlternateDrug
 from src.Prediction.disease_predictions import ModelPipeline
 from src.Insurance.Insurance import Insurance_Prediction
 #from src.ImagePrediction.image_prediction import ImagePrediction
-from src.DrugResponse.drugresponse import report_generator
+from src.DrugResponse.drugresponse import report_generator2
 from src.llm_report.Report import report_generator
 from src.Food.food import food_report_generator
 
@@ -306,16 +306,16 @@ def about():
 def contact():
     return render_template("contact.html")
 
-@app.route('/drugresponse', methods=['GET', 'POST'])
-def drugresponse():
+@app.route('/drugres', methods=['GET', 'POST'])
+def drugres():
     try:
-        with open('src/datasets/side_effects.json', 'r') as file:
-            side_effects_data = json.load(file)
-        side_effects = None
         if request.method == 'POST':
-            drug_name = request.form.get('drug_name')
-            side_effects = side_effects_data.get(drug_name, "No data available for this drug.")
-        return render_template("drug_response.html", side_effects=side_effects)
+            data = request.form.to_dict()
+            llm = report_generator2()
+            data = llm.report(data)
+            return render_template('drug_response_output.html', data=data)
+        
+        return render_template('drug_response.html')
     except Exception as e:
         lg.error(f"Error in /drugresponse route: {e}")
         raise CustomException(e, sys)
