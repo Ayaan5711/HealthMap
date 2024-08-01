@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nutrition Health App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin: 10px 0 5px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      input[type="file"],
+      input[type="text"],
+      input[type="submit"] {
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      input[type="file"] {
+        border: none;
+        background: #fafafa;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .instructions {
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #e7f3e7;
+        border-left: 5px solid #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Food Analyzer</h1>
+      <p class="instructions">
+        Please upload a photo of your meal and enter any relevant disease
+        information to analyze the meal's nutritional value.
+      </p>
+      <form
+        action="{{ url_for('food') }}"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="file">Upload a photo of your meal:</label>
+        <input type="file" id="file" name="file" accept="image/*" required />
+
+        <label for="disease">Enter your disease (if any):</label>
+        <input type="text" id="disease2" name="disease2" />
+
+        <input type="submit" value="Analyze Meal" />
+      </form>
+    </div>
+  </body>
+</html>
