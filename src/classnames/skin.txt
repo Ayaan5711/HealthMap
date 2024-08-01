@@ -21,10 +21,10 @@ Urticaria Hives
 Vascular Tumors
 Vasculitis
 Warts Molluscum
-akiec
-bcc
+Actinic Keratoses
+Basal Cell Carcinoma
 Benign Keratosis-like Lesions
-df
-mel
-nv
-vasc
+Dermatofibroma 
+Melanoma 
+Melanocytic Nevi
+Vascular Lesions

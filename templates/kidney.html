@@ -38,6 +38,7 @@
 
   <body>
     <!--::header part start::-->
+    {% include 'food_analyzer.html' %}
     <header class="main_menu home_menu">
       <div class="container">
         <div class="row align-items-center">
@@ -90,7 +91,6 @@
                       Multi-Disease
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      
                       <a class="dropdown-item" href="{{url_for('kidney')}}"
                         >Kidney</a
                       >
@@ -109,8 +109,10 @@
                       <a class="dropdown-item" href="{{url_for('breast')}}"
                         >Breast Cancer</a
                       >
-                      
-                      <a class="dropdown-item" href="{{url_for('disease_image_input')}}"
+
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('disease_image_input')}}"
                         >Disease Prediction using image</a
                       >
                     </div>
@@ -136,9 +138,7 @@
                         href="{{url_for('alternativedrug')}}"
                         >Alternative Drug</a
                       >
-                      <a
-                        class="dropdown-item"
-                        href="{{url_for('drugresponse')}}"
+                      <a class="dropdown-item" href="{{url_for('drugres')}}"
                         >Drug Response</a
                       >
                     </div>
@@ -147,17 +147,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('insurance') }}"
                       >Insurance</a
-                    >
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('contact')}}"
-                      >Contact</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('developer')}}"
-                      >developer</a
                     >
                   </li>
                 </ul>
@@ -231,193 +220,307 @@
                 </h5>
               </div>
               <div class="card-body">
-                <form class="form-horizontal" action="{{ url_for('kidney') }}" method="POST">
+                <form
+                  class="form-horizontal"
+                  action="{{ url_for('kidney') }}"
+                  method="POST"
+                >
                   <div class="row g-3">
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" name="age" placeholder="Age" required>
-                          </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          name="age"
+                          placeholder="Age"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" name="bp" placeholder="Blood Pressure (bp)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          name="bp"
+                          placeholder="Blood Pressure (bp)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" step="any" name="sg" placeholder="Specific Gravity (sg)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          step="any"
+                          name="sg"
+                          placeholder="Specific Gravity (sg)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" name="al" placeholder="Albumin (al)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          name="al"
+                          placeholder="Albumin (al)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" name="su" placeholder="Sugar (su)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          name="su"
+                          placeholder="Sugar (su)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="rbc" required>
-                                  <option value="" disabled selected>Red Blood Cells (rbc)</option>
-                                  <option value="1">Abnormal</option>
-                                  <option value="0">Normal</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="rbc" required>
+                          <option value="" disabled selected>
+                            Red Blood Cells (rbc)
+                          </option>
+                          <option value="1">Abnormal</option>
+                          <option value="0">Normal</option>
+                        </select>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="pc" required>
-                                  <option value="" disabled selected>Pus Cell (pc)</option>
-                                  <option value="1">Abnormal</option>
-                                  <option value="0">Normal</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="pc" required>
+                          <option value="" disabled selected>
+                            Pus Cell (pc)
+                          </option>
+                          <option value="1">Abnormal</option>
+                          <option value="0">Normal</option>
+                        </select>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="pcc" required>
-                                  <option value="" disabled selected>Pus Cell Clumps (pcc)</option>
-                                  <option value="1">Present</option>
-                                  <option value="0">Not Present</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="pcc" required>
+                          <option value="" disabled selected>
+                            Pus Cell Clumps (pcc)
+                          </option>
+                          <option value="1">Present</option>
+                          <option value="0">Not Present</option>
+                        </select>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="ba" required>
-                                  <option value="" disabled selected>Bacteria (ba)</option>
-                                  <option value="1">Present</option>
-                                  <option value="0">Not Present</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="ba" required>
+                          <option value="" disabled selected>
+                            Bacteria (ba)
+                          </option>
+                          <option value="1">Present</option>
+                          <option value="0">Not Present</option>
+                        </select>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" name="bgr" placeholder="Blood Glucose Random (bgr)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          name="bgr"
+                          placeholder="Blood Glucose Random (bgr)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" name="bu" placeholder="Blood Urea (bu)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          name="bu"
+                          placeholder="Blood Urea (bu)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" step="any" name="sc" placeholder="Serum Creatinine (sc)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          step="any"
+                          name="sc"
+                          placeholder="Serum Creatinine (sc)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" step="any" name="sod" placeholder="Sodium (sod)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          step="any"
+                          name="sod"
+                          placeholder="Sodium (sod)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" step="any" name="pot" placeholder="Potassium (pot)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          step="any"
+                          name="pot"
+                          placeholder="Potassium (pot)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" step="any" name="hemo" placeholder="Hemoglobin (hemo)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          step="any"
+                          name="hemo"
+                          placeholder="Hemoglobin (hemo)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" name="pcv" placeholder="Packed Cell Volume (pcv)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          name="pcv"
+                          placeholder="Packed Cell Volume (pcv)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" name="wc" placeholder="White Blood Cell Count (wc)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          name="wc"
+                          placeholder="White Blood Cell Count (wc)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <input class="form-control" type="number" step="any" name="rc" placeholder="Red Blood Cell Count (rc)" required>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          step="any"
+                          name="rc"
+                          placeholder="Red Blood Cell Count (rc)"
+                          required
+                        />
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="htn" required>
-                                  <option value="" disabled selected>Hypertension (htn)</option>
-                                  <option value="1">Yes</option>
-                                  <option value="0">No</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="htn" required>
+                          <option value="" disabled selected>
+                            Hypertension (htn)
+                          </option>
+                          <option value="1">Yes</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="dm" required>
-                                  <option value="" disabled selected>Diabetes Mellitus (dm)</option>
-                                  <option value="1">Yes</option>
-                                  <option value="0">No</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="dm" required>
+                          <option value="" disabled selected>
+                            Diabetes Mellitus (dm)
+                          </option>
+                          <option value="1">Yes</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="cad" required>
-                                  <option value="" disabled selected>Coronary Artery Disease (cad)</option>
-                                  <option value="1">Yes</option>
-                                  <option value="0">No</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="cad" required>
+                          <option value="" disabled selected>
+                            Coronary Artery Disease (cad)
+                          </option>
+                          <option value="1">Yes</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="appet" required>
-                                  <option value="" disabled selected>Appetite (appet)</option>
-                                  <option value="1">Good</option>
-                                  <option value="0">Poor</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="appet" required>
+                          <option value="" disabled selected>
+                            Appetite (appet)
+                          </option>
+                          <option value="1">Good</option>
+                          <option value="0">Poor</option>
+                        </select>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="pe" required>
-                                  <option value="" disabled selected>Pedal Edema (pe)</option>
-                                  <option value="1">Yes</option>
-                                  <option value="0">No</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="pe" required>
+                          <option value="" disabled selected>
+                            Pedal Edema (pe)
+                          </option>
+                          <option value="1">Yes</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <select class="form-control" name="ane" required>
-                                  <option value="" disabled selected>Anemia (ane)</option>
-                                  <option value="1">Yes</option>
-                                  <option value="0">No</option>
-                              </select>
-                          </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <select class="form-control" name="ane" required>
+                          <option value="" disabled selected>
+                            Anemia (ane)
+                          </option>
+                          <option value="1">Yes</option>
+                          <option value="0">No</option>
+                        </select>
                       </div>
+                    </div>
                   </div>
                   <div class="row justify-content-center mt-3">
-                      <button type="submit" class="btn_3">Predict</button>
+                    <button type="submit" class="btn_3">Predict</button>
                   </div>
-              </form>
+                </form>
               </div>
             </div>
           </div>
           {% if prediction_text is not none %}
           <div class="col-md-8 mt-4">
-              {% if prediction_text == 1 %}
-                  <div class="card shadow-sm alert alert-danger">
-                      <div class="card-body">
-                          <center><h3>Sorry! Please consult a DOCTOR.</h3></center>
-                      </div>
-                  </div>
-              {% elif prediction_text == 0 %}
-                  <div class="card shadow-sm alert alert-success">
-                      <div class="card-body">
-                          <center><h3>Great! You are HEALTHY.</h3></center>
-                      </div>
-                  </div>
-              {% endif %}
-        </div>
-    {% endif %}
+            {% if prediction_text == 1 %}
+            <div class="card shadow-sm alert alert-danger">
+              <div class="card-body">
+                <center><h3>Sorry! Please consult a DOCTOR.</h3></center>
+              </div>
+            </div>
+            {% elif prediction_text == 0 %}
+            <div class="card shadow-sm alert alert-success">
+              <div class="card-body">
+                <center><h3>Great! You are HEALTHY.</h3></center>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
         </div>
       </div>
     </section>

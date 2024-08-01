@@ -1,0 +1,35 @@
+.custom-container {
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 20px auto;
+  /* max-width: 1000px; */
+  width: fit-content;
+}
+
+.heading_item {
+  margin-bottom: 20px;
+}
+
+.drug_response_heading {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .drug_response_heading {
+    font-size: 40px;
+
+  }
+
+  .drug_response_subheading {
+    font-size: 30px;
+  }
+
+}
+
+p {
+  margin: 10px 0;
+}

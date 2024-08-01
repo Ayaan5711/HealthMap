@@ -1,18 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Potential Side Effects</title>
-</head>
-<body>
-    <h1>Potential Side Effects</h1>
-    <ul>
-        {% for effect in data %}
+    <link rel="icon" href="../static/img/logo.png" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../static/css/animate.css" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../static/css/themify-icons.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@500&family=Raleway:wght@500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../static/css/drug_response_output.css" />
+
+    <!-- flaticon CSS -->
+    <!-- <link rel="stylesheet" href="../static/css/flaticon.css" /> -->
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="../static/css/magnific-popup.css" />
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="../static/css/nice-select.css" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../static/css/slick.css" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    <!--::header part start::-->
+    {% include 'food_analyzer.html' %}
+    <header class="main_menu home_menu">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand navbar_img" href="/">
+                <img src="../static/img/logo6.png" alt="logo" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="collapse navbar-collapse main-menu-item justify-content-center"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav align-items-center">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="about" href="{{url_for('about')}}"
+                      >About</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('disease') }}"
+                      >Disease Symptoms</a
+                    >
+                  </li>
+
+                  <li class="nav-item dropdown active">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="/disease_input_type"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Multi-Disease
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{url_for('kidney')}}"
+                        >Kidney</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('heart')}}"
+                        >Heart</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('liver')}}"
+                        >Liver</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('parkinsons')}}"
+                        >Parkinsons</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('diabetes')}}"
+                        >Diabetes</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('breast')}}"
+                        >Breast Cancer</a
+                      >
+
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('disease_image_input')}}"
+                        >Disease Prediction using image</a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdown_1"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Drug
+                    </a>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdown_1"
+                    >
+                      <a
+                        class="dropdown-item"
+                        href="{{url_for('alternativedrug')}}"
+                        >Alternative Drug</a
+                      >
+                      <a class="dropdown-item" href="{{url_for('drugres')}}"
+                        >Drug Response</a
+                      >
+                    </div>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('insurance') }}"
+                      >Insurance</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('contact')}}"
+                      >Contact</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('developer')}}"
+                      >Developer</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <a
+                class="btn_2 d-none d-lg-block"
+                href="#appointmentModal"
+                data-bs-toggle="modal"
+                >Appointment</a
+              >
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- {% for effect in data %}
             <li>
                 <strong>{{ effect['side_effect'] }}:</strong> {{ effect['description'] }}
             </li>
+        {% endfor %} -->
+
+    <div class="container custom-container">
+      <div class="heading_item text-center">
+        <img
+          src="https://st4.depositphotos.com/9999814/22105/i/450/depositphotos_221059420-stock-photo-healthcare-people-group-professional-doctor.jpg"
+          alt="side effects"
+          class="img-fluid"
+          style="border-radius: 10px"
+        />
+        <h2 class="drug_response_heading">Potential Side Effects</h2>
+      </div>
+      <div>
+        {% for effect in data %}
+        <p>
+          <strong> ⦾ {{ effect['side_effect'] }}:</strong> {{
+          effect['description'] }}
+        </p>
         {% endfor %}
-    </ul>
-</body>
+
+        <!-- <p>
+          <strong>⦾ Drowsiness:</strong> Benadryl is known to cause drowsiness,
+          which can affect alertness and reaction time.
+          
+        </p>
+        <p>
+          <strong>⦾ Dry Mouth: </strong> Benadryl can reduce saliva production,
+          leading to a dry mouth.
+        </p> -->
+      </div>
+    </div>
+  </body>
 </html>
