@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Potential Side Effects</title>
-  </head>
-  <body>
+</head>
+<body>
     <h1>Potential Side Effects</h1>
     <ul>
-      {% for effect in data %}
-      <li>
-        <strong>{{ effect['side_effect'] }}:</strong> {{ effect['description']
-        }}
-      </li>
-      {% endfor %}
+        {% for effect in data %}
+            <li>
+                <strong>{{ effect['side_effect'] }}:</strong> {{ effect['description'] }}
+            </li>
+        {% endfor %}
     </ul>
-  </body>
+</body>
 </html>
