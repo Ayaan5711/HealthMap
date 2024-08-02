@@ -10,37 +10,58 @@ HealthMap is an advanced platform designed for personalized medicine and bioinfo
 - **Knowledge Enhancement**: Utilizes cutting-edge LLMs and VLMs to provide comprehensive medical knowledge and assist healthcare professionals.
 - **User-Friendly Interface**: Easy-to-navigate interface for both patients and healthcare providers.
 
+- Demo Video **[Link](https://drive.google.com/file/d/1ZWa58DOyrsY8Mk9yHauWxg_6hak5APEL/view)**
+
 ## Getting Started
 
-### Prerequisites
+### Installation and Setup:
 
-- Python 3.8+
-- Required Python packages (listed in `requirements.txt`)
+1. Make Sure You are using `python==3.11`
 
-### Installation
-
-1. Clone the repository:
+2. Clone the repository:
     ```sh
     git clone https://github.com/Ayaan5711/healthmap.git
     ```
-2. Navigate to the project directory:
+3. Navigate to the project directory:
     ```sh
     cd healthmap
     ```
-3. Install the required packages:
+
+4. Create a New Virtual Environment:
+    - 1. Creating a new Environment:
+        ```sh
+        python -m venv HealthMapvenv
+        ```
+    - 2. Activating HealthMapvenv Environment:
+        ```sh
+        HealthMapvenv\Scripts\activate
+        ```
+
+5. Install the required packages:
     ```sh
     pip install -r requirements.txt
     ```
 
-### Usage
+6. Download [this folder](https://drive.google.com/drive/folders/17bhvoDmlmTXdryUS-8AGeDieWOtT4q31?usp=sharing) from drive and store it inside src folder in this directory"
 
-1. Start the application:
+7. Make sure your directory should look like this
+    ```sh
+    src/
+        - image_models/
+            - brain_chest_malaria_skin_inception_v3_model_state_dict.pth 
+            - ....etc
+        - ...other files...
+    ... other files ...
+    ```
+
+
+8. Start the application:
     ```sh
     python app.py
     ```
-2. Open your web browser and navigate to `http://localhost:5000`.
+9. Open your web browser and navigate to `http://localhost:5000`.
 
-3. Follow the on-screen instructions to use HealthMap's features.
+10. Follow the on-screen instructions to use HealthMap's features.
 
 ## Components
 
