@@ -38,7 +38,7 @@
 
   <body>
     <!--::header part start::-->
-    {% include 'food_analyzer.html' %}
+    {% include 'food_analyzer.html' %} {% include 'chatbot_icon.html' %}
     <header class="main_menu home_menu">
       <div class="container">
         <div class="row align-items-center">
@@ -72,13 +72,13 @@
                     >
                   </li>
 
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for('disease') }}"
                       >Disease Symptoms</a
                     >
                   </li>
 
-                  <li class="nav-item dropdown active">
+                  <li class="nav-item dropdown">
                     <a
                       class="nav-link dropdown-toggle"
                       href="/disease_input_type"
