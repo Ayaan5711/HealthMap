@@ -1,3 +1,15 @@
+PyPDF2==3.0.1
+langchain==0.2.11
+langchain-google-genai==1.0.8
+google-generativeai==0.7.2
+langchain-community==0.2.10
+python-dotenv==1.0.1
+streamlit==1.32.2
+faiss-cpu==1.8.0.post1
+torch==2.0.1
+torchvision==0.15.2
+flask_sqlalchemy==3.1.1
+
 absl-py==2.1.0
 altair==5.2.0
 asttokens==2.4.1

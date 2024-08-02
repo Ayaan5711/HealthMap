@@ -1,47 +1,47 @@
 
 {
-  "name_of_disease": "Infiltration of the Chest Area",
-  "description": "Infiltration of the chest area refers to the abnormal accumulation of cells, fluid, or other substances within the tissues of the chest, particularly the lungs. This can lead to a variety of symptoms and complications depending on the underlying cause and severity.",
+  "name_of_disease": [
+    "Chest Nodule"
+  ],
+  "description": [
+    "A chest nodule is a small, round growth or mass that appears on the chest. It can be found in the lungs, lymph nodes, or other tissues in the chest area. Nodules can be benign (non-cancerous) or malignant (cancerous)."
+  ],
   "most_likely_cause_of_disease": [
-    "Infection (pneumonia, tuberculosis)",
-    "Inflammation (bronchitis, pleurisy)",
-    "Cancer (lung cancer, lymphoma)",
-    "Fluid buildup (pleural effusion, pulmonary edema)",
-    "Connective tissue diseases (sarcoidosis)",
-    "Exposure to environmental toxins",
-    "Certain medications",
-    "Autoimmune disorders"
+    "Benign Causes:",
+    " - **Infections:**  Tuberculosis, fungal infections, bacterial pneumonia",
+    " - **Inflammation:**  Sarcoidosis, granulomatosis with polyangiitis (GPA)",
+    " - **Non-cancerous growths:**  Fibromas, lipomas, hamartomas",
+    " - **Previous injury or surgery:**  Scar tissue",
+    "Malignant Causes:",
+    " - **Lung cancer:**  The most common cause of malignant chest nodules",
+    " - **Lymphoma:**  Cancer of the lymphatic system",
+    " - **Metastases:**  Cancer that has spread from other parts of the body to the chest"
   ],
   "precautions_we_need_to_take": [
-    "Avoid contact with sick individuals",
-    "Practice good hygiene (wash hands frequently)",
-    "Get vaccinated against preventable infections",
-    "Quit smoking",
-    "Avoid exposure to environmental toxins",
-    "Follow your doctor's recommendations for medication and treatment"
+    "Early detection is crucial for both benign and malignant nodules. If you notice a new lump or growth on your chest, consult a doctor immediately."
   ],
   "symptoms_of_that_disease": [
-    "Cough",
-    "Shortness of breath",
-    "Chest pain",
-    "Wheezing",
-    "Fever",
-    "Fatigue",
-    "Weight loss",
-    "Swelling in the legs or ankles",
-    "Night sweats"
+    "Symptoms vary depending on the cause and size of the nodule. Some common symptoms include:",
+    " - **Coughing:**  May be persistent or accompanied by blood",
+    " - **Shortness of breath:**  Especially during exertion",
+    " - **Chest pain:**  May be sharp or dull, and may worsen with breathing",
+    " - **Wheezing:**  A whistling sound during breathing",
+    " - **Fatigue:**  Feeling tired and weak",
+    " - **Weight loss:**  Unexplained weight loss",
+    " - **Night sweats:**  Excessive sweating at night",
+    " - **Fever:**  May be a sign of infection"
   ],
   "diet_we_need_to_follow": [
-    "Consult a doctor or registered dietitian for personalized dietary advice",
-    "Focus on a balanced diet rich in fruits, vegetables, whole grains, and lean protein",
-    "Limit processed foods, sugary drinks, and saturated and trans fats",
-    "Stay hydrated by drinking plenty of water"
+    "A healthy diet can support overall well-being and may help manage some symptoms associated with chest nodules. Focus on:",
+    " - **Fruits and vegetables:**  Rich in antioxidants and vitamins",
+    " - **Whole grains:**  Provide fiber and nutrients",
+    " - **Lean protein:**  For muscle health",
+    " - **Healthy fats:**  Essential for cell function",
+    " - **Hydration:**  Drink plenty of water"
   ],
   "affect_of_disease": [
-    "Respiratory difficulties",
-    "Reduced lung capacity",
-    "Pain and discomfort",
-    "Increased risk of infection",
-    "Complications depending on the underlying cause (e.g., heart failure, sepsis)"
+    "The impact of a chest nodule depends on its nature:",
+    " - **Benign nodules:**  May not cause any symptoms and often require no treatment. However, they may require monitoring to ensure they don't grow or change.",
+    " - **Malignant nodules:**  Can be life-threatening. Early detection and treatment are crucial for improving outcomes."
   ]
 }

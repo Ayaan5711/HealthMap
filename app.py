@@ -29,7 +29,7 @@ from src.disease_prediction.disease_prediction import DiseasePrediction
 from src.alternativedrug.AlternativeDrug import AlternateDrug
 from src.Prediction.disease_predictions import ModelPipeline
 from src.Insurance.insurance_calculator import calculate_insurance_price
-# from src.ImagePrediction.image_prediction import ImagePrediction
+from src.ImagePrediction.image_prediction import ImagePrediction
 from src.DrugResponse.drugresponse import report_generator2
 from src.llm_report.Report import report_generator
 from src.Food.food import food_report_generator

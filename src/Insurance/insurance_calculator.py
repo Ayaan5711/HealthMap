@@ -94,12 +94,12 @@ def calculate_insurance_price(data):
     else:
         income_factor = 0.8
 
-    if data['past_disease_history'] is not "None":
+    if data['past_disease_history'] != "":
         past_disease_factor = sum(insurance(data['past_disease_history']))
     else:
         past_disease_factor = 1.0
 
-    if data['family_disease_history'] is not "None":
+    if data['family_disease_history'] != "":
         family_disease_factor = sum(insurance(data['past_disease_history']))
     else:
         family_disease_factor = 1.0

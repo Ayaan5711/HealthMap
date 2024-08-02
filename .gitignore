@@ -63,7 +63,7 @@ instance/
 
 node_modules
 
-myenv/
+HealthMapvenv/
 static/uploads/
 logs/
 src/image_models
