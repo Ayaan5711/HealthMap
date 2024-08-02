@@ -8,8 +8,6 @@ import sys
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 import tensorflow as tf
-from keras.models import load_model
-from PIL import Image
 import warnings
 import json
 import logging
@@ -429,7 +427,7 @@ def parkinsons():
 def insurance():
     if request.method == 'POST':
         form_data = request.form.to_dict()
-        insurance_price = calculate_insurance_price(form_data)
+        insurance_price = calculate_insurance_price(form_data)/20
         
         return render_template("insurance.html", insurance_price = insurance_price)
     else:
