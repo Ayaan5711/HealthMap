@@ -6,6 +6,7 @@ import os
 import asyncio
 import sys
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 import tensorflow as tf
 from keras.models import load_model
 from PIL import Image
