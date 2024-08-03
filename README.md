@@ -54,14 +54,18 @@ HealthMap is an advanced platform designed for personalized medicine and bioinfo
     ... other files ...
     ```
 
+8. Set environment file `.env` file and set this value:
+    ```sh
+    GOOGLE_API_KEY = 'YOUR GOOGLE GEMINI API KEY'
+    ```
 
-8. Start the application:
+9. Start the application:
     ```sh
     python app.py
     ```
-9. Open your web browser and navigate to `http://localhost:5000`.
+10. Open your web browser and navigate to `http://localhost:5000`.
 
-10. Follow the on-screen instructions to use HealthMap's features.
+11. Follow the on-screen instructions to use HealthMap's features.
 
 ## Components
 

@@ -1,47 +1,51 @@
 
 {
-  "name_of_disease": [
-    "Chest Nodule"
-  ],
+  "name_of_disease": "Eczema",
   "description": [
-    "A chest nodule is a small, round growth or mass that appears on the chest. It can be found in the lungs, lymph nodes, or other tissues in the chest area. Nodules can be benign (non-cancerous) or malignant (cancerous)."
+    "Eczema, also known as atopic dermatitis, is a long-term (chronic) skin condition that causes dry, itchy patches of skin.",
+    "It's a common condition, particularly in children, and can range in severity from mild to severe."
   ],
   "most_likely_cause_of_disease": [
-    "Benign Causes:",
-    " - **Infections:**  Tuberculosis, fungal infections, bacterial pneumonia",
-    " - **Inflammation:**  Sarcoidosis, granulomatosis with polyangiitis (GPA)",
-    " - **Non-cancerous growths:**  Fibromas, lipomas, hamartomas",
-    " - **Previous injury or surgery:**  Scar tissue",
-    "Malignant Causes:",
-    " - **Lung cancer:**  The most common cause of malignant chest nodules",
-    " - **Lymphoma:**  Cancer of the lymphatic system",
-    " - **Metastases:**  Cancer that has spread from other parts of the body to the chest"
+    "The exact cause is unknown, but it's believed to be a combination of genetic and environmental factors.",
+    "A weakened skin barrier, which allows irritants and allergens to enter the skin more easily.",
+    "A faulty immune system, which may overreact to triggers.",
+    "Dry skin, which is more prone to irritation and inflammation.",
+    "Family history of eczema.",
+    "Exposure to allergens, such as dust mites, pollen, pet dander, and certain foods.",
+    "Irritants, such as soaps, detergents, and perfumes.",
+    "Stress and anxiety."
   ],
   "precautions_we_need_to_take": [
-    "Early detection is crucial for both benign and malignant nodules. If you notice a new lump or growth on your chest, consult a doctor immediately."
+    "Avoid known triggers, such as allergens and irritants.",
+    "Keep skin moisturized by applying a thick, fragrance-free moisturizer regularly.",
+    "Take lukewarm baths or showers and avoid harsh soaps.",
+    "Wear loose-fitting, breathable clothing.",
+    "Avoid scratching, as this can worsen inflammation.",
+    "Use cool compresses to relieve itching.",
+    "Manage stress and anxiety."
   ],
   "symptoms_of_that_disease": [
-    "Symptoms vary depending on the cause and size of the nodule. Some common symptoms include:",
-    " - **Coughing:**  May be persistent or accompanied by blood",
-    " - **Shortness of breath:**  Especially during exertion",
-    " - **Chest pain:**  May be sharp or dull, and may worsen with breathing",
-    " - **Wheezing:**  A whistling sound during breathing",
-    " - **Fatigue:**  Feeling tired and weak",
-    " - **Weight loss:**  Unexplained weight loss",
-    " - **Night sweats:**  Excessive sweating at night",
-    " - **Fever:**  May be a sign of infection"
+    "Red, itchy patches of skin.",
+    "Dry, scaly skin.",
+    "Small, raised bumps or blisters.",
+    "Cracked or weeping skin.",
+    "Thickened, leathery skin.",
+    "Skin infections, such as impetigo or cellulitis.",
+    "Swollen lymph nodes.",
+    "Fatigue."
   ],
   "diet_we_need_to_follow": [
-    "A healthy diet can support overall well-being and may help manage some symptoms associated with chest nodules. Focus on:",
-    " - **Fruits and vegetables:**  Rich in antioxidants and vitamins",
-    " - **Whole grains:**  Provide fiber and nutrients",
-    " - **Lean protein:**  For muscle health",
-    " - **Healthy fats:**  Essential for cell function",
-    " - **Hydration:**  Drink plenty of water"
+    "There is no specific diet for eczema, but some people may find that certain foods worsen their symptoms.",
+    "Common food triggers include dairy products, eggs, wheat, soy, nuts, and seafood.",
+    "It's important to keep a food diary to track potential triggers.",
+    "A balanced diet rich in fruits, vegetables, and whole grains is generally recommended.",
+    "Staying hydrated by drinking plenty of water is also important.",
+    "Probiotics, which are good bacteria found in fermented foods, may help to improve gut health and reduce eczema symptoms."
   ],
   "affect_of_disease": [
-    "The impact of a chest nodule depends on its nature:",
-    " - **Benign nodules:**  May not cause any symptoms and often require no treatment. However, they may require monitoring to ensure they don't grow or change.",
-    " - **Malignant nodules:**  Can be life-threatening. Early detection and treatment are crucial for improving outcomes."
+    "Eczema can be uncomfortable and itchy, affecting quality of life.",
+    "It can lead to skin infections.",
+    "In severe cases, it can cause sleep disturbances and emotional distress.",
+    "There is no cure for eczema, but treatments can help to manage symptoms and improve quality of life."
   ]
 }
